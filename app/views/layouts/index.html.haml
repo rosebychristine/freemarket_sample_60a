@@ -1,0 +1,62 @@
+%body
+  .main
+   .container
+    .content
+     .chapter__container
+      %h2.chapter__header
+        本人情報の登録
+      .form
+        %p
+          お客さまの本人情報をご登録ください。
+          %br
+          登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+        %p.text-right
+          本人確認書類のアップロードについて
+        .form-group
+          %label 
+            お名前
+          %p
+            user-name
+        .form-group
+          %label 
+            お名前カナ
+          %p
+            user-name-kana
+        .form-group
+          %label
+            生年月日
+          %p
+            2000/05/26
+        .form-group
+          %label
+            郵便番号
+          %span.form-arbitrary
+            任意  
+            .select-wrap
+              = fa_icon "icon-arrow-bottom", class: "icon"
+              %select.select-default
+                大阪
+        .form-group
+          %label
+            市区町村
+          %span.form-arbitrary
+            任意  
+          %input.input-default{type: 'text', value: ' ', name: 'city', placeholder:'例) 横浜市緑区'}
+        .form-group
+          %label
+            番地
+          %span.form-arbitrary
+            任意  
+          %input.input-default{type: 'text', value: ' ', name: 'address1', placeholder:'例) 青山1-1-1'}
+        .form-group
+          %label
+            建物名 
+          %span.form-arbitrary
+            任意  
+          %input
+            ビル
+        .form-group
+          %button.btn-default__but-red{type: 'submit', value: '登録する'}
+        .form-group__text-right
+          %p
+            = link_to '本人確認書類のアップロードについて'
