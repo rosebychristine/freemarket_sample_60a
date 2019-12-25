@@ -1,0 +1,20 @@
+// Place all the styles related to the logout controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.l-chapter-container{
+  box-sizing: border-box;
+  background-color: white;
+  margin : 0, 40;
+  .l-single-content{
+    max-width: 320px;
+    margin: 0 auto;
+    .btn-default{
+      box-sizing: border-box;
+      background: #ea352d;
+      border: solid 1px #ea352d;
+      color: #ffff;
+      height: 50px;
+      width: 320px;
+    }
+  }
+}
