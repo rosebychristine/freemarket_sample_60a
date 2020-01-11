@@ -88,7 +88,7 @@
                   <i class="icon-check">
                     <!-- 見本環境での::beforeがよく分からず放置 本来ここに記述されている-->
                     </i>
-                    <label for="reveal-password">パスワードを表示する</label>
+                    <label class="reveal-password">パスワードを表示する</label>
                 </div> 
               </div>
               
@@ -99,8 +99,8 @@
               </div>
               <!-- 名前（漢字）入力フォーム -->
               <div class="form-index">
-                <label for="oname">お名前（全角)</label>
-                <span class="need-select">必須</span>
+                <label class="oname">お名前（全角)</label>
+                <span class="need-select-name">必須</span>
                 <input type="text" name="first-name"
                 placeholder="例）山田" class="input-default half-one">
                 <input type="text" name="family-name"
@@ -164,7 +164,7 @@
 
 
                       </select>
-                      <span>年</span>
+                      <span class="years">年</span>
                     </div>
                     <div class="select-wrap-month">
                       <i class="icon-arrow-bottom">
@@ -186,7 +186,7 @@
                         <option value="11">11</option>
                         <option value="12">12</option>
                       </select>
-                      <span>月</span>
+                      <span class="month">月</span>
                     </div>
 
                     <!-- 日付入力フォーム作成 -->
@@ -227,7 +227,7 @@
                       <option value="30">30</option>
                       <option value="31">31</option>
                       </select>
-                      <span>日</span>
+                      <span class="days">日</span>
                     </div>
                 </div>
               </div>
@@ -259,7 +259,7 @@
               <!-- これもリンク先を仮置きにしています -->
               <div class="form-group-about">
                 <p>
-                  <a href="" target="_blank">
+                  <a href="" class="regi" target="_blank">
                     本人情報の登録について
                     <i class="icon-arrow-right">
                     </i>

@@ -13,6 +13,7 @@ body {
   label {
     font-weight: 600;
     position: relative;
+    top: 15px;
     z-index: 2;
     font-size: 14px;
     vertical-align: middle;
@@ -88,52 +89,191 @@ body {
     max-width: 343px;
     margin: auto;
 
-    .input-default{
-      width: 100%;
-      margin: 24px 0 0;
-      height: 48px;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      background: #fff;
-      line-height: 1.5;
-      font-size: 16px;
-      float: left;
-    }
-
-    .half {
-        width: calc(50% - 6px);
-    }
-
-    .half-one {
-        width: calc(50% - 6px);
-        position: relative;
-        top: 15px;
-    }
-
-      .need-select {
-        background: #ea352d;
-        margin: 0 0 0 8px;
-        padding: 2px 4px;
-        border-radius: 2px;
-        color: #fff;
-        font-size: 12px;
-        vertical-align: top;
-        position: relative;
-        top: 5px;
-       }
-
-    .form-index:first-child {
-      margin: 0;
-      }
-
-    .form-index {
+        .input-default{
+        width: 100%;
         margin: 24px 0 0;
-      }
+        height: 48px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        line-height: 1.5;
+        font-size: 16px;
+        float: left;
+        }
+
+        .half {
+            width: calc(50% - 6px);
+        }
+
+        .half-one {
+            width: calc(50% - 6px);
+            position: relative;
+            top: 15px;
+            right: 10px;
+        }
+
+        .need-select {
+            background: #ea352d;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;
+            position: relative;
+            top: 17px;
+            right: 2px;
+        }
+        .need-select-name {
+            background: #ea352d;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;
+            position: relative;
+            top: 17px;
+            right: 2px;
+            position: relative;
+            right: 170px;
+        }
+
+        .form-index:first-child {
+        margin: 0;
+        }
+
+        .form-index {
+            margin: 24px 0 0;
+        }
+
+        .form-info-thin {
+            position: relative;
+            bottom: 30px;
+        }
 
       .form-index-password {
         margin: 24px 0 0;
       }
+
+      .oname {
+        position: relative;
+        right: 170px;
+        top: 15px;
+      }
+      p {
+      margin: 8px 0 0;
+      line-height: 1.5;
+      color: #888;
+      }
+
+      h3 {
+        font-size: 16px;
+      }
+
+      .identification {
+          position: relative;
+          top: 5px;
+      }
+
+      .reveal-password {
+          position: relative;
+          top: -1px
+      }
+      .velification {
+        margin: 24px 0 0;
+      }
+
+      .select-default {
+        position: relative;
+        z-index: 2;
+        height: 48px;
+        padding: 0 16px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: 0;
+        font-size: 16px;
+        line-height: 1.5;
+        cursor: pointer;
+        width: 100%;
+    }
+        .select-wrap {
+            float: left;
+            position: relative;
+            right: 35px;
+
+             .years {
+                position: relative;
+                top: -30px;
+                left: 90px;
+            }
+        }
+        .select-wrap-month {
+            float: left;
+
+             .month {
+                position: relative;
+                top: -30px;
+                left: 70px;
+             }
+        }
+
+        .select-wrap-daily {
+            position: relative;
+            left: 30px;
+
+            .days {
+                position: relative;
+                left: 70px;
+                bottom: 30px;
+            }
+        }
+
+        .birthday-input-form {
+            display: flex;
+            margin: 23px;
+        }
     }   
+    .last-content {
+        max-width: 343px;
+        text-align: center;
+        margin: 0 auto;
+
+        .next-page {
+            margin: 24px 0 ;
+            background: #ea352d;
+            border: 1px solid #ea352d;
+            color: #fff;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            border: 1px solid transparent;
+            -webkit-transition: all ease-out .3s;
+            transition: all ease-out .3s;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        a {
+            color: #0099e8;
+            text-decoration: none;
+        }
+
+        .regi {
+            position: relative;
+            left: 100px;
+        }
+
+        .english-code {
+            color: #888888;
+            font-size: 12px;
+            padding: 20px;
+            background-color: #f5f5f5;
+            margin: 15px;
+        }
+
+      }
+    }
   }
-}
 }
