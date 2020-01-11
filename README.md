@@ -46,6 +46,9 @@ Things you may want to cover:
 - has_many  :like
 - has_many  :comment
 - has_many  :message
+- has_many  :alert
+- belongs_to : address
+- belongs_to : cregitcard
 
 ## addressテーブル
 |Column|Type|Option|
@@ -89,6 +92,7 @@ Things you may want to cover:
 - has_one  :shipping
 - has_many  :evaluation
 - has_many  :image
+- has_many  :alert
 - has_one  :order
 
 ## imagesテーブル
@@ -189,15 +193,16 @@ Things you may want to cover:
 - belongs_to  :product
 - belongs_to  :user
 
-<!-- ## orderテーブル
+## alertsテーブル
 |Column|Type|Option|
 |------|----|-------|
-|buyer_id|references|null: false <br> foreign_key: true|
+|user_id|references|null: false <br> foreign_key: true|
 |product_id|references|null: false|
 
 ### Association
 - belongs_to  :product
-- belongs_to  :user -->
+- belongs_to  :user
+
 
 
 
