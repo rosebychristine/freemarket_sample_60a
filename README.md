@@ -48,7 +48,6 @@ Things you may want to cover:
 - has_many  :message
 - has_many  :alert
 - belongs_to : address
-- belongs_to : cregitcard
 
 ## addressテーブル
 |Column|Type|Option|
@@ -59,15 +58,6 @@ Things you may want to cover:
 |name|string|null: false|
 |last_name|string|null: false|
 |tell|string|unique: true|
-### Association
-- belongs_to  :user
-
-## cregitcardsテーブル
-|Column|Type|Option|
-|------|----|-------|
-|card_number|integer|null: false|
-|user_id|references|null: false <br> foreign_key: true|
-
 ### Association
 - belongs_to  :user
 
@@ -93,7 +83,6 @@ Things you may want to cover:
 - has_many  :evaluation
 - has_many  :image
 - has_many  :alert
-- has_one  :order
 
 ## imagesテーブル
 |Column|Type|Option|
@@ -103,10 +92,6 @@ Things you may want to cover:
 
 ### Association
 - belongs_to  :product
-
-## alertsテーブル
-
-### Association
 
 ## brandsテーブル
 |Column|Type|Option|
