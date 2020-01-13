@@ -42,11 +42,12 @@ Things you may want to cover:
 |birthday|string|null: false|
 |status|integer|null: false|
 ### Association
-- has_many  :product
-- has_many  :like
-- has_many  :comment
-- has_many  :message
-- has_many  :alert
+- has_many  :products
+- has_many  :likes
+- has_many  :comments
+- has_many  :messages
+- has_many  :alerts
+- has_many  :orders
 - belongs_to : address
 
 ## addressテーブル
@@ -76,13 +77,14 @@ Things you may want to cover:
 - belongs_to  :user
 - belongs_to  :category
 - belongs_to  :brand
-- has_many  :like
-- has_many  :comment
-- has_many  :message
+- has_many  :likes
+- has_many  :comments
+- has_many  :messages
 - has_one  :shipping
-- has_many  :evaluation
-- has_many  :image
-- has_many  :alert
+- has_many  :evaluations
+- has_many  :images
+- has_many  :alerts
+- has_many  :orders
 
 ## imagesテーブル
 |Column|Type|Option|
@@ -100,7 +102,7 @@ Things you may want to cover:
 |brand_name|string|null: false|
 
 ### Association
-- has_many  :product
+- has_many  :products
 - belongs_to  :category
 
 ## categorysテーブル
@@ -111,8 +113,8 @@ Things you may want to cover:
 |ancestry|string|null: false|
 
 ### Association
-- has_many  :brand
-- has_many  :product
+- has_many  :brands
+- has_many  :products
 
 ## products-categorysテーブル
 |Column|Type|Option|
@@ -188,6 +190,15 @@ Things you may want to cover:
 - belongs_to  :product
 - belongs_to  :user
 
+## odersテーブル
+|Column|Type|Option|
+|------|----|-------|
+|user_id|references|null: false <br> foreign_key: true|
+|product_id|references|null: false|
+
+### Association
+- belongs_to  :product
+- belongs_to  :user
 
 
 
