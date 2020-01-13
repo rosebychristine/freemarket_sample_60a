@@ -48,13 +48,14 @@ Things you may want to cover:
 - has_many  :messages  dependent: :destroy
 - has_many  :alerts  dependent: :destroy
 - has_many  :orders  dependent: :destroy
-- belongs_to : address  dependent: :destroy
+- has_one :address  dependent: :destroy
 
-## addressテーブル
+## addressesテーブル
 |Column|Type|Option|
 |------|----|-------|
-|address-number|integer|null: false|
+|postal_code|integer|null: false|
 |country|string|null: false|
+|prefectures|string|null: false|
 |city|string|null: false|
 |name|string|null: false|
 |last_name|string|null: false|
@@ -65,12 +66,13 @@ Things you may want to cover:
 ## productsテーブル
 |Column|Type|Option|
 |------|----|-------|
-|product_name|string|null: false|
+|name|string|null: false|
 |condition|string|null: false|
 |price|integer|null: false|
 |deu_time|string|null: false|
-|brand_id|references|null: false|
+|brand_id|references|null: false <br> foreign_key: true|
 |shipping_id|references|null: false|
+|cotegory_id|references|null: false<br> foreign_key: true|
 |user_id|references|null: false <br> foreign_key: true|
 
 ### Association
@@ -99,7 +101,7 @@ Things you may want to cover:
 |Column|Type|Option|
 |------|----|-------|
 |category_id|references|null: false|
-|brand_name|string|null: false|
+|name|string|null: false|
 
 ### Association
 - has_many  :products
@@ -108,7 +110,7 @@ Things you may want to cover:
 ## categorysテーブル
 |Column|Type|Option|
 |------|----|-------|
-|category_name|string|null: false|
+|name|string|null: false|
 |path|text|null: false|
 |ancestry|string|null: false|
 
@@ -119,8 +121,8 @@ Things you may want to cover:
 ## products-categorysテーブル
 |Column|Type|Option|
 |------|----|-------|
-|category_id|references|null: false|
-|products_id|references|null: false|
+|category_id|references|null: false <br> foreign_key: true|
+|products_id|references|null: false <br> foreign_key: true|
 
 ### Association
 - belongs_to  :product
@@ -130,8 +132,8 @@ Things you may want to cover:
 |Column|Type|Option|
 |------|----|-------|
 |user_id|references|null: false <br> foreign_key: true|
-|product_id|references|null: false|
-|message_text|text|null: false|
+|product_id|references|null: false <br> foreign_key: true|
+|text|text|null: false|
 
 ### Association
 - belongs_to  :user
@@ -141,8 +143,8 @@ Things you may want to cover:
 |Column|Type|Option|
 |------|----|-------|
 |user_id|references|null: false <br> foreign_key: true|
-|product_id|references|null: false|
-|comment_text|text|null: false|
+|product_id|references|null: false <br> foreign_key: true|
+|text|text|null: false|
 
 ### Association
 - belongd_to  :user
@@ -160,9 +162,9 @@ Things you may want to cover:
 ## evaluationsテーブル
 |Column|Type|Option|
 |------|----|-------|
-|product_id|references|null: false|
+|product_id|references|null: false <br> foreign_key: true|
 |user_id|references|null: false <br> foreign_key: true|
-|evaluation_text|text|null: false|
+|text|text|null: false|
 |rate|string|null: false|
 
 ### Association
@@ -174,7 +176,7 @@ Things you may want to cover:
 |Column|Type|Option|
 |------|----|-------|
 |user_id|references|null: false <br> foreign_key: true|
-|product_id|references|null: false|
+|product_id|references|null: false <br> foreign_key: true|
 
 ### Association
 - belongs_to  :product
