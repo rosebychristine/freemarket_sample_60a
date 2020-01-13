@@ -57,6 +57,7 @@ Things you may want to cover:
 |country|string|null: false|
 |prefectures|string|null: false|
 |city|string|null: false|
+|address|null: false|
 |name|string|null: false|
 |last_name|string|null: false|
 |tell|string|unique: true|
@@ -71,7 +72,7 @@ Things you may want to cover:
 |price|integer|null: false|
 |deu_time|string|null: false|
 |brand_id|references|null: false <br> foreign_key: true|
-|shipping_id|references|null: false|
+|shipping_id|references|null: false <br> foreign_key: true|
 |cotegory_id|references|null: false<br> foreign_key: true|
 |user_id|references|null: false <br> foreign_key: true|
 
@@ -92,7 +93,7 @@ Things you may want to cover:
 |Column|Type|Option|
 |------|----|-------|
 |image_url|text|null: false|
-|products_id|references|null: false|
+|products_id|references|null: false <br> foreign_key: true|
 
 ### Association
 - belongs_to  :product
@@ -100,7 +101,7 @@ Things you may want to cover:
 ## brandsテーブル
 |Column|Type|Option|
 |------|----|-------|
-|category_id|references|null: false|
+|category_id|references|null: false <br> foreign_key: true|
 |name|string|null: false|
 
 ### Association
@@ -196,7 +197,7 @@ Things you may want to cover:
 |Column|Type|Option|
 |------|----|-------|
 |user_id|references|null: false <br> foreign_key: true|
-|product_id|references|null: false|
+|product_id|references|null: false <br> foreign_key: true|
 
 ### Association
 - belongs_to  :product
