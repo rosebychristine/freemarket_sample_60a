@@ -43,12 +43,12 @@ Things you may want to cover:
 |status|integer|null: false|
 ### Association
 - has_many  :products
-- has_many  :likes
-- has_many  :comments
-- has_many  :messages
-- has_many  :alerts
-- has_many  :orders
-- belongs_to : address
+- has_many  :likes  dependent: :destroy
+- has_many  :comments  dependent: :destroy
+- has_many  :messages  dependent: :destroy
+- has_many  :alerts  dependent: :destroy
+- has_many  :orders  dependent: :destroy
+- belongs_to : address  dependent: :destroy
 
 ## addressテーブル
 |Column|Type|Option|
@@ -77,13 +77,13 @@ Things you may want to cover:
 - belongs_to  :user
 - belongs_to  :category
 - belongs_to  :brand
-- has_many  :likes
-- has_many  :comments
-- has_many  :messages
-- has_one  :shipping
+- has_many  :likes  dependent: :destroy
+- has_many  :comments  dependent: :destroy
+- has_many  :messages  dependent: :destroy
+- has_one  :shipping  
 - has_many  :evaluations
-- has_many  :images
-- has_many  :alerts
+- has_many  :images  dependent: :destroy
+- has_many  :alerts  dependent: :destroy
 - has_many  :orders
 
 ## imagesテーブル
