@@ -7,9 +7,9 @@
         %figure= image_tag 'mercari.png', :size => '68'
         %ul.clearfix
           %li
-            %a{:href => "#", :target => "_blank"}
-              = image_tag 'apple.svg', :size => '130x40'
+            = link_to "#", class: "logo", target: "_blank" do
+              = image_tag 'apple.svg', size: '130x40'
           %li.last
-            %a{:href => "#", :target => "_blank"}
-              = image_tag 'Google.png', :size => '130x40'
-    %figure= image_tag 's.png', :size => '300x260'
+            = link_to "#", class: "logo", target: "_blank" do
+              = image_tag 'Google.png', size:'130x40'
+    %figure= image_tag 's.png', size: '300x260'
