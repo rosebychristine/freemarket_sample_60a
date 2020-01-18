@@ -33,15 +33,15 @@
             .select-default{name: "preecture"}
             
         .form-group
-          %label{:for => "city"} 市区町村
+          %label{for: "city"} 市区町村
           %span.form-arbitrary 任意
           %input.input-default{name: "city", placeholder: "例) 横浜市緑区", type: "text", value: ""}/
         .form-group
-          %label{:for => "address1-label"} 番地
+          %label{for: "address1-label"} 番地
           %span.form-arbitrary 任意
           %input.input-default{name: "address1", placeholder: "例) 青山1-1-1", type: "text", value: ""}/
         .form-group
-          %label{:for => "address2-label"} 建物名
+          %label{for: "address2-label"} 建物名
           %span.form-arbitrary 任意
           %input.input-default{name: "address2", placeholder: "例) 柳ビル103", type: "text", value: ""}
         %button.btn-default.btn-red{type: "submit"} 登録する
