@@ -24,6 +24,44 @@ body {
   .header {
     text-align: center;
     height: 128px;
+
+    .progress-status {
+      width: 12px;
+      height: 12px;
+      margin: 8px auto 0;
+      background: #ccc;
+      border-radius: 50%;
+    }
+
+    .progress-status:before {
+      right: 50%;
+    }
+
+    .progress-status:after {
+      left: 50%;
+    }
+    
+    .progress-bar li {
+      margin: 0 40px 0 0;
+    } 
+
+
+    .progress-status:before, .progress-status:after {
+      position: absolute;
+      bottom: 5px;
+      z-index: -1;
+      display: block;
+      content: '';
+      width: 100%;
+      height: 2px;
+      background: #ccc;
+    }
+
+
+    .progress-bar li:last-child {
+      margin: 0;
+  }
+
     h1 {
       font-size: 100%;
       font-weight: normal;
@@ -33,23 +71,24 @@ body {
         width: 185px;
         height: 49px;
         line-height: 49px;
-        float: left;
-        position: relative;
-        top: 50px;
-        left: 130px;
     }
     .signup-bar.progress-bar {
-      padding: 68px 0 0 270px;
-      border: 0;
-      vertical-align: top;
+      padding: 16px 0;
+      border-top: 1px solid #eee;
     }
     .ol{
       margin: 0;
     }
+
+    .progress-bar li.active .progress-status {
+      background: #ea352d;
+    }
+
     li.active {
       font-weight: 600;
       color: #ea352d;
     }
+
     li {
       position: relative;
       z-index: 1;
@@ -103,13 +142,14 @@ body {
 
         .half {
             width: calc(50% - 6px);
+            position: relative;
+              left: 10px;
         }
 
         .half-one {
             width: calc(50% - 6px);
             position: relative;
             top: 15px;
-            right: 10px;
         }
 
         .need-select {
@@ -124,6 +164,20 @@ body {
             top: 17px;
             right: 2px;
         }
+        
+        .need-select-free {
+            background: #ccc;;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;
+            position: relative;
+            top: 17px;
+            right: 2px;
+        }
+
         .need-select-name {
             background: #ea352d;
             margin: 0 0 0 8px;
@@ -144,7 +198,7 @@ body {
         }
 
         .form-index {
-            margin: 24px 0 0;
+          margin: 24px 0 0;
         }
 
         .form-info-thin {
@@ -186,6 +240,7 @@ body {
 
       .select-default {
         position: relative;
+        left: 10px;
         z-index: 2;
         height: 48px;
         padding: 0 16px;
@@ -205,7 +260,7 @@ body {
              .years {
                 position: relative;
                 top: -30px;
-                left: 90px;
+                left: 100px;
             }
         }
         .select-wrap-month {
@@ -214,7 +269,7 @@ body {
              .month {
                 position: relative;
                 top: -30px;
-                left: 70px;
+                left: 80px;
              }
         }
 
@@ -224,7 +279,7 @@ body {
 
             .days {
                 position: relative;
-                left: 70px;
+                left: 80px;
                 bottom: 30px;
             }
         }
@@ -244,7 +299,6 @@ body {
             background: #ea352d;
             border: 1px solid #ea352d;
             color: #fff;
-            display: block;
             width: 100%;
             line-height: 48px;
             font-size: 14px;
@@ -274,6 +328,100 @@ body {
         }
 
       }
+      .l-single-content {
+        padding: 24px 16px 30px;
+        border-top: 1px solid #ccc;
+      }
+      .last-content2 {
+      color: #0099e8;
+        text-decoration: none;
+      }
+      
+      .thank-you {
+      font-weight: 600;
+      z-index: 2;
+      font-size: 14px;
+      vertical-align: middle;
+      cursor: pointer;
+      text-align: center;
+      font-size: 3em;
+      }
+
+      .signup-cards {
+        margin: 8px 0 0;
+        font-size: 0;
+        position: relative;
+        top: 5px;
+          li {
+            display: inline-block;
+          margin: 0 0 0 8px;
+          vertical-align: middle;
+          }
+      }
+
+      .right-messages {
+        float: right;
+        color: #0099e8;
+        text-decoration: none;
+      }
+
+      .phone-number {
+        font-size: 16px;
+      }
+
+        .form-index-ex {
+          margin: 24px 0 0;
+
+          .select-wrap-2 {
+            display: inline-block;
+            width: calc(50% - 2px);
+
+            .select-default-2 {
+              position: relative;
+              z-index: 2;
+              height: 48px;
+              padding: 0 16px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: 0;
+              font-size: 16px;
+              line-height: 1.5;
+              cursor: pointer;
+              width: calc(100% - 38px);
+            }
+
+            .years {
+              position: relative;
+              left: 10px;
+            }
+          }
+        }
+
+
+      }
+      .single-footer {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        height: 200px;
+        padding: 40px 0;
+        text-align: center;
+      }
+      .single-footer a {
+        display: block;
+        color: #333;
+      }
+
+      .single-footer li {
+        margin: 16px 0 0;
+        font-size: 12px;
+      }
+
+      .single-footer img {
+        padding: 20px;
+      }
+
     }
   }
-}
