@@ -9,6 +9,6 @@ Rails.application.routes.draw do
       get 'ready'
     end
   end
-end
   root "mypage#index"
 end
+
