@@ -1,0 +1,10 @@
+%main.container
+  = render 'shared/side_bar'
+  .logout-main
+    %form{:action => "#"}
+      .logout-in
+        %button.btn-logout{:type => "submit"}
+          ログアウト
+
+= render 'shared/banner'
+= render 'shared/footer'
