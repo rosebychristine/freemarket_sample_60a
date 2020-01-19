@@ -19,6 +19,16 @@ body {
     vertical-align: middle;
     cursor: pointer;
     }
+    
+    .birthday-sp{
+      font-weight: 600;
+      position: relative;
+      top: -5px;
+      z-index: 2;
+      font-size: 14px;
+      vertical-align: middle;
+      cursor: pointer;
+    }
 
   // ヘッダーのscss
   .header {
@@ -119,14 +129,29 @@ body {
       font-weight: bold;
       text-align: center;
       line-height: 1.5;
-      }
+    }
+
     #registration-form {
       padding: 24px 16px 40px;
       border-top: 1px solid #ccc;
     }
+
     .form-create {
     max-width: 343px;
     margin: auto;
+
+      .need-select-sp {
+        position: relative;
+        top: -5px;
+        right: 2px;
+        background: #ea352d;
+        margin: 0 0 0 8px;
+        padding: 2px 4px;
+        border-radius: 2px;
+        color: #fff;
+        font-size: 12px;
+        vertical-align: top;
+      }
 
         .input-default{
         width: 100%;
@@ -216,7 +241,7 @@ body {
         top: 15px;
       }
       p {
-      margin: 8px 0 0;
+      margin: 20px 0 0;
       line-height: 1.5;
       color: #888;
       }
@@ -361,6 +386,8 @@ body {
 
       .right-messages {
         float: right;
+        position: relative;
+        left: 10px;
         color: #0099e8;
         text-decoration: none;
       }
@@ -370,7 +397,7 @@ body {
       }
 
         .form-index-ex {
-          margin: 24px 0 0;
+          margin: 28px 0 0;
 
           .select-wrap-2 {
             display: inline-block;
@@ -421,6 +448,13 @@ body {
 
       .single-footer img {
         padding: 21px;
+      }
+
+      .signup-cards {
+        .img-credit {
+          position: relative;
+          bottom: 10px;
+        }
       }
 
     }

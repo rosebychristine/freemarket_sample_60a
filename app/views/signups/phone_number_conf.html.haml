@@ -1,95 +1,77 @@
-!!!
-%html{lang: "ja-JP"}
-  / 日本語である事を示す
-  %head
-    %meta{content: "text/html; charset=UTF-8", "http-equiv":  "Content-Type"}/
-    %meta{charset: "UTF-8"}/
-    / UTF-8形式で記述する宣言
-    %link{href: "signup.scss", rel: "stylesheet", type: "text/scss"}/
-    %meta{content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no", name: "viewport"}/
-    / デバイスに対応した大きさ、ズーム倍率の設定、今回は最後の記述で固定倍率とした
-    %meta{content: "telephone=no", name: "format-detection"}/
-    / 電話番号的な羅列でもリンクにしない処理
-    %title
-      会員情報入力 - メルカリ スマホでかんたん フリマアプリ
-  %body
-    .all-container
-      / viewの全てを囲む
-      %header.header
-        %h1
-          %a{href: ""}
-            %img{alt: "mercari", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?1714804574"}/
-        %nav.progress-bar.signup-bar
-          %ol.clearfix
-            %li
-              会員情報
-              .progress-status
-            %li.active
-              電話番号認証
-              .progress-status
-            %li
-              お届け先住所入力
-              .progress-status
-            %li
-              支払い方法
-              .progress-status
-            %li
-              完了
-              .progress-status
+.all-container
+  / viewの全てを囲む
+  %header.header
+    %h1
+      = link_to '#', class: "link", target: "_blank" do
+        = image_tag 'merukari.svg' 
+
+    %nav.progress-bar.signup-bar
+      %ol.clearfix
+        %li
+          会員情報
+          .progress-status
+        %li.active
+          電話番号認証
+          .progress-status
+        %li
+          お届け先住所入力
+          .progress-status
+        %li
+          支払い方法
+          .progress-status
+        %li
+          完了
+          .progress-status
+        　
+  %main.main-view-container
+    .main-view
+      %h2.sub-header 電話番号認証
+      %form.l-single-inner.registration-form{action: "https://www.mercari.com/jp/signup/sms_confirmation/sms/", method: "POST", novalidate: "novalidate"}
+        %input{name: "after_save_callback", type: "hidden", value: ""}/
+        　
+        .l-single-content
+          .form-create
+            .form-index
+              %label.phone-number{for: "phone_number"} 認証番号
+              %input.input-default{name: "phone_number", placeholder: "認証番号を入力", type: "tel", value:""}/
+            %p
+              SMSで届いた認証番号を入力してください
+            .last-content
+              %button.next-page{type: "submit"} 認証して完了
+        .l-single-content
+          .form-create
             　
-      %main.main-view-container
-        .main-view
-          %h2.sub-header 電話番号認証
-          %form.l-single-inner.registration-form{action: "https://www.mercari.com/jp/signup/sms_confirmation/sms/", method: "POST", novalidate: "novalidate"}
-            %input{name: "after_save_callback", type: "hidden", value: ""}/
+            .form-index
+              %label.phone-number{for: "phone_number"}
+                30秒たっても認証番号が届かない方へ
+              %p
+                電話で認証番号を聞くこともできます。
             　
-            .l-single-content
-              .form-create
-                .form-index
-                  %label.phone-number{for: "phone_number"} 認証番号
-                  %input.input-default{name: "phone_number", placeholder: "認証番号を入力", type: "tel", value:""}/
-                %p
-                  SMSで届いた認証番号を入力してください
-                .last-content
-                  %button.next-page{type: "submit"} 認証して完了
-            .l-single-content
-              .form-create
-                　
-                .form-index
-                  %label.phone-number{for: "phone_number"}
-                    30秒たっても認証番号が届かない方へ
-                  %br/
-                  %p
-                    電話で認証番号を聞くこともできます。
-                　
-                .last-content
-                  %button.next-page{type: "submit"} 認証して完了
-            .l-single-content
-              .form-create
-                　
-                .form-index
-                  %label.phone-number{for: "warning"}
-                    認証番号を再送することもできます。もう一度電話番号を入力して下さい。
-                  %br/
-                  %br/
-                  %br/
-                  %a.right-messages{href: "#"}
-                    電話番号を再度入力する
-                  %br/
-                  %p.l-single-text
-                    ※SMSが届かない場合は
-                    %a.last-content2{href: "", target: "_blank"}> SMS受信設定
-                    を確認して、もう一度電話番号を入力してください。
-                %footer.single-footer
-                  %nav
-                    %ul.clearfix
-                      %li
-                        %a{href: ""} プライバシーポリシー
-                      %li
-                        %a{href: ""} メルカリ利用規約
-                      %li
-                        %a{href: ""} 特定商取引に関する表記
-                  %a.single-footer-logo{href: ""}
-                    %img{alt: "mercari", height: "65", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?3649802486", width: "80"}/
-                  %p
-                    %small © Mercari, Inc.
+            .last-content
+              %button.next-page{type: "submit"} 認証して完了
+        .l-single-content
+          .form-create
+            　
+            .form-index
+              %label.phone-number{for: "warning"}
+                認証番号を再送することもできます。もう一度電話番号を入力して下さい。
+              %a.right-messages
+                = link_to '電話番号を再度入力する', "#", class: "right-messages" 
+              %p.l-single-text
+                ※SMSが届かない場合は
+                %a.last-content2
+                = link_to 'SMS受信設定', "#", class: "last-content2"
+                を確認して、もう一度電話番号を入力してください。
+          %footer.single-footer
+            %nav
+              %ul.clearfix
+                %li
+                  = link_to 'プライバシーポリシー', "#", class: "a btn btn-default" 
+                %li
+                  = link_to 'メルカリ利用規約', "#", class: "a btn btn-default" 
+                %li
+                  = link_to '特定商取引に関する表記', "#", class: "a btn btn-default" 
+            = link_to '#', class: "fotter-img", target: "_blank" do
+              = image_tag 'fotter-mer.svg', height: '100px', width: "10%"       
+            %p
+              %small © Mercari, Inc.
