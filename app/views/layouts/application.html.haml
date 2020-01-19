@@ -1,19 +1,11 @@
 !!!
-%html{ lang: 'ja' }
+%html
   %head
-    %meta{ content: 'text/html; charset=UTF-8', 'http-equiv': 'Content-Type' }/
-    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1.0' }/
-    %title FreemarketSample59a
-    -# クレジットカード決済
-    %script{src: "https://js.pay.jp/", type: "text/javascript"}
+    %meta{content: "text/html; charset=UTF-8", "http-equiv":"Content-Type"}/
+    %title FreemarketSample60a
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    -# スライダー(Slick)のCSS読み込み
-    %link{ href: '//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.css',
-    rel: 'stylesheet', type: 'text/css' }/
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    -# スライダー(Slick)のJS読み込み
-    %script{ src: '//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.0/slick/slick.min.js', type: 'text/javascript' }
   %body
     = yield
