@@ -26,9 +26,9 @@
   %main.main-view-container
     .main-view
       %h2.sub-header 電話番号認証
-      %form.l-single-inner.registration-form{action: "https://www.mercari.com/jp/signup/sms_confirmation/sms/", method: "POST", novalidate: "novalidate"}
+      %form.l-single-inner.registration-form{action: "#", method: "POST", novalidate: "novalidate"}
         %input{name: "after_save_callback", type: "hidden", value: ""}/
-        　
+        
         .l-single-content
           .form-create
             .form-index
@@ -40,18 +40,18 @@
               %button.next-page{type: "submit"} 認証して完了
         .l-single-content
           .form-create
-            　
+            
             .form-index
               %label.phone-number{for: "phone_number"}
                 30秒たっても認証番号が届かない方へ
               %p
                 電話で認証番号を聞くこともできます。
-            　
+            
             .last-content
               %button.next-page{type: "submit"} 認証して完了
         .l-single-content
           .form-create
-            　
+            
             .form-index
               %label.phone-number{for: "warning"}
                 認証番号を再送することもできます。もう一度電話番号を入力して下さい。
