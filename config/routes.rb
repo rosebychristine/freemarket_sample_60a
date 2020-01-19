@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     end
   end
   root "mypage#index"
+  resources :logoutpages, only: [:index]
 end
 
