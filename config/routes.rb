@@ -1,20 +1,4 @@
-Rails.application.routes.draw do
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+Rails.application.routes.draw do  
   resources :signups, only: [:index, :create] do
     collection do
       get 'member_info'
@@ -25,4 +9,6 @@ Rails.application.routes.draw do
       get 'ready'
     end
   end
+end
+  root "mypage#index"
 end
