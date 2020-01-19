@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   root "mypage#index"
-  get "logoutpages" => "logoutpages#index"
+  resources :logoutpages, only: [:index]
 end
