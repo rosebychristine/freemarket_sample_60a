@@ -1,0 +1,480 @@
+body {
+    position: relative;
+    min-height: 100%;
+    background: #f5f5f5;
+    font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+    font-size: 14px;
+    color: #333;
+    line-height: 1;
+
+.all-container {
+  padding: 0 0 250px;
+
+  label {
+    font-weight: 600;
+    position: relative;
+    top: 15px;
+    z-index: 2;
+    font-size: 14px;
+    vertical-align: middle;
+    cursor: pointer;
+    }
+    
+    .birthday-sp{
+      font-weight: 600;
+      position: relative;
+      top: -5px;
+      z-index: 2;
+      font-size: 14px;
+      vertical-align: middle;
+      cursor: pointer;
+    }
+
+  // ヘッダーのscss
+  .header {
+    text-align: center;
+    height: 128px;
+
+    .progress-status {
+      width: 12px;
+      height: 12px;
+      margin: 8px auto 0;
+      background: #ccc;
+      border-radius: 50%;
+    }
+
+    .progress-status:before {
+      right: 50%;
+    }
+
+    .progress-status:after {
+      left: 50%;
+    }
+    
+    .progress-bar li {
+      margin: 0 40px 0 0;
+    } 
+
+
+    .progress-status:before, .progress-status:after {
+      position: absolute;
+      bottom: 5px;
+      z-index: -1;
+      display: block;
+      content: '';
+      width: 100%;
+      height: 2px;
+      background: #ccc;
+    }
+
+
+    .progress-bar li:last-child {
+      margin: 0;
+  }
+
+    h1 {
+      font-size: 100%;
+      font-weight: normal;
+    }
+
+    img {
+        width: 185px;
+        height: 49px;
+        line-height: 49px;
+    }
+    .signup-bar.progress-bar {
+      padding: 16px 0;
+      border-top: 1px solid #eee;
+    }
+    .ol{
+      margin: 0;
+    }
+
+    .progress-bar li.active .progress-status {
+      background: #ea352d;
+    }
+
+    li.active {
+      font-weight: 600;
+      color: #ea352d;
+    }
+
+    li {
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+      min-width: 40px;
+      margin: 0 5% 0 0;
+      font-size: 12px;
+      color: #888;
+    }
+  }
+  //ヘッダー終わり
+  //メインのscss
+  main {
+    display: block;
+
+  .main-view {
+    background: #fff;
+    width: 700px;
+    margin: 0 auto;
+  }
+    .sub-header {
+      font-size: 22px;
+      padding: 32px;
+      display: block;
+      font-size: 1.5em;
+      margin-block-start: 0.83em;
+      margin-inline-end: 0px;
+      font-weight: bold;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    #registration-form {
+      padding: 24px 16px 40px;
+      border-top: 1px solid #ccc;
+    }
+
+    .form-create {
+    max-width: 343px;
+    margin: auto;
+
+      .need-select-sp {
+        position: relative;
+        top: -5px;
+        right: 2px;
+        background: #ea352d;
+        margin: 0 0 0 8px;
+        padding: 2px 4px;
+        border-radius: 2px;
+        color: #fff;
+        font-size: 12px;
+        vertical-align: top;
+      }
+
+        .input-default{
+        width: 100%;
+        margin: 24px 0 0;
+        height: 48px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        line-height: 1.5;
+        font-size: 16px;
+        float: left;
+        }
+
+        .half {
+            width: calc(50% - 6px);
+            position: relative;
+              left: 10px;
+        }
+
+        .half-one {
+            width: calc(50% - 6px);
+            position: relative;
+            top: 15px;
+        }
+
+        .need-select {
+            background: #ea352d;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;
+            position: relative;
+            top: 17px;
+            right: 2px;
+        }
+        
+        .need-select-free {
+            background: #ccc;;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;
+            position: relative;
+            top: 17px;
+            right: 2px;
+        }
+
+        .need-select-name {
+            background: #ea352d;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            color: #fff;
+            font-size: 12px;
+            vertical-align: top;
+            position: relative;
+            top: 17px;
+            right: 2px;
+            position: relative;
+            right: 170px;
+        }
+
+        .form-index:first-child {
+        margin: 0;
+        }
+
+        .form-index {
+          margin: 24px 0 0;
+        }
+
+        .form-info-thin {
+            position: relative;
+            bottom: 30px;
+        }
+
+      .form-index-password {
+        margin: 24px 0 0;
+      }
+
+      .oname {
+        position: relative;
+        right: 170px;
+        top: 15px;
+      }
+      p {
+      margin: 20px 0 0;
+      line-height: 1.5;
+      color: #888;
+      }
+
+      h3 {
+        font-size: 16px;
+      }
+
+      .identification {
+          position: relative;
+          top: 5px;
+      }
+
+      .reveal-password {
+          position: relative;
+          top: -1px
+      }
+      .velification {
+        margin: 24px 0 0;
+      }
+
+      .select-default {
+        position: relative;
+        left: 10px;
+        z-index: 2;
+        height: 48px;
+        padding: 0 16px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: 0;
+        font-size: 16px;
+        line-height: 1.5;
+        cursor: pointer;
+        width: 100%;
+    }
+        .select-wrap {
+            float: left;
+            position: relative;
+            right: 35px;
+
+             .years {
+                position: relative;
+                top: -30px;
+                left: 100px;
+            }
+        }
+        .select-wrap-month {
+            float: left;
+
+             .month {
+                position: relative;
+                top: -30px;
+                left: 80px;
+             }
+        }
+
+        .select-wrap-daily {
+            position: relative;
+            left: 30px;
+
+            .days {
+                position: relative;
+                left: 80px;
+                bottom: 30px;
+            }
+        }
+
+        .birthday-input-form {
+            display: flex;
+            margin: 23px;
+        }
+    }   
+    .last-content {
+        max-width: 343px;
+        text-align: center;
+        margin: 0 auto;
+
+        .next-page {
+            margin: 24px 0 ;
+            background: #ea352d;
+            border: 1px solid #ea352d;
+            color: #fff;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            border: 1px solid transparent;
+            -webkit-transition: all ease-out .3s;
+            transition: all ease-out .3s;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .next-page-red {
+          background: #ea352d;
+          border: 1px solid #ea352d;
+          color: #fff;
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+          border: 1px solid transparent;
+          -webkit-transition: all ease-out .3s;
+          transition: all ease-out .3s;
+          cursor: pointer;
+          text-align: center;
+      }
+
+        .next-page-blue  {
+          margin: 16px 0 0;
+          background: #385185;
+          color: #fff;
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+        }
+
+        .next-page-black  {
+          margin: 16px 0 0;
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+          border: #979797 solid 1px;
+        }
+
+        a {
+            color: #0099e8;
+            text-decoration: none;
+        }
+
+        .regi {
+            position: relative;
+            left: 100px;
+        }
+
+        .english-code {
+            color: #888888;
+            font-size: 12px;
+            padding: 20px;
+            background-color: #f5f5f5;
+            margin: 15px;
+        }
+
+      }
+      .l-single-content {
+        padding: 24px 16px 30px;
+        border-top: 1px solid #ccc;
+      }
+      .last-content2 {
+      color: #0099e8;
+        text-decoration: none;
+      }
+      
+      .thank-you {
+      font-weight: 600;
+      z-index: 2;
+      font-size: 14px;
+      vertical-align: middle;
+      cursor: pointer;
+      text-align: center;
+      font-size: 3em;
+      }
+
+      .signup-cards {
+        margin: 8px 0 0;
+        font-size: 0;
+        position: relative;
+        top: 5px;
+          li {
+            display: inline-block;
+          margin: 0 0 0 8px;
+          vertical-align: middle;
+          }
+      }
+
+      .right-messages {
+        float: right;
+        position: relative;
+        left: 10px;
+        color: #0099e8;
+        text-decoration: none;
+      }
+
+      .phone-number {
+        font-size: 16px;
+      }
+
+        .form-index-ex {
+          margin: 28px 0 0;
+
+          .select-wrap-2 {
+            display: inline-block;
+            width: calc(50% - 2px);
+
+            .select-default-2 {
+              position: relative;
+              z-index: 2;
+              height: 48px;
+              padding: 0 16px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: 0;
+              font-size: 16px;
+              line-height: 1.5;
+              cursor: pointer;
+              width: calc(100% - 38px);
+            }
+
+            .years {
+              position: relative;
+              left: 10px;
+            }
+          }
+        }
+
+
+      }
+      .single-footer {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        height: 200px;
+        padding: 40px 0;
+        text-align: center;
+      }
+      .single-footer a {
+        display: block;
+        color: #333;
+      }
+
+      .single-footer li {
+        margin: 16px 0 0;
+        font-size: 12px;
+      }
+    }
+  }

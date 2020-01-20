@@ -1,0 +1,58 @@
+.all-container
+  / viewの全てを囲む
+  %header.header
+    %h1
+      = link_to '#', class: "link", target: "_blank" do
+        = image_tag 'merukari.svg'   
+    %nav.progress-bar.signup-bar
+      %ol.clearfix
+        %li
+          会員情報
+          .progress-status
+        %li.active
+          電話番号認証
+          .progress-status
+        %li
+          お届け先住所入力
+          .progress-status
+        %li
+          支払い方法
+          .progress-status
+        %li
+          完了
+          .progress-status
+        　
+  %main.main-view-container
+    .main-view
+      %h2.sub-header 電話番号の確認
+      %form.l-single-inner.registration-form{action: "https://www.mercari.com/jp/signup/sms_confirmation/sms/", method: "POST", novalidate: "novalidate"}
+        %input{name: "after_save_callback", type: "hidden", value: ""}/
+        .l-single-content
+          .form-create
+            .form-index
+              %label{for: "phone_number"} 携帯電話の番号
+              %input.input-default{name: "phone_number", placeholder: "携帯電話の番号を入力", type: "tel", value: ""}/
+            %p
+              本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+            .last-content
+              %button.next-page{type: "submit"} SMSを送信する
+              %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+              .form-group.text-right
+                %a
+                  = link_to '電話番号の確認が必要な理由', "#", class: "btn btn-default"
+                  %i.icon-arrow-right
+            %input{name: "__csrf_value", type: "hidden", value: "a7c6c6fabbf507f8cb94ec578ff24dd60f778836506c5daa60bfc15cf30e0d42b3503ec937b010af163532a677ddbfc8dc5127fc936e848c87028bd24d3cddb64"}/
+            %input{name: "id", type: "hidden", value: "176888850"}/
+          %footer.single-footer
+            %nav
+              %ul.clearfix
+                %li
+                  = link_to 'プライバシーポリシー', "#", class: "a btn btn-default" 
+                %li
+                  = link_to 'メルカリ利用規約', "#", class: "a btn btn-default" 
+                %li
+                  = link_to '特定商取引に関する表記', "#", class: "a btn btn-default"
+            = link_to '#', class: "fotter-img", target: "_blank" do
+              = image_tag 'fotter-mer.svg', height: '100px', width: "10%"       
+            %p
+              %small © Mercari, Inc.
