@@ -9,6 +9,14 @@ Rails.application.routes.draw do
       get 'ready'
     end
   end
+
+  resources :logins, only: [:index, :new] do
+    collection do
+      get 'login'
+      get 'new'
+    end
+  end
+  
   root "mypage#index"
   resources :logoutpages, only: [:index]
 end

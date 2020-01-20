@@ -1,0 +1,30 @@
+.all-container
+  / viewの全てを囲む
+  %header.header-login
+    %h1
+      = link_to '#', class: "link", target: "_blank" do
+        = image_tag 'merukari.svg',class: "login-mercari"
+  %main.main-view-container
+    .main-view
+      %h2.sub-header 新規会員登録
+      %form.l-single-inner.registration-form{action: "#", method: "POST", novalidate: "novalidate"}
+        .l-single-content
+          .form-create
+            .last-content
+              .form-index
+                %button.next-page-red{type: "submit"} メールアドレスで登録する
+                %button.next-page-blue{type: "submit"} Facebookで登録する
+                %button.next-page-black{type: "submit"} Googleで登録する
+        %footer.single-footer
+          %nav
+            %ul.clearfix
+              %li
+              = link_to 'プライバシーポリシー', "#", class: "a btn btn-default" 
+              %li
+              = link_to 'メルカリ利用規約', "#", class: "a btn btn-default" 
+              %li
+              = link_to '特定商取引に関する表記', "#", class: "a btn btn-default" 
+          = link_to '#', class: "fotter-img", target: "_blank" do
+            = image_tag 'fotter-mer.svg', height: '100px', width: "10%"       
+          %p
+            %small © Mercari, Inc.
