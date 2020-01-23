@@ -56,7 +56,7 @@ group :development do
 end
 
 gem 'carrierwave'
-gem 'fog'
+gem 'fog-aws'
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
