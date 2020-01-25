@@ -16,7 +16,7 @@
             .sell-item-detail
               %p.sell-item-name 綺麗なバッグ
               %p.sell-item-price
-                %span 100円
+                %span ¥2,020
                 %span.sell-tax （税込）送料込み
       .sell-product
         .sell-product-inner
@@ -32,7 +32,7 @@
               %li.accordion-parent
                 .checkbox-default.use-point
                   %input{class: "check",:checked => "checked", :name => "riyu", :type => "checkbox", :value => "1"}
-                    %i.icon-check
+                    %i.fas.fa-check-square.fa-lg
                     %label.sell-position
                       ポイントを使用（所持ポイント:P0)
 
@@ -40,14 +40,14 @@
               .sell-product-inner
                 %h4 支払い方法
                 %p.user-info
-                  %i.icon-plus-circle
+                  %i.fas.fa-plus-circle
                   = link_to '登録してください', "#", class: "left-messages"
 
             %section.sell-content.sell-content-payment
               .sell-product-inner
                 %h4 配送先
                 %p.user-info
-                  %i.icon-plus-circle
+                  %i.fas.fa-plus-circle
                   = link_to '登録してください', "#", class: "left-messages"
             
             %section.sell-content.sell-content-error
