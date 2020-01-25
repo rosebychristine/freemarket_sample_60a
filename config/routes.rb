@@ -16,6 +16,12 @@ Rails.application.routes.draw do
       get 'new'
     end
   end
+
+  resources :sells, only: [:purchase] do
+    collection do
+      get 'buy_conf'
+    end
+  end
   
   root "mypage#index"
   resources :logoutpages, only: [:index]
