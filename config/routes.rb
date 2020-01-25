@@ -19,5 +19,6 @@ Rails.application.routes.draw do
   
   root "mypage#index"
   resources :logoutpages, only: [:index]
+  resources :creditpages, only: [:index]
 end
 

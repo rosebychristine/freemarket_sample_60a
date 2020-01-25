@@ -1,0 +1,24 @@
+%main.container
+  = render 'shared/side_bar'
+  .credit-main
+    %section.credit-all
+      %h2.credit-head
+        支払い方法
+      .credit-content
+        %section
+          .credit-list
+            %h3.credit-child
+              クレジット一覧
+            %ul.credit-name
+        .credit-btn
+          .credit-in
+            %button.btn-credit{type: "submit"}
+              = fa_icon 'credit-card', calss: "credit-icon"
+              クレジットカードを追加する
+        .credit-pay
+          = link_to "支払い方法について", "#" , class: "payment"
+          = link_to "#" do
+            = fa_icon 'chevron-right', class: 'icon'
+
+= render 'shared/banner'
+= render 'shared/footer'
