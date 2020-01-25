@@ -43,16 +43,4 @@
                   %i.icon-arrow-right
             %input{name: "__csrf_value", type: "hidden", value: "a7c6c6fabbf507f8cb94ec578ff24dd60f778836506c5daa60bfc15cf30e0d42b3503ec937b010af163532a677ddbfc8dc5127fc936e848c87028bd24d3cddb64"}/
             %input{name: "id", type: "hidden", value: "176888850"}/
-          %footer.single-footer
-            %nav
-              %ul.clearfix
-                %li
-                  = link_to 'プライバシーポリシー', "#", class: "a btn btn-default" 
-                %li
-                  = link_to 'メルカリ利用規約', "#", class: "a btn btn-default" 
-                %li
-                  = link_to '特定商取引に関する表記', "#", class: "a btn btn-default"
-            = link_to '#', class: "fotter-img", target: "_blank" do
-              = image_tag 'fotter-mer.svg', height: '100px', width: "10%"       
-            %p
-              %small © Mercari, Inc.
+= render 'shared/fotter'

@@ -119,16 +119,4 @@
             / 次へ進むボタンを作成
             %button.next-page{type: "submit"}
               追加する
-        %footer.single-footer
-          %nav
-            %ul.clearfix
-              %li
-                = link_to 'プライバシーポリシー', "#", class: "a btn btn-default" 
-              %li
-                = link_to 'メルカリ利用規約', "#", class: "a btn btn-default" 
-              %li
-                = link_to '特定商取引に関する表記', "#", class: "a btn btn-default" 
-          = link_to '#', class: "fotter-img", target: "_blank" do
-            = image_tag 'fotter-mer.svg', height: '100px', width: "10%"       
-          %p
-            %small © Mercari, Inc.
+= render 'shared/fotter'
