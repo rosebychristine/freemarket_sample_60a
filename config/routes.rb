@@ -26,5 +26,11 @@ Rails.application.routes.draw do
   root "mypage#index"
   resources :logoutpages, only: [:index]
   resources :creditpages, only: [:index]
-end
 
+  resources :mypages, only: [:index,:profile] do
+    collection do
+      get 'index'
+      get 'profile'
+    end
+  end
+end
