@@ -1,0 +1,28 @@
+.single-footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  height: 250px;
+  padding: 40px 0;
+  text-align: center;
+    ul {
+      li:first-child {
+        margin: 0;
+      }
+    }
+    a {
+      display: block;
+      color: #333;
+    }
+    li {
+      margin: 16px 0 0;
+      font-size: 12px;
+    }
+  .single-fotter-logo {
+    width: 80px;
+    height: 65px;
+    margin: 40px auto 0;
+    }
+  }

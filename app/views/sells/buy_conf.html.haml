@@ -1,0 +1,66 @@
+.all-container
+  / viewの全てを囲む
+  %header.header
+    %h4.margi
+      = link_to '#', class: "link", target: "_blank" do
+        = image_tag 'merukari.svg' 
+  %main.main-view-container
+    %section.main-view-buy
+      %h6.sub-header
+        購入内容の確認
+      .sell-product
+        .sell-product-inner
+          .sell-item-box
+            .sell-item-image
+              = image_tag 'item-data.jpg'
+            .sell-item-detail
+              %p.sell-item-name 綺麗なバッグ
+              %p.sell-item-price
+                %span ¥2,020
+                %span.sell-tax （税込）送料込み
+      .sell-product
+        .sell-product-inner
+          %form.sell-form{action: "", method: "POST"}
+            %ul.sell-price
+              %li.sell-price-pay
+                .sell-price-paypay
+                  支払い金額
+              .buy-price-big
+                %span
+                  ¥1,000,000
+            %ul.sell-points
+              %li.accordion-parent
+                .checkbox-default.use-point
+                  %input{class: "check",:checked => "checked", :name => "riyu", :type => "checkbox", :value => "1"}
+                    %i.fas.fa-check-square.fa-lg
+                    %label.sell-position
+                      ポイントを使用（所持ポイント:P0)
+
+            %section.sell-content.sell-content-payment
+              .sell-product-inner
+                %h4 支払い方法
+                %p.user-info
+                  %i.fas.fa-plus-circle
+                  = link_to '登録してください', "#", class: "left-messages"
+
+            %section.sell-content.sell-content-payment
+              .sell-product-inner
+                %h4 配送先
+                %p.user-info
+                  %i.fas.fa-plus-circle
+                  = link_to '登録してください', "#", class: "left-messages"
+            
+            %section.sell-content.sell-content-error
+              %p.has-error-text
+                この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
+              %button.next-page{type: "submit"}
+                購入する
+              %p.not-have-app-text
+                アプリをお持ちでない方は以下よりインストールしてご利用いただけます。
+              %br
+              .store-logos
+                = link_to '#', class: "apple", target: "_blank" do
+                  = image_tag 'apple.svg', size:'130x40'
+                = link_to '#', class: "google", target: "_blank" do
+                  = image_tag 'Google.png', size:'130x40'
+= render 'shared/fotter'

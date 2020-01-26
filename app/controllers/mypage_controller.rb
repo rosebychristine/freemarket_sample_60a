@@ -5,4 +5,8 @@ class MypageController < ApplicationController
   end
 
 
+
+  def index
+  end
 end
+
