@@ -1,0 +1,86 @@
+.all-slider {
+  width: 100%;
+  height: 390px;
+  visibility: inherit;
+  box-sizing: border-box;
+}
+.slider-one {
+  overflow: hidden;
+  padding: 0%;
+}
+.slider-one__img{
+  width: 1440px;
+  height: 390px;
+  position: relative;
+  -webkit-box-align: center;
+  align-items: center;
+}
+.slider_comments{
+  height: initial;
+  position: relative;
+  padding: 20px 40px;
+  top: 60px;
+  left: 200px;
+  width: 780px;
+  text-align: center;
+}
+.iphoneicon_img {
+  width: 1440px;
+  height: 390px;
+  position: absolute;
+}
+
+.big_comment {
+  font-size: 60px;
+  margin-top: 8px;
+  display: flex;
+  font-weight: bold;
+  white-space: normal;
+  margin-bottom: 16px;
+  padding: 0%;
+}
+.small_comments {
+  font-size: 18px;
+  margin-top: auto;
+  display: block;
+  margin-bottom: 3px;
+  line-height: 1.77777;
+  text-align: left;
+}
+.toplink_app {
+  background-color: initial;
+  position: initial;
+  text-align: left;
+  padding: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+}
+.p {
+  vertical-align: baseline;
+  margin: 0px;
+  padding: 0px;
+  border-width: 0px;
+  border-style: initial;
+}
+.slider-controler i{
+  position: absolute;
+}
+.left-slider-control {
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+.left-slider-control {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  margin-left: 60px;
+  // -webkit-transform: translate(-50%)
+}
+
+.right_slider_control {
+  position: absolute;
+  top: 50px;
+  right: 0;
+}
