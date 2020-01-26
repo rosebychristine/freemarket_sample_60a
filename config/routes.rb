@@ -34,3 +34,11 @@ Rails.application.routes.draw do
     end
   end
 end
+
+  resources :mypages, only: [:index,:profile] do
+    collection do
+      get 'index'
+      get 'profile'
+    end
+  end
+end
