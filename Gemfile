@@ -55,6 +55,9 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+gem 'carrierwave'
+gem 'fog-aws'
+
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
@@ -63,11 +66,20 @@ group :test do
   gem 'chromedriver-helper'
 end
 
+gem 'font-awesome-sass'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# パンくず機能
+gem "gretel"
+gem 'haml-rails'
+gem 'jquery-rails'
 # gem 'font-awesome-sass'
 gem 'font-awesome-rails'
-
+gem  'haml-rails'
 group :production do
   gem 'unicorn', '5.4.1'
 end
+gem 'haml-rails'
+gem 'devise'

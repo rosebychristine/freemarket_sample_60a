@@ -1,0 +1,122 @@
+.all-container
+  / viewの全てを囲む
+  %header.header
+    %h1
+      = link_to '#', class: "link", target: "_blank" do
+        = image_tag 'merukari.svg'
+      
+    %nav.progress-bar.signup-bar
+      %ol.clearfix
+        %li
+          会員情報
+          .progress-status
+        %li
+          電話番号認証
+          .progress-status
+        %li
+          お届け先住所入力
+          .progress-status
+        %li.active
+          支払い方法
+          .progress-status
+        %li
+          完了
+          .progress-status
+        　
+  %main.main-view-container
+    .main-view
+      %h2.sub-header 支払い方法
+      %form#registration-form.inner-register-form{action: "", method: "POST"}
+        .form-create
+          .form-index
+            %label{for: "mickname"} カード番号
+            %span.need-select 必須
+            %input.input-default{name: "nickname", placeholder: "   半角数字のみ", type: "text", value: ""}/
+          .signup-cards
+            %ul.signup-card-list
+              %li
+              = image_tag 'visa.svg', height: '20px',width: '49px'
+              %li.img-credit
+                = image_tag 'master-card.svg' , height: '20px' ,width: '34px'
+              %li.img-credit
+                = image_tag 'saison-card.svg'  , height: '20px',width: '30px'
+              %li.img-credit
+                = image_tag 'jcb.svg' , height: '20px',width: '32px'
+              %li.img-credit
+                = image_tag 'american_express.svg'  , height: '20px',width: '21px'
+              %li.img-credit
+                = image_tag 'dinersclub.svg' , height: '20px',width: '32px'
+              %li.img-credit
+                = image_tag 'discover.svg' , height: '20px',width: '32px'
+                
+          .form-index-ex
+            %label.birthday-sp{for: "birthday"} 有効期限
+            %span.need-select-sp 必須
+            .border
+              .select-wrap-2
+                %i.icon-arrow-bottom
+                  / ::beforeがよく分からず放置
+                / select-defaultでクラスを統一しています
+                %select.select-default-2{"aria-invalid" => "false", name: "month"}
+                  %option{value: ""} --
+                  %option{value: "1"} 1
+                  %option{value: "2"} 2
+                  %option{value: "3"} 3
+                  %option{value: "4"} 4
+                  %option{value: "5"} 5
+                  %option{value: "6"} 6
+                  %option{value: "7"} 7
+                  %option{value: "8"} 8
+                  %option{value: "9"} 9
+                  %option{value: "10"} 10
+                  %option{value: "11"} 11
+                  %option{value: "12"} 12
+                %span.years 月
+              .select-wrap-2
+                %i.icon-arrow-bottom
+                  / ::beforeがよく分からず放置
+                %select.select-default-2{"aria-invalid" => "false", name: "years"}
+                  %option{value:  ""} --
+                  %option{value:  "2019"} 2019
+                  %option{value:  "2018"} 2018
+                  %option{value:  "2016"} 2016
+                  %option{value:  "2015"} 2015
+                  %option{value:  "2014"} 2014
+                  %option{value:  "2013"} 2013
+                  %option{value:  "2012"} 2012
+                  %option{value:  "2011"} 2011
+                  %option{value:  "2010"} 2010
+                  %option{value:  "2009"} 2009
+                  %option{value:  "2008"} 2008
+                  %option{value:  "2009"} 2009
+                  %option{value:  "2008"} 2008
+                  %option{value:  "2007"} 2007
+                  %option{value:  "2006"} 2006
+                  %option{value:  "2005"} 2005
+                  %option{value:  "2004"} 2004
+                  %option{value:  "2003"} 2003
+                  %option{value:  "2002"} 2002
+                  %option{value:  "2001"} 2001
+                  %option{value:  "2000"} 2000
+                  %option{value:  "1999"} 1999
+                  %option{value:  "1998"} 1998
+                  %option{value:  "1997"} 1997
+                  %option{value:  "1996"} 1996
+                  %option{value:  "1995"} 1995
+                  %option{value:  "1994"} 1994
+                  %option{value:  "1993"} 1993
+                  %option{value:  "1992"} 1992
+                  %option{value:  "1991"} 1991
+                  %option{value:  "1990"} 1990
+                %span.years 年
+          .form-index
+            %label{for: "mickname"} セキュリティコード
+            %span.need-select 必須
+            %input.input-default{name: "nickname", placeholder: "カード背面４桁もしくは３桁の番号", type: "text", value: ""}/
+          %a.right-messages
+            = link_to 'カード裏面の番号とは？', "#", class: "right-messages"
+          .last-content
+            / 次へ進むボタンを作成
+            %button.next-page{type: "submit"}
+              追加する
+= render 'shared/fotter'
