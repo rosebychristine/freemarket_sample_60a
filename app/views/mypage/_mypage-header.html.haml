@@ -1,0 +1,53 @@
+%header.toppage-header-wrapper
+  .toppage-header-top
+    .toppage-header-top__header
+      .toppage-header-top__header-contents
+        = link_to "#" do
+          = image_tag 'merukari.svg', alt: 'mercari-logo', class: 'toppage-header-top__header-contents--mercari-logo'
+
+        .toppage-header-top__header-search
+          %form{ method: 'post' }
+            %input{ name: 'search', class: 'toppage-header-top__header-search--search-form',
+            placeholder: '何かお探しですか？' }
+          .toppage-header-top__header-search--search-btn
+            = fa_icon 'search', alt: 'search-icon', class: 'toppage-header-top__header-search--search-btn'
+
+    .toppage-header-top__footer
+      %nav.toppage-header-top__footer-search
+        %ul.toppage-header-top__footer-search-categories
+          %li.toppage-header-top__footer-search-wrapper
+            %h2
+              = link_to "#" do          
+                = fa_icon 'list-ul lg', alt: 'list-icon', style: 'color:#ea352d'
+                %span.toppage-header-top__footer-search-text カテゴリーから探す
+
+          %li.toppage-header-top__footer-search-brand
+            %h2
+              = link_to "#" do
+                = fa_icon 'tag lg', alt: 'tag-icon', style: 'color:#ea352d', class: 'toppage-header-top__footer-search-brand--icon'
+                %span ブランドから探す
+           
+      .toppage-header-top__footer-contents              
+        %li.toppage-header-top__footer-contents-login-content
+          = link_to "#" do
+            = fa_icon 'heart ', alt: 'heart-icon', style: 'color:#cccccc', class: 'toppage-header-top__footer-contents-login-content--heart-icon'
+            %span いいね！一覧
+
+        %li.toppage-header-top__footer-contents-login-content
+          = link_to "#" do
+            = fa_icon 'bell', alt: 'bell-icon', style: 'color:#cccccc', class: 'toppage-header-top__footer-contents-login-content--bell-icon'
+            %span お知らせ
+            
+        %li.toppage-header-top__footer-contents-login-content
+          = link_to "#" do
+            = fa_icon 'check', alt: 'check-icon', style: 'color:#cccccc', class: 'toppage-header-top__footer-contents-login-content--check-icon'
+            %span やることリスト
+           
+        %li.toppage-header-top__footer-contents-login-content
+          = link_to "#" do
+            %figure
+              %div
+                = image_tag 'tatara.png', alt: 'mypage-logo', width: '32px', class: 'toppage-header-top__footer-contents-login-content--mypage-header-user-icon'
+                %span
+                  = link_to 'マイページ'
+ 

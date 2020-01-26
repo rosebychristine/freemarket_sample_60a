@@ -1,0 +1,15 @@
+%aside.banner
+  .banner__main
+    .banner__main__inner
+      %h2 スマホでかんたんフリマアプリ
+      %p 今すぐ無料ダウンロード！
+      .banner__icon.clearfix
+        %figure= image_tag 'mercari.png', :size => '68'
+        %ul.clearfix
+          %li
+            = link_to "#", class: "logo", target: "_blank" do
+              = image_tag 'apple.svg', size: '130x40'
+          %li.last
+            = link_to "#", class: "logo", target: "_blank" do
+              = image_tag 'Google.png', size:'130x40'
+    %figure= image_tag 's.png', size: '300x260'
