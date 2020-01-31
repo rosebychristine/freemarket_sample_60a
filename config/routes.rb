@@ -9,6 +9,8 @@ Rails.application.routes.draw do
       get 'ready'
     end
   end
+  
+  get 'sells/new' => 'sells#new'
 
   resources :logins, only: [:index, :new] do
     collection do
