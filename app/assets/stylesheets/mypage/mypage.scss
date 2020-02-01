@@ -67,9 +67,7 @@
    }
    .text-right {
     text-align: right;
-    i {
-      color: #0099e8;
-    }
+    color: #0099e8;
   }
    .form-group {
     margin: 40px 0 0;
@@ -212,11 +210,6 @@
   .footer-nav-lang {
     width: auto;
     margin-top: 18px;
-  }
-  .clearfix:after {
-    content: '';
-    display: block;
-    clear: both;
   }
 }
 .footer-bottom {
