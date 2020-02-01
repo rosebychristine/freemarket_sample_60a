@@ -198,11 +198,12 @@
   &__btn-box{
     p {
       line-height: 1.5;
+      a {
+        line-height: 1.5;
+        color: #0099e8;
+      }
     }
-    // a {
-    //   line-height: 1.5;
-    //   color: #0099e8;
-    // }
+    
   }
   &__btn-default {
     display: block;
