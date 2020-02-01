@@ -161,6 +161,12 @@
   .itm_dtl_msg
     .msg_container
       .msg_content
+        %form.msgform{action: "#", method: "POST"}
+          %input.msgform{name: "keyword", type: "hidden", value: ""}/
+          %p
+            相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          %input{type: "hidden", name: "itmm_id", value: ""}
+          %textarea{object_name, method, {}
       
   
 
