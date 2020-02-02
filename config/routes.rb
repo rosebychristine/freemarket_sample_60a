@@ -9,6 +9,8 @@ Rails.application.routes.draw do
       get 'ready'
     end
   end
+  
+  get 'sells/new' => 'sells#new'
 
   resources :logins, only: [:index, :new] do
     collection do
@@ -26,6 +28,8 @@ Rails.application.routes.draw do
   root "mypages#index"
   resources :logoutpages, only: [:index]
   resources :creditpages, only: [:index]
+  resources :product_detail, only: [:show]
+  resources :top, only: [:index]
 
   resources :mypages, only: [:index,:profile] do
     collection do
