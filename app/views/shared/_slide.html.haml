@@ -1,0 +1,28 @@
+%div
+  .all-slider
+    .slider-one
+      .slider-one__img
+        = image_tag '87070ef24da7a9e81af7204569c1044c_w.jpg', alt: 'iphone', class: 'iphoneicon_img'
+        .slider_comments
+          .big_comment
+            スマホで かんたん
+          .big_comment
+            フリマアプリ
+          %p.small_comments
+            メルカリはスマホカメラからすぐに出品できる
+          %p.small_comments
+            購入時も安心な独自システムのアプリです
+          .toplink_app
+            =link_to "#", class: "appleimg_i" do
+              = image_tag 'FAVPNG_app-store-apple-google-play-download_RzKiviWY', alt: 'appleDLicon', height: '60px', width: '170px'
+            =link_to "#", class: "googleimg_i" do
+              = image_tag 'google-play-badge (1).png', alt: 'googleDLicon', height: '60px', width: '170px'
+    .slider-two
+    .slider-controler
+      .left-slider-control
+        %i.fa.fa-chevron-left
+
+      .right_slider_control
+        %i.fa.fa-chrvron-right
+      .center_slider_control
+
