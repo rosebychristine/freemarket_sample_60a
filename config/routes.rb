@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     end
   end
   
-  get 'sells/new' => 'sells#new'
+  resources :sells, only: [:new]
 
   resources :logins, only: [:index, :new] do
     collection do
