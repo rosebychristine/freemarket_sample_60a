@@ -1,3 +1,7 @@
+.mypage-container
+  = render 'mypages/mypage-header'
+  - breadcrumb :mypage_profile
+  = render 'mypages/bread-crumbs'
 %main.container
   = render 'shared/side_bar'
   .credit-main
