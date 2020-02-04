@@ -31,6 +31,8 @@ li.category_li{
   display: inline;
 }
 .ct-list {
+  list-style: none;
+  padding: 16px;
   display: block;
   text-align: center;
   width: 100%;
@@ -89,7 +91,6 @@ padding: 0;
 h3.category_h3 {
   display: block;
   box-sizing: border-box;
-  // いらんかも
 }
 h4.category_h4 {
   display: block;
