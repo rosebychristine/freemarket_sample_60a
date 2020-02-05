@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   resources :logoutpages, only: [:index]
   resources :creditpages, only: [:index]
   resources :product_detail, only: [:show]
-  resources :top, only: [:index]
+  resources :tops, only: [:index]
 
   resources :mypages, only: [:index,:profile] do
     collection do
