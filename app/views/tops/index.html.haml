@@ -1,9 +1,9 @@
 = render 'shared/header'
 = render 'shared/slide'
-%main
+%main.top
   %h2.category_h2 人気のカテゴリー
   .category-lis
-    %ul.ct-list.category_ul
+    %ul.ct-list
       %li.first-ct.category_li
         =link_to "#", class: "popular-ct" do
           レディース
@@ -576,7 +576,7 @@
   %h2.category_h2
     人気のブランド
   .category-lis
-    %ul.ct-list.category_ul
+    %ul.ct-list
       %li.first-ct.category_li
         =link_to "#", class: "popular-ct" do
           シャネル
