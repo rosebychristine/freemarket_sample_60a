@@ -146,6 +146,10 @@
     padding: 0 20px 10px 20px;
     background: #212121;
     color: #fff;
+
+    .fa {
+      font-family: FontAwesome;
+    }
     .g {
       position: flex;
     }
@@ -214,11 +218,7 @@
     width: auto;
     margin-top: 18px;
   }
-  .clearfix:after {
-    content: '';
-    display: block;
-    clear: both;
-  }
+ 
 }
 .footer-bottom {
   padding: 30px;
