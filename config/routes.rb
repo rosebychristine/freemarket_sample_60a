@@ -1,4 +1,5 @@
 Rails.application.routes.draw do  
+  devise_for :users
   resources :signups, only: [:index, :create] do
     collection do
       get 'member_info'
