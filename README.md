@@ -23,7 +23,7 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ....
+* .....
 
 # mercari DB設計
 
