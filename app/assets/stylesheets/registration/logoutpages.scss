@@ -7,17 +7,20 @@
   width: 100%;
   height: 174px;
   .logout-in{
-     display:block;
-     max-width: 320px;
-    .btn-logout{
-      font-size: 14px;
-      box-sizing: border-box;
-      background: #ea352d;
-      border: solid 1px #ea352d;
-      color: #ffff;
-      height: 50px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 50px;
+    background: #ea352d;
+    border: solid 1px #ea352d;
+    a.btn-logout{
+      text-align: center;
       width: 320px;
-      margin: auto;
+      // box-sizing: border-box;
+      // background: #ea352d;
+      // border: solid 1px #ea352d;
+      color: #ffff;
     }
   }
 }

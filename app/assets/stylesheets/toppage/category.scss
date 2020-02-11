@@ -1,36 +1,35 @@
-.main {
-  padding: 42px 0px 100px;
-  left: 50%;
+main.topmainss.topmainss {
   margin-right: 50px;
   position: relative;
-  top: 0%;
-  width: 100%;
+  width: 100vw;
 }
-// h2{
-//   text-align: center;
-//   font-size: 28px;
-//   font-weight: 600;
-//   line-height: 1.4em;
-//   margin: 0;
-//   padding-top: 40px;
-//   padding-bottom: 0;
-//   background-color: rgb(255, 255, 255);
-// }
+h2.category_h2{
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.4em;
+  margin: 0;
+  padding-top: 40px;
+  padding-bottom: 0;
+  background-color: rgb(255, 255, 255);
+}
 .category-lis{
   background-color: rgb(255, 255, 255);
   overflow-x: auto;
   text-align: center;
   white-space: nowrap;
 }
-// ul {
-//   list-style: none;
-//   padding: 16px;
-//   display: flex;
-// }
-// ul li{
-//   display: inline;
-// }
+ul.category_ul {
+  list-style: none;
+  padding: 16px;
+  display: flex;
+}
+li.category_li{
+  display: inline;
+}
 .ct-list {
+  list-style: none;
+  padding: 16px;
   display: block;
   text-align: center;
   width: 100%;
@@ -86,12 +85,11 @@ line-height: 1.4em;
 margin: 0;
 padding: 0;
 }
-h3 {
+h3.category_h3 {
   display: block;
   box-sizing: border-box;
-  // いらんかも
 }
-h4 {
+h4.category_h4 {
   display: block;
   box-sizing: border-box;
 }
@@ -111,9 +109,6 @@ h4 {
   height: 674px;
   flex-wrap: wrap;
   padding: 2.5% 0;
-}
-div {
-  display: block;
 }
 
 .ldies_itm_lnks{
@@ -169,11 +164,9 @@ figcaption{
   position: relative;
   width: 100%;
 }
-span {
-  display: inline-block;
+span.category_spa {
   height: 2.8em;
   overflow: hidden;
-  position: relative;
 }
 .style_figcaptions {
   -webkit-box-align: center;
