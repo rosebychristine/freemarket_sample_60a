@@ -28,8 +28,8 @@ Rails.application.routes.draw do
   root "mypages#index"
   resources :logoutpages, only: [:index]
   resources :creditpages, only: [:index]
-  resources :product_detail, only: [:show]
-  resources :top, only: [:index]
+  resources :productsdetails, only: [:show]
+  resources :tops, only: [:index]
 
   resources :mypages, only: [:index,:profile] do
     collection do
