@@ -402,6 +402,12 @@ a.itm_detailbox {
     width: 20%;
     padding: 10px;
     display: table-cell;
+
+    &__style {
+      visibility: visible;
+      transition: all 0.5s ease 0s;
+      opacity: 1;
+    }
   }
   &__two {
     align-items: center;
