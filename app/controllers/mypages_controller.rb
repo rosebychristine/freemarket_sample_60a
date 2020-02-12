@@ -3,4 +3,6 @@ class MypagesController < ApplicationController
   end
   def profile
   end
+  def mypage
+  end
 end

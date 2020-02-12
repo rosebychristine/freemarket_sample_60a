@@ -1,8 +1,8 @@
 Rails.application.routes.draw do  
   resources :signups, only: [:index, :create] do
     collection do
-      get 'member_info'
-      get 'phone_number'
+      get 'member_info',to: 'signups#member_info'
+      get 'phone_number',to: 'signups#phone_number'
       get 'phone_number_conf'
       get 'postal_code'
       get 'credit'
@@ -29,6 +29,7 @@ Rails.application.routes.draw do
 
   resources :mypages, only: [:index,:profile] do
     collection do
+      get 'mypage'
       get 'index'
       get 'profile'
     end
