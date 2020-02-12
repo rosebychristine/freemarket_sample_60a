@@ -1,9 +1,10 @@
 @import 'config/reset';
-@import 'config/colors';
 @import 'config/font_size';
+@import 'config/colors';
 @import 'config/size';
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+@import "mixins/vendor_prefix";
 @import 'mypage/mypage';
 @import 'mypage/profile';
 @import 'registration/creditpages';
@@ -12,8 +13,13 @@
 @import 'registration/sells.scss';
 @import 'registration/signup';
 @import 'shared/fotter';
-@import 'toppage/top';
+@import 'toppage/tops';
 @import 'toppage/toppage_header';
+@import 'toppage/topslide';
+@import 'toppage/category';
 @import 'bread-crumbs';
 @import 'shared/camera';
 @import 'mypage/mypage_kondo';
+@import 'sell';
+@import 'signup/signup-header';
+@import 'signup/signup-footer'

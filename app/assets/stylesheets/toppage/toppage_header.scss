@@ -56,7 +56,7 @@
       &-search  {
         height: 50px;
         a:hover {
-          color: $sky_blue;
+          color:  #0095ee;
         }
         &-categories  {
           position: relative;
@@ -71,7 +71,7 @@
             height: 100%;
             line-height: 44px;
             font-weight: bold;
-            color: $black;
+            color: #333;
             text-decoration: none;
         }
         &-text  {
@@ -99,14 +99,14 @@
           display: inline-block;
         }
          a {
-          color: $black;
+          color: #333;
           text-decoration: none;
         }
         span  {
           margin-left: 10px;
         }
         span:hover  {
-          color: $sky_blue;
+          color:  #0095ee;
         }
         
         &-login-content  { 

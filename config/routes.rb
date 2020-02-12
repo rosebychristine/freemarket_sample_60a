@@ -1,4 +1,5 @@
 Rails.application.routes.draw do  
+  devise_for :users
   resources :signups, only: [:index, :create] do
     collection do
       get 'member_info',to: 'signups#member_info'
@@ -9,6 +10,8 @@ Rails.application.routes.draw do
       get 'ready'
     end
   end
+  
+  resources :sells, only: [:new]
 
   resources :logins, only: [:index, :new] do
     collection do
@@ -26,6 +29,8 @@ Rails.application.routes.draw do
   root "mypages#index"
   resources :logoutpages, only: [:index]
   resources :creditpages, only: [:index]
+  resources :product_detail, only: [:show]
+  resources :tops, only: [:index]
 
   resources :mypages, only: [:index,:profile] do
     collection do
