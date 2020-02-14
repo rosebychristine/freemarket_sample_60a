@@ -1,0 +1,99 @@
+= render 'mypage-header'
+- breadcrumb :mypage_profile
+= render 'mypages/bread-crumbs'
+%main.container
+  .mypa-container
+    = render 'shared/side_bar'
+    = render 'shared/camera'
+    .mypa-content
+      %section.mypa-user-icon
+        = link_to '#', class: "mypa", target: "_blank" do
+          = image_tag 'user-mypa.png',class: "mypa-icon"
+          %h2.bold メルカリ
+          .mypa_number
+            .comment
+              評価
+              %span 0
+            .comment.comment-2
+              出品数
+              %span 0 
+      %section.mypa-tab
+        %ul.mypa-tabs
+          %li.tab
+            %h5
+              %input#mypa-tab-notification.mypa-half-1{class: "tab-selector-1", checked: "checked", name: "radio-set", type: "radio"}/
+              %label.mypa-half{for: "mypa-tab-notification"} お知らせ
+          %li.tab
+            %h5
+              %input#mypa-tab-notification-2.mypa-half-2{class: "tab-selector-2",name: "radio-set", type: "radio"}/
+              %label.mypa-half{for: "mypa-tab-notification-2"} やることリスト
+        .tab-content
+          .mypa-item-link-1
+            = link_to '#', class: "mypa", target: "_blank" do
+              = image_tag 'mercari_mini.png',class: "mercari_mini"
+            .mypa-item-body
+              .mypa-item-text-1
+                %h5 こんにちは
+              %time
+                %i.icon-time
+                %span 2 日前
+              .icon-arrow-right
+          .mypa-item-link-1
+            = link_to '#', class: "mypa", target: "_blank" do
+              = image_tag 'mercari_mini.png',class: "mercari_mini"
+            .mypa-item-body
+              .mypa-item-text-1
+                %h5 こんにちは
+              %time
+                %i.icon-time
+                %span 2 日前
+              .icon-arrow-right
+          .mypa-item-link-1
+            = link_to '#', class: "mypa", target: "_blank" do
+              = image_tag 'mercari_mini.png',class: "mercari_mini"
+            .mypa-item-body
+              .mypa-item-text-1
+                %h5  こんにちは
+              %time
+                %i.icon-time
+                %span 2 日前
+              .icon-arrow-right
+          .mypa-item-link-1
+            = link_to '#', class: "mypa", target: "_blank" do
+              = image_tag 'mercari_mini.png',class: "mercari_mini"
+            .mypa-item-body
+              .mypa-item-text-1
+                %h5  こんにちは
+              %time
+                %i.icon-time
+                %span 2 日前
+              .icon-arrow-right
+          .mypa-item-link-1
+            = link_to '#', class: "mypa", target: "_blank" do
+              = image_tag 'mercari_mini.png',class: "mercari_mini"
+            .mypa-item-body
+              .mypa-item-text-1
+                %h5  こんにちは
+              %time
+                %i.icon-time
+                %span 2 日前
+              .icon-arrow-right
+          %li.mypa-go-list
+            = link_to '一覧を見る', class: "mypa-index", target: "_blank"
+      %section.mypa-tab.mypa-tab-2
+        %ul.mypa-tabs
+          %h2 購入した商品
+          %li.tab
+            %input#mypa-trans-1.mypa-half-1{checked: "checked", name: "radio-set-2", type: "radio"}/
+            %label.mypa-half{for: "mypa-trans-1"} 取引中
+          %li.tab
+            %input#mypa-trans-2.mypa-half-2{name: "radio-set-2", type: "radio"}/
+            %label.mypa-half{for: "mypa-trans-2"} 過去の取引 
+        .trans-content
+          %ul#trans-content-tab.trans-content-tab
+            %li#mypa-item-not-found
+              取引中の商品はありません
+    
+
+= render 'shared/banner'
+= render 'shared/footer'
