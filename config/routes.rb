@@ -37,7 +37,7 @@ Rails.application.routes.draw do
     end
   end
   
-  root "mypages#index"
+  root "mypages#edit"
   resources :logoutpages, only: [:index]
   resources :creditpages, only: [:index]
   resources :products_details, only: [:show]
