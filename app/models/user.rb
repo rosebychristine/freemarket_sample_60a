@@ -10,5 +10,5 @@ class User < ApplicationRecord
   has_many :messages dependent: :destroy
   has_many :alerts dependent: :destroy
   has_many :orders dependent: :destroy
-  has_one :address dependent: :destroy
+  has_one  :address dependent: :destroy
 end
