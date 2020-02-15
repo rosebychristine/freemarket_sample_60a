@@ -1,4 +1,8 @@
-Rails.application.routes.draw do  
+Rails.application.routes.draw do
+#   resources :users, only: [:index, :create, :edit, :update, :show]
+#   resources :items, only: [:index, :create, :edit, :update, :show]
+# end
+
   resources :signups, only: [:index, :create] do
     collection do
       get 'member_info',to: 'signups#member_info'
