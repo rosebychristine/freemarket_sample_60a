@@ -1,4 +1,8 @@
-Rails.application.routes.draw do
+
+Rails.application.routes.draw do  
+  devise_for :users
+  resources :signups, only: [:index, :create, :new] do
+
 #   resources :users, only: [:index, :create, :edit, :update, :show]
 #   resources :items, only: [:index, :create, :edit, :update, :show]
 # end

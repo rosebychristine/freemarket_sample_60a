@@ -9,6 +9,7 @@ body {
 
 .all-container {
   padding: 0 0 250px;
+  
 
   label {
     font-weight: 600;
@@ -157,6 +158,11 @@ body {
         font-size: 12px;
         vertical-align: top;
       }
+      
+      
+      .form-index {
+        margin: 24px 0 0;
+      
 
         .input-default{
         width: 100%;
@@ -173,7 +179,7 @@ body {
         .half {
             width: calc(50% - 6px);
             position: relative;
-              left: 10px;
+            left: 10px;
         }
 
         .half-one {
@@ -194,7 +200,7 @@ body {
             top: 17px;
             right: 2px;
         }
-        
+      }
         .need-select-free {
             background: #ccc;;
             margin: 0 0 0 8px;
@@ -227,9 +233,7 @@ body {
         margin: 0;
         }
 
-        .form-index {
-          margin: 24px 0 0;
-        }
+   
 
         .form-info-thin {
             position: relative;
@@ -337,6 +341,7 @@ body {
             transition: all ease-out .3s;
             cursor: pointer;
             text-align: center;
+            // z-index: 1000;
         }
 
         .next-page-red {
