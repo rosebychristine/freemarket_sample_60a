@@ -1,6 +1,6 @@
 Rails.application.routes.draw do  
   devise_for :users
-  resources :signups, only: [:index, :create] do
+  resources :signups, only: [:index, :create, :new] do
     collection do
       get 'member_info'
       get 'phone_number'
