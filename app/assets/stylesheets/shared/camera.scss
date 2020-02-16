@@ -1,0 +1,41 @@
+.new_itembox {
+    background-color: red;
+    border-radius: 50%;
+    bottom: 32px;
+    font-size: 22px;
+    height: 160px;
+    right: 32px;
+    width: 160px;
+    position: fixed;
+    z-index: 10000;
+    a {
+      color: white;
+      text-decoration: none;
+  }
+}
+  .newitembox_link {
+    display: block;
+  }
+  .new_itembox__btn {
+    position: absolute;
+    text-align: center;
+    width: 160px;
+    height: 160px;
+    padding-top: 32px;
+  }
+  .new_itembox__btn__text {
+    font-size: 22px;
+    color: rgb(255, 255, 255);
+  }
+  .fa-camera {
+    color: rgb(255, 255, 255);
+    display: block;
+    width: 130px;
+    // max-width: 100%;
+    // max-height: 100%;
+    margin-top: 8px;
+    height: 54px;
+    margin: 5px auto 0px;
+    font-size: 60px;
+  }
+  
