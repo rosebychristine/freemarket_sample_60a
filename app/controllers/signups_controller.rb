@@ -13,11 +13,11 @@ class SignupsController < ApplicationController
     end
 
     def postal_code
-      @address = Adress.new
+      @address = Address.new
     end
 
     def create
-      Adress.new(address_params)
+      Address.new(address_params)
       # binding.pry
     end
 
