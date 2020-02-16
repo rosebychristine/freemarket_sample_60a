@@ -1,0 +1,259 @@
+.mypa-container {
+width: 1020px;
+  .mypa-content {
+  float: right;
+  width: 700px;
+    .mypa-tab {
+    margin: 0;
+    background: #fff;
+    .mypa-tabs {
+      border: 0;
+      background: #eeeeee;
+      font-size: 0;
+      position: relative;
+      width: 700px;
+      h2 {
+      background: #fafafa;
+      font-size: 16px;
+      line-height: 72px;
+      width: 700px;
+      padding: 0 16px;
+      }
+      li.tab {
+      width: 50%;
+      background: #fff;
+      display: inline-block;
+      text-align: center;
+      vertical-align: top;
+      background: #F5F5F5;
+        label {
+        position: relative;
+        display: block;
+        color: #333;
+        font-size: 16px;
+        line-height: 72px;
+        padding: 0 20px;
+        display: block;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+        text-shadow: 1px 1px 1px rgba(255,255,255,0.3);
+        border-radius: 3px 3px 0 0;
+        z-index: 3;
+        }
+        label:after {
+          content: '';
+          background: #fff;
+          position: absolute;
+          bottom: -2px;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          display: block;
+        }
+        input:hover + label {
+          background: whitesmoke; 
+        }
+        label:first-of-type {
+          z-index: 4;
+        }
+        input:checked + label {
+          background: #fff;
+          border-top: 2px solid #ea352d;
+
+          z-index: 6;
+        }
+        #mypa-tab-notification {  
+          background-color: red;
+          position: absolute;
+          z-index: 1000;
+          width: 350px;
+          height: 72px;
+          left: 0px;
+          top: 0px;
+          opacity: 0;
+          -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+          filter: alpha(opacity=0);
+          cursor: pointer;
+        }
+        #mypa-tab-notification-2 {
+          background-color: red;
+          position: absolute;
+          z-index: 1000;
+          width: 350px;
+          height: 72px;
+          left: 350px;
+          top: 0px;
+          opacity: 0;
+          -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+          filter: alpha(opacity=0);
+          cursor: pointer;
+        }
+      }
+    }
+    .tab-content {
+      background: #fff;
+      position: relative;
+      z-index: 5;
+      box-shadow: 0 -2px 3px -2px rgba(0,0,0,0.2), 0 2px 2px rgba(0,0,0,0.1);
+      border-radius: 0 3px 3px 3px;
+      width: 100%;
+      .mypa-item-list {
+      display: block;
+        .mypa-item-link-1 li:first-child {
+        border-bottom: 1px solid #eee;
+        }
+      }
+      .mypa-go-list li:last-child {
+        border: 0;
+      }
+      li.mypa-go-list {
+        border: 0;
+        padding: 16px;
+        list-style: none;
+        a {
+        display: block;
+        height: 56px;
+        margin: 0 auto;
+        background: #eee;
+        color: #333;
+        line-height: 56px;
+        text-align: center;
+        }
+      }
+      input.tab-selector-1:checked ~ .tab-content .mypa-item-text-1,
+      input.tab-selector-2:checked ~ .tab-content .mypa-item-text-2 {
+      z-index: 100;
+      -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+      filter: alpha(opacity=100);
+      opacity: 1;
+      -webkit-transition: opacity ease-out 0.2s 0.1s;
+      -moz-transition: opacity ease-out 0.2s 0.1s;
+      -o-transition: opacity ease-out 0.2s 0.1s;
+      -ms-transition: opacity ease-out 0.2s 0.1s;
+      transition: opacity ease-out 0.2s 0.1s;
+      }
+      .mypa-item-link-1 {
+        display: block;
+        min-height: 80px;
+        padding: 16px;
+        color: #333;
+        border-bottom: 1px solid #eee;
+        
+        .mypa-item-body {
+          margin: 0 40px 0 68px;
+          .mypa-item-text {
+          overflow: hidden;
+          display: block;
+          display: -webkit-box;
+          max-height: 4.4em;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          text-overflow: ellipsis;
+          line-height: 1.5;
+          }
+          time {
+            display: inline-block;
+            color: #888;
+          }
+        }
+      }
+      .mercari_mini {
+        position: relative;
+      overflow: hidden;
+      float: left;
+      width: 48px;
+      height: 48px;
+      }
+    }
+  }
+    .mypa-tab-2 {
+      margin: 40px 0 0;
+      background: #fff;
+      .trans-content {
+        .trans-content-tab {
+          display: block;
+          #mypa-item-not-found {
+            padding: 160px 0 60px;
+            background: url(../images/merucari-back.png);
+            background-image: url(../images/merucari-back.png);
+            background-position-x: center;
+            background-position-y: 40px;
+            background-size: 78px 85px;
+            background-repeat-x: no-repeat;
+            background-repeat-y: no-repeat;
+            background-attachment: initial;
+            background-origin: initial;
+            background-clip: initial;
+            background-color: initial;
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+            background-repeat: no-repeat;
+            background-position: center 40px;
+            background-size: 78px 85px;
+            text-align: center;
+            font-size: 16px;
+            color: #ccc;
+          }
+        }
+      }
+    }
+    .mypa-user-icon  {
+    position: relative;
+    height: 155px;
+    padding: 20px;
+    background: url(../images/merucari-back.png);
+      background-image: url(../images/merucari-back.png);
+      background-position-x: center;
+      background-position-y: 40px;
+      background-size: 78px 85px;
+      background-repeat-x: no-repeat;
+      background-repeat-y: no-repeat;
+      background-attachment: initial;
+      background-origin: initial;
+      background-clip: initial;
+      background-color: initial;
+      background-repeat: no-repeat;
+      background-size: cover;
+      text-align: center;
+      .mypa {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      color: #333;
+        .mypa-icon {
+        overflow: hidden;
+        width: 60px;
+        height: 60px;
+        margin: 0 auto;
+        border-radius: 50%;
+        }
+      }
+      .bold {
+      margin: 8px 0 0;
+      font-size: 14px;
+      }
+      .mypa_number {
+        margin: 8px 0 0;
+        font-size: 0;
+        .comment {
+          display: inline-block;
+          font-size: 14px;
+          span {
+            margin: 0 0 0 8px;
+            font-size: 16px;
+          }
+        }
+        .comment-2 {
+            margin: 0 0 0 16px;
+        }
+      }
+    }
+  }
+}

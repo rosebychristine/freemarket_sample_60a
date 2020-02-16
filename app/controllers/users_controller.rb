@@ -1,4 +1,4 @@
-class MypagesController < ApplicationController
+class UsersController < ApplicationController
   def index
   end
 
@@ -16,8 +16,5 @@ class MypagesController < ApplicationController
 
   def update
   end
-
-  def destroy
-  end
-
+  
 end
