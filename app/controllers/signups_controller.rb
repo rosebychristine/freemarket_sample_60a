@@ -18,7 +18,6 @@ class SignupsController < ApplicationController
 
     def create
       Address.new(address_params)
-      # binding.pry
     end
 
     def ready
