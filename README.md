@@ -69,12 +69,15 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|null: false|
 |condition|string|null: false|
+|dscription|text|null: false|
 |price|integer|null: false|
-|deu_time|string|null: false|
+|profit|integer|null: false|
+|deu_time|datetime|null: false|
 |brand_id|references|null: false <br> foreign_key: true|
 |shipping_id|references|null: false <br> foreign_key: true|
 |cotegory_id|references|null: false<br> foreign_key: true|
 |user_id|references|null: false <br> foreign_key: true|
+|messages|references|null: true|
 
 ### Association
 - belongs_to  :user
