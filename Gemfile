@@ -83,3 +83,5 @@ group :production do
 end
 gem 'haml-rails'
 gem 'devise'
+
+gem 'pry-rails'

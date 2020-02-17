@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class CreditpagesControllerTest < ActionDispatch::IntegrationTest
+class AdressTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
