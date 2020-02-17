@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => {
+    :registrations => 'users/registrations',
+    :sessions => 'users/sessions'   
+  }
+  devise_scope :user do 
+    get "sign_in", :to => "users/sessions#new"
+    get "sign_out", :to => "users/sessions#destroy" 
+  end
   resources :users, only: [:index, :edit]
   resources :items, only: [:index, :create, :show]
   resources :mypages, only: [:index,:profile] 
@@ -7,16 +14,6 @@ end
 #   resources :users, only: [:index, :create, :edit, :update, :show]
 #   resources :items, only: [:index, :create, :edit, :update, :show]
 # end
-#   resources :signups, only: [:index, :create] do
-#     collection do
-#       get 'member_info',to: 'signups#member_info'
-#       get 'phone_number',to: 'signups#phone_number'
-#       get 'phone_number_conf'
-#       get 'postal_code'
-#       get 'credit'
-#       get 'ready'
-#     end
-#   end
   
 #   resources :sells, only: [:new]
 
