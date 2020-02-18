@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       get 'step4'
     end
   end
-  resources :items, only: [:index, :create, :show]
-  resources :mypages, only: [:index,:profile] 
+  resources :users, only: [:index,:edit]
+  resources :items, only: [:new,:show,:update]
+  resources :mypages, only: [:index,:profile,:show] 
 end

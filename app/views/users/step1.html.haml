@@ -28,15 +28,16 @@
     .main-view
       %h2.sub-header
         会員情報入力
-      %form#registration-form.inner-register-form{action: "", method: "POST"}
-        
+      -# %form#registration-form.inner-register-form{action: "", method: "POST"}
+      = form_for @user, url: step2_users_path, method: :get do |f|
         / アクションはパス先が完成していないので未定義で置いている
         / ニックネームフォーム作成
         .form-create
           .form-index
-            %label{for: "mickname"} ニックネーム
+            %label{for: "nickname"} ニックネーム
             %span.need-select 必須
-            %input.input-default{name: "nickname", placeholder: "例）メルカリ太郎", type: "text", value: ""}/
+            -# %input.input-default{name: "nickname", placeholder: "例）メルカリ太郎", type: "text", value: ""}/
+            = f.text_field :nickname, class: 'input-default', placeholder: '例）メルカリ太郎', type: 'text'
           / メールアドレスフォーム作成
           .form-index
             %label{for: "email"} メールアドレス
@@ -179,7 +180,8 @@
               / 利用規約のリンクは仮置き
               = link_to '利用規約', "#", class: "a btn btn-default"
               に同意したものとみなします
-            %button.next-page{type: "submit"} 次へ進む
+            -# %button.next-page{type: "submit"} 次へ進む
+            = f.submit class: 'next-page'
           / これもリンク先を仮置きにしています
           .form-group-about
             %p
