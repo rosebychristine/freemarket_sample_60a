@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
 
     def index
+      @products = Product.order("created_at DESC").limit(5)
     end
 
     def new
@@ -22,11 +23,9 @@ class ItemsController < ApplicationController
     end
 
     def show
-    end
-
+      @Product = Product.find(params[:id])
+    end 
     def product_params
         params.require(:product).permit(:name, :price ,:description).merge(user_id: 1)
     end
-
-
 end

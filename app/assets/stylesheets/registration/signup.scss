@@ -9,6 +9,19 @@ body {
 
 .all-container {
   padding: 0 0 250px;
+
+  .need-select {
+    background: #ea352d;
+    margin: 0 0 0 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    vertical-align: top;
+    position: relative;
+    top: 17px;
+    right: 2px;
+  }
   
 
   label {

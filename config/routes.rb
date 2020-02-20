@@ -1,9 +1,7 @@
 
 Rails.application.routes.draw do
-  devise_for :users, :controllers => {
-    :registrations => 'users/registrations',
-    :sessions => 'users/sessions'   
-  }
+  devise_for :users
+  root 'items#index'
   devise_scope :user do 
     get "sign_in", :to => "users/sessions#new"
     get "sign_out", :to => "users/sessions#destroy" 
@@ -37,12 +35,12 @@ end
 #   resources :creditpages, only: [:index]
 #   resources :products_details, only: [:show]
 #   resources :tops, only: [:index]
-
-#   resources :mypages, only: [:index,:profile] do
-#     collection do
-#       get 'mypage'
-#       get 'index'
-#       get 'profile'
-#     end
-#   end
-# end
+  resources :users do
+    collection do
+      get 'step1'
+      get 'step2'
+      get 'step3'
+      get 'step4'
+    end
+  end
+end
