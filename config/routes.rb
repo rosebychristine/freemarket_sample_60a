@@ -41,6 +41,5 @@ end
       get 'step2'
       get 'step3'
       get 'step4'
-    end
   end
 end
