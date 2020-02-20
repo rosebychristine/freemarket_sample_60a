@@ -1,10 +1,10 @@
 .sell-container
-  = render 'shared/header_login'
+  = render 'shared/header_signin'
   %main.sell-main
     %section.sell-main__container
       %div
         %h2.sell-main__head 商品の情報を入力
-        = form_with model: @opai, class:'sell-main__form' do |f|
+        = form_with model: @product, url: items_path,method: :post, class:'sell-main__form' do |f|
           .sell-main__upload-box
             %h3.sell-main__upload-head
               出品画像
