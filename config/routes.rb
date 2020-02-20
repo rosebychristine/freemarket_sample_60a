@@ -8,8 +8,9 @@ Rails.application.routes.draw do
     get "sign_in", :to => "users/sessions#new"
     get "sign_out", :to => "users/sessions#destroy" 
   end
+  root 'items#index'
   resources :users, only: [:index, :edit]
-  resources :items, only: [:index, :create, :show]
+  resources :items, only: [:index, :create, :show,:new]
   resources :mypages, only: [:index,:profile] 
 end
 #   resources :users, only: [:index, :create, :edit, :update, :show]

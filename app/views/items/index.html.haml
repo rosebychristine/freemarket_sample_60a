@@ -1,5 +1,9 @@
-= render 'shared/header'
-= render 'shared/slide'
+- if user_signed_in? 
+  = render 'mypage-header'
+  - breadcrumb :mypage_profile
+  = render 'mypages/bread-crumbs'
+- else
+  = render 'shared/header_login'
 %main.top
   %h2.category_h2 人気のカテゴリー
   .category-lis
