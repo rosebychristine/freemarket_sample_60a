@@ -1,5 +1,9 @@
-= render 'shared/header'
-= render 'shared/slide'
+- if user_signed_in? 
+  = render 'mypage-header'
+  - breadcrumb :mypage_profile
+  = render 'mypages/bread-crumbs'
+- else
+  = render 'shared/header_login'
 %main.top
   %h2.category_h2 人気のカテゴリー
   .category-lis
@@ -23,139 +27,140 @@
         =link_to "#", class: "see_more_ladiesitm" do
           もっと見る
       .ladiesitm_links_container
-        %div
+        %div        
           %ul.ladiesitm_links.category_ul
-            %li.ladiesitm_one.category_li
-              %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
-                =link_to "#", class: "ldies_itm_lnks" do
-                  %figure.ladies_itm_lnk
-                    %figcaption
-                      %span.category_spa
-                        name
-                      .style_figcaptions
-                    .thumbnail_style_p
-                      %span.label_price.category_spa
-                        ¥
-                        1,888
-                      = image_tag 'A955DC6E-D8D8-4A83-A9F5-0FED77CF93AF.jpg', alt: 'ipsa_lotion', class: 'ladies-recommend'
-            %li.ladiesitm_one.category_li
-              %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
-                =link_to "#", class: "ldies_itm_lnks" do
-                  %figure.ladies_itm_lnk
-                    %figcaption
-                      %span.category_spa
-                        name
-                      .style_figcaptions
-                    .thumbnail_style_p
-                      %span.label_price.category_spa
-                        ¥
-                        1,888
-                      = image_tag 'A955DC6E-D8D8-4A83-A9F5-0FED77CF93AF.jpg', alt: 'ipsa_lotion', class: 'ladies-recommend'
-            %li.ladiesitm_one.category_li
-              %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
-                =link_to "#", class: "ldies_itm_lnks" do
-                  %figure.ladies_itm_lnk
-                    %figcaption
-                      %span.category_spa
-                        name
-                      .style_figcaptions
-                    .thumbnail_style_p
-                      %span.label_price.category_spa
-                        ¥
-                        1,888
-                      = image_tag 'A955DC6E-D8D8-4A83-A9F5-0FED77CF93AF.jpg', alt: 'ipsa_lotion', class: 'ladies-recommend'
-            %li.ladiesitm_one.category_li
-              %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
-                =link_to "#", class: "ldies_itm_lnks" do
-                  %figure.ladies_itm_lnk
-                    %figcaption
-                      %span.category_spa
-                        name
-                      .style_figcaptions
-                    .thumbnail_style_p
-                      %span.label_price.category_spa
-                        ¥
-                        1,888
-                      = image_tag 'A955DC6E-D8D8-4A83-A9F5-0FED77CF93AF.jpg', alt: 'ipsa_lotion', class: 'ladies-recommend'
-            %li.ladiesitm_one.category_li
-              %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
-                =link_to "#", class: "ldies_itm_lnks" do
-                  %figure.ladies_itm_lnk
-                    %figcaption
-                      %span.category_spa
-                        name
-                      .style_figcaptions
-                    .thumbnail_style_p
-                      %span.label_price.category_spa
-                        ¥
-                        1,888
-                      = image_tag 'A955DC6E-D8D8-4A83-A9F5-0FED77CF93AF.jpg', alt: 'ipsa_lotion', class: 'ladies-recommend'
-          %ul.ladiesitm_links.category_ul
-            %li.ladiesitm_one.category_li
-              %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
-                =link_to "#", class: "ldies_itm_lnks" do
-                  %figure.ladies_itm_lnk
-                    %figcaption
-                      %span.category_spa
-                        name
-                      .style_figcaptions
-                    .thumbnail_style_p
-                      %span.label_price.category_spa
-                        ¥
-                        1,888
-                      = image_tag 'A955DC6E-D8D8-4A83-A9F5-0FED77CF93AF.jpg', alt: 'ipsa_lotion', class: 'ladies-recommend'
-            %li.ladiesitm_one.category_li
-              %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
-                =link_to "#", class: "ldies_itm_lnks" do
-                  %figure.ladies_itm_lnk
-                    %figcaption
-                      %span.category_spa
-                        name
-                      .style_figcaptions
-                    .thumbnail_style_p
-                      %span.label_price.category_spa
-                        ¥
-                        1,888
-                      = image_tag 'A955DC6E-D8D8-4A83-A9F5-0FED77CF93AF.jpg', alt: 'ipsa_lotion', class: 'ladies-recommend'
-            %li.ladiesitm_one.category_li
-              %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
-                =link_to "#", class: "ldies_itm_lnks" do
-                  %figure.ladies_itm_lnk
-                    %figcaption
-                      %span.category_spa
-                        name
-                      .style_figcaptions
-                    .thumbnail_style_p
-                      %span.label_price.category_spa
-                        ¥
-                        1,888
-                      = image_tag 'A955DC6E-D8D8-4A83-A9F5-0FED77CF93AF.jpg', alt: 'ipsa_lotion', class: 'ladies-recommend'
-            %li.ladiesitm_one.category_li
-              %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
-                =link_to "#", class: "ldies_itm_lnks" do
-                  %figure.ladies_itm_lnk
-                    %figcaption
-                      %span.category_spa
-                        name
-                      .style_figcaptions
-                    .thumbnail_style_p
-                      %span.label_price.category_spa
-                        ¥
-                        1,888
-                      = image_tag 'A955DC6E-D8D8-4A83-A9F5-0FED77CF93AF.jpg', alt: 'ipsa_lotion', class: 'ladies-recommend'
-            %li.ladiesitm_one.category_li
-              %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
-                =link_to "#", class: "ldies_itm_lnks" do
-                  %figure.ladies_itm_lnk
-                    %figcaption
-                      %span.category_spa
-                        name
-                      .style_figcaptions
-                    .thumbnail_style_p
-                      %span.label_price.category_spa
-                        ¥
-                        1,888
-                      = image_tag 'A955DC6E-D8D8-4A83-A9F5-0FED77CF93AF.jpg', alt: 'ipsa_lotion', class: 'ladies-recommend'
+            - @products.each do |product|
+              %li.ladiesitm_one.category_li
+                %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+                  = link_to item_path(product.id), method: :get ,class: "ldies_itm_lnks" do
+                    %figure.ladies_itm_lnk
+                      %figcaption
+                        %span.category_spa
+                          = product.name
+                        .style_figcaptions
+                      .thumbnail_style_p
+                        %span.label_price.category_spa
+                          ¥
+                          = product.price
+                        = image_tag 'A955DC6E-D8D8-4A83-A9F5-0FED77CF93AF.jpg', alt: 'ipsa_lotion', class: 'ladies-recommend'
+          -#   %li.ladiesitm_one.category_li
+          -#     %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+          -#       =link_to "#", class: "ldies_itm_lnks" do
+          -#         %figure.ladies_itm_lnk
+          -#           %figcaption
+          -#             %span.category_spa
+          -#               name
+          -#             .style_figcaptions
+          -#           .thumbnail_style_p
+          -#             %span.label_price.category_spa
+          -#               ¥
+          -#               1,888
+          -#             = image_tag 'A955DC6E-D8D8-4A83-A9F5-0FED77CF93AF.jpg', alt: 'ipsa_lotion', class: 'ladies-recommend'
+          -#   %li.ladiesitm_one.category_li
+          -#     %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+          -#       =link_to "#", class: "ldies_itm_lnks" do
+          -#         %figure.ladies_itm_lnk
+          -#           %figcaption
+          -#             %span.category_spa
+          -#               name
+          -#             .style_figcaptions
+          -#           .thumbnail_style_p
+          -#             %span.label_price.category_spa
+          -#               ¥
+          -#               1,888
+          -#             = image_tag 'A955DC6E-D8D8-4A83-A9F5-0FED77CF93AF.jpg', alt: 'ipsa_lotion', class: 'ladies-recommend'
+          -#   %li.ladiesitm_one.category_li
+          -#     %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+          -#       =link_to "#", class: "ldies_itm_lnks" do
+          -#         %figure.ladies_itm_lnk
+          -#           %figcaption
+          -#             %span.category_spa
+          -#               name
+          -#             .style_figcaptions
+          -#           .thumbnail_style_p
+          -#             %span.label_price.category_spa
+          -#               ¥
+          -#               1,888
+          -#             = image_tag 'A955DC6E-D8D8-4A83-A9F5-0FED77CF93AF.jpg', alt: 'ipsa_lotion', class: 'ladies-recommend'
+          -#   %li.ladiesitm_one.category_li
+          -#     %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+          -#       =link_to "#", class: "ldies_itm_lnks" do
+          -#         %figure.ladies_itm_lnk
+          -#           %figcaption
+          -#             %span.category_spa
+          -#               name
+          -#             .style_figcaptions
+          -#           .thumbnail_style_p
+          -#             %span.label_price.category_spa
+          -#               ¥
+          -#               1,888
+          -#             = image_tag 'A955DC6E-D8D8-4A83-A9F5-0FED77CF93AF.jpg', alt: 'ipsa_lotion', class: 'ladies-recommend'
+          -# %ul.ladiesitm_links.category_ul
+          -#   %li.ladiesitm_one.category_li
+          -#     %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+          -#       =link_to "#", class: "ldies_itm_lnks" do
+          -#         %figure.ladies_itm_lnk
+          -#           %figcaption
+          -#             %span.category_spa
+          -#               name
+          -#             .style_figcaptions
+          -#           .thumbnail_style_p
+          -#             %span.label_price.category_spa
+          -#               ¥
+          -#               1,888
+          -#             = image_tag 'A955DC6E-D8D8-4A83-A9F5-0FED77CF93AF.jpg', alt: 'ipsa_lotion', class: 'ladies-recommend'
+          -#   %li.ladiesitm_one.category_li
+          -#     %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+          -#       =link_to "#", class: "ldies_itm_lnks" do
+          -#         %figure.ladies_itm_lnk
+          -#           %figcaption
+          -#             %span.category_spa
+          -#               name
+          -#             .style_figcaptions
+          -#           .thumbnail_style_p
+          -#             %span.label_price.category_spa
+          -#               ¥
+          -#               1,888
+          -#             = image_tag 'A955DC6E-D8D8-4A83-A9F5-0FED77CF93AF.jpg', alt: 'ipsa_lotion', class: 'ladies-recommend'
+          -#   %li.ladiesitm_one.category_li
+          -#     %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+          -#       =link_to "#", class: "ldies_itm_lnks" do
+          -#         %figure.ladies_itm_lnk
+          -#           %figcaption
+          -#             %span.category_spa
+          -#               name
+          -#             .style_figcaptions
+          -#           .thumbnail_style_p
+          -#             %span.label_price.category_spa
+          -#               ¥
+          -#               1,888
+          -#             = image_tag 'A955DC6E-D8D8-4A83-A9F5-0FED77CF93AF.jpg', alt: 'ipsa_lotion', class: 'ladies-recommend'
+          -#   %li.ladiesitm_one.category_li
+          -#     %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+          -#       =link_to "#", class: "ldies_itm_lnks" do
+          -#         %figure.ladies_itm_lnk
+          -#           %figcaption
+          -#             %span.category_spa
+          -#               name
+          -#             .style_figcaptions
+          -#           .thumbnail_style_p
+          -#             %span.label_price.category_spa
+          -#               ¥
+          -#               1,888
+          -#             = image_tag 'A955DC6E-D8D8-4A83-A9F5-0FED77CF93AF.jpg', alt: 'ipsa_lotion', class: 'ladies-recommend'
+          -#   %li.ladiesitm_one.category_li
+          -#     %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
+          -#       =link_to "#", class: "ldies_itm_lnks" do
+          -#         %figure.ladies_itm_lnk
+          -#           %figcaption
+          -#             %span.category_spa
+          -#               name
+          -#             .style_figcaptions
+          -#           .thumbnail_style_p
+          -#             %span.label_price.category_spa
+          -#               ¥
+          -#               1,888
+          -#             = image_tag 'A955DC6E-D8D8-4A83-A9F5-0FED77CF93AF.jpg', alt: 'ipsa_lotion', class: 'ladies-recommend'
     .ladies_itms     
       .ladies_titles{name: "scroll_one"}
         %h4.ladies_title.category_h4 メンズ新着アイテム
