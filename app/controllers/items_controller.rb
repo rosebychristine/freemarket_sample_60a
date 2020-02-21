@@ -18,6 +18,5 @@ class ItemsController < ApplicationController
 
     def new
         @product = Product.new
-        # @product.images.new
     end
 end
