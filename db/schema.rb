@@ -126,6 +126,7 @@ ActiveRecord::Schema.define(version: 2020_02_15_101645) do
     t.string "name", default: "", null: false
     t.integer "price", default: 0, null: false
     t.string "condition", default: "", null: false
+    t.text "description", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
