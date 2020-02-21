@@ -4,18 +4,22 @@
     %section.sell-main__container
       %div
         %h2.sell-main__head 商品の情報を入力
-        = form_with model: @product, url: items_path,method: :post, class:'sell-main__form' do |f|
+        = form_with model: @products, class:'sell-main__form' do |f|
           .sell-main__upload-box
             %h3.sell-main__upload-head
               出品画像
               %span.sell-main__form-require 必須
             %p 最大10枚までアップロードできます
-            .sell-main__dropbox-container.clearfix
-              .sell-main__upload-items
-                .sell-main__upload-drop-box
-                  %pre
-                    ドラッグアンドドロップ
-                    またはクリックしてファイルをアップロード
+            = f.label :image  do
+              .sell-main__dropbox-container.clearfix
+                .sell-main__upload-items
+                  = f.fields_for :iamges do |image|    
+                    .image-input
+                      = image.file_field :src, id: "image"
+                  .sell-main__upload-drop-box
+                    %pre
+                      ドラッグアンドドロップ
+                      またはクリックしてファイルをアップロード
           .sell-main__content.clearfix
             .sell-main__form-group
               = f.label :name do

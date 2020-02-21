@@ -87,8 +87,11 @@ ActiveRecord::Schema.define(version: 2020_02_15_101645) do
   end
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "src"
+    t.bigint "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_images_on_product_id"
   end
 
   create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -175,6 +178,7 @@ ActiveRecord::Schema.define(version: 2020_02_15_101645) do
   add_foreign_key "comments", "users"
   add_foreign_key "evaluations", "products"
   add_foreign_key "evaluations", "users"
+  add_foreign_key "images", "products"
   add_foreign_key "likes", "products"
   add_foreign_key "likes", "users"
   add_foreign_key "messages", "products"

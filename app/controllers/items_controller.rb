@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
 
     def index
+        @items = Item.includes(:images).order('created_at DESC')
       @products = Product.order("created_at DESC").limit(5)
     end
 
@@ -8,6 +9,7 @@ class ItemsController < ApplicationController
     # 出品画面を表示するためのアクション
     # form_withを使うためにまずインスタンス生成をする（空っぽのインスタンスの準備）
     @product = Product.new
+
     end
 
     def create
@@ -23,7 +25,11 @@ class ItemsController < ApplicationController
     end
 
     def show
-      @Product = Product.find(params[:id])
+    end
+
+    def new
+        @product = Product.new
+        @Product = Product.find(params[:id])
     end 
     def product_params
         params.require(:product).permit(:name, :price ,:description).merge(user_id: 1)
