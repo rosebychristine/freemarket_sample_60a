@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       get 'step5'
       post 'create2'
     end
+  end
   resources :items, only: [:index, :create, :show,:new]
   resources :mypages, only: [:index,:profile] 
 end
