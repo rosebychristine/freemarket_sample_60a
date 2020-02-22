@@ -10,16 +10,7 @@
             .itm_picture__width
               .itm_picture__active
                 .itm_picture__active__one
-                  = image_tag '950B1AAB-A6D9-442E-BF33-C3743A1E41EA.jpg', alt: 'クッション未使用', class: 'img_itm_one'
-              .itm_picture__active
-                .itm_picture__active__one
-                  = image_tag '8651F35B-510B-4510-A297-272226E55505.jpg', alt: 'クッション未使用', class: 'img_itm_one'
-              .itm_picture__active
-                .itm_picture__active__one
-                  = image_tag '0CEE4D9A-3157-4E09-8F94-A3BC37934600.jpg', alt: 'クッション未使用', class: 'img_itm_one'
-              .itm_picture__active
-                .itm_picture__active__one
-                  = image_tag '0C9FDF3F-0599-40D2-8B22-C1EE93CE08D1.jpg', alt: 'クッション未使用', class: 'img_itm_one'
+                  = image_tag @images.first.src.url, class: 'img_itm_one'
             .itm_picture.disabled
               .itm_picture__pre
                 prev
