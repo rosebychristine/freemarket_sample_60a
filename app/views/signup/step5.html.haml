@@ -25,12 +25,15 @@
   %main.main-view-container
     .main-view
       %h2.sub-header 支払い方法
-      %form#registration-form.inner-register-form{action: "", method: "POST"}
+      -# %form.registration-form.inner-register-form
+      = form_for @user, url: create2_signup_index_path, method: :post, html: {class: 'first-main__box'} do |f|
         .form-create
           .form-index
             %label{for: "mickname"} カード番号
             %span.need-select 必須
-            %input.input-default{name: "nickname", placeholder: "   半角数字のみ", type: "text", value: ""}/
+            -# %input.input-default
+            .input-default
+              = f.text_field :credit_card_no, class: 'half half-one2', placeholder: "  半角数字のみ", value: ""
           .signup-cards
             %ul.signup-card-list
               %li
@@ -56,7 +59,9 @@
                 %i.icon-arrow-bottom
                   / ::beforeがよく分からず放置
                 / select-defaultでクラスを統一しています
-                %select.select-default-2{"aria-invalid" => "false", name: "month"}
+                -# %select.select-default-2{"aria-invalid" => "false", name: "month"}
+                  -# = f.select :creditmonth_id, [["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{}
+                = f.select :creditmonth_id, nil, {}, class:'select-default-2' do
                   %option{value: ""} --
                   %option{value: "1"} 1
                   %option{value: "2"} 2
@@ -74,7 +79,9 @@
               .select-wrap-2
                 %i.icon-arrow-bottom
                   / ::beforeがよく分からず放置
-                %select.select-default-2{"aria-invalid" => "false", name: "years"}
+                -# %select.select-default-2{"aria-invalid" => "false", name: "years"}
+                  -# = f.select :credityear_id, [["19",2019],["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]],{} , class: 'form-signup__month__select'
+                = f.select :credityear_id, nil, {}, class:'select-default-2' do
                   %option{value:  ""} --
                   %option{value:  "2019"} 2019
                   %option{value:  "2018"} 2018
@@ -111,11 +118,11 @@
           .form-index
             %label{for: "mickname"} セキュリティコード
             %span.need-select 必須
-            %input.input-default{name: "nickname", placeholder: "カード背面４桁もしくは３桁の番号", type: "text", value: ""}/
+            .input-default
+              = f.text_field :credit_card_security_code, class: 'half half-one2', placeholder: "カード背面４桁もしくは３桁の番号", value: ""
           %a.right-messages
             = link_to 'カード裏面の番号とは？', "#", class: "right-messages"
           .last-content
             / 次へ進むボタンを作成
-            %button.next-page{type: "submit"}
-              追加する
+            = f.submit  class: 'next-page'
 = render 'shared/fotter'

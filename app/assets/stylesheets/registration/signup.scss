@@ -175,7 +175,7 @@ body {
       
       .form-index {
         margin: 24px 0 0;
-      
+        height: 90px;
 
         .input-default{
         width: 100%;
@@ -200,6 +200,12 @@ body {
             position: relative;
             top: 15px;
         }
+
+        .half-one2 {
+          width: calc(90% - 6px);
+          position: relative;
+          top: 15px;
+      }
 
         .need-select {
             background: #ea352d;
@@ -255,6 +261,17 @@ body {
 
       .form-index-password {
         margin: 24px 0 0;
+        .input-default{
+          width: 100%;
+          margin: 24px 0 0;
+          height: 48px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
+          float: left;
+          }
       }
 
       .oname {
