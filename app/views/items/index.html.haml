@@ -29,7 +29,7 @@
       .ladiesitm_links_container
         %div        
           %ul.ladiesitm_links.category_ul
-            - @products.each do |product|
+            - @product.each do |product|
               %li.ladiesitm_one.category_li
                 %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
                   = link_to item_path(product.id), method: :get ,class: "ldies_itm_lnks" do
