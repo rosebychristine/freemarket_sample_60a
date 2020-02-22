@@ -1,6 +1,7 @@
 
 Rails.application.routes.draw do
   devise_for :users
+  root 'items#index'
   resources :users, only: [:index,:edit]
   resources :signup do
     collection do
@@ -11,7 +12,6 @@ Rails.application.routes.draw do
       get 'step5'
       post 'create2'
     end
-  end
-  resources :items, only: [:new,:show,:update]
-  resources :mypages, only: [:index,:profile,:show] 
+  resources :items, only: [:index, :create, :show,:new]
+  resources :mypages, only: [:index,:profile] 
 end
