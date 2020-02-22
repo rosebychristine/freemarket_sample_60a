@@ -1,19 +1,17 @@
 
 Rails.application.routes.draw do
   devise_for :users
-  devise_scope :user do 
-    get "sign_in", :to => "users/sessions#new"
-    get "sign_out", :to => "users/sessions#destroy" 
-  end
-  resources :users do
+  resources :users, only: [:index,:edit]
+  resources :signup do
     collection do
       get 'step1'
       get 'step2'
       get 'step3'
       get 'step4'
+      get 'step5'
+      post 'create2'
     end
   end
-  resources :users, only: [:index,:edit]
   resources :items, only: [:new,:show,:update]
   resources :mypages, only: [:index,:profile,:show] 
 end

@@ -21,21 +21,24 @@
         %li
           完了
           .progress-status
-        　
+        
   %main.main-view-container
     .main-view
       %h2.sub-header 電話番号の確認
-      %form.l-single-inner.registration-form{action: "#", method: "POST", novalidate: "novalidate"}
+      -# %form.l-single-inner.registration-form{action: "#", method: "POST", novalidate: "novalidate"}
+      = form_for @user, url: step3_signup_index_path, method: :get, html: {class: 'first-main__box'} do |f|
         %input{name: "after_save_callback", type: "hidden", value: ""}/
         .l-single-content
           .form-create
             .form-index
               %label{for: "phone_number"} 携帯電話の番号
-              %input.input-default{name: "phone_number", placeholder: "携帯電話の番号を入力", type: "tel", value: ""}/
+              -# %input.input-default{name: "phone_number", placeholder: "携帯電話の番号を入力", type: "tel", value: ""}/
+              = f.telephone_field :phone_number, placeholder: '携帯電話の番号を入力', class: 'input-default'
             %p
               本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
             .last-content
-              %button.next-page{type: "submit"} SMSを送信する
+              -# %button.next-page{type: "submit"} SMSを送信する
+              = f.submit class: 'next-page'
               %p ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
               .form-group.text-right
                 %a
