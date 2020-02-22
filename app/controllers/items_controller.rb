@@ -9,8 +9,6 @@ class ItemsController < ApplicationController
     # 出品画面を表示するためのアクション
     # form_withを使うためにまずインスタンス生成をする（空っぽのインスタンスの準備）
     @product = Product.new
-    @Product = Product.find(params[:id])
-
     end
 
     def create
@@ -26,7 +24,7 @@ class ItemsController < ApplicationController
     end
 
     def show
-        @Product = Product.find(params[:id])
+        @product = Product.find(params[:id])
     end
 
 
