@@ -1,7 +1,9 @@
 class ItemsController < ApplicationController
 
     def index
-      @product = Product.order("created_at DESC").limit(5)
+    #   @items = Item.includes(:images).order('created_at DESC')
+      @products = Product.order("created_at DESC").limit(5)
+
     end
 
     def new
