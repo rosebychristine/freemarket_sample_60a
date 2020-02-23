@@ -26,6 +26,8 @@ class ItemsController < ApplicationController
     end
 
     def edit
+        @product = Product.find(1)
+        @image = Image.find(1)
     end
 
     def update
