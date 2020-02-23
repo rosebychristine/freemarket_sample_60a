@@ -11,8 +11,9 @@ class ItemsController < ApplicationController
     # form_withを使うためにまずインスタンス生成をする（空っぽのインスタンスの準備）
     @product = Product.new
     @product.images.new
-     product_condition
-    fee_budd 
+    # @product.build_shipping
+    product_condition
+    fee_burden 
     sipping_time
     prefectures 
 
@@ -20,9 +21,12 @@ class ItemsController < ApplicationController
 
     def create
     # 保存する処理
-        @product = Product.create(product_params)
-        # @product = Item.includes(:images).order('created_at DESC').limit(10)
-
+        @product = Product.new(product_params)
+        if @product.save
+            redirect_to root_path
+        else
+            render :new
+        end
     end
 
     def edit
@@ -38,15 +42,14 @@ class ItemsController < ApplicationController
 
 
     private
-
     def product_params
-        params.require(:product).permit(:name, :price ,:description, :condition, images_attributes: [:src]).merge(user_id: 1)
+        params.require(:product).permit(:name, :price ,:description, :condition, :fee_burden, :shipping_time,:prefectures, images_attributes: [:src]).merge(user_id: 1)
     end
     def product_condition
         @condition = ["新品、未使用","目立った傷や汚れなし","やや傷や汚れあり","傷や汚れあり","全体的に状態が悪い"]
     end
-    def fee_budd 
-        @fee_budd = ["送料込み(出品者負担)", "着払い(購入者負担)"]
+    def fee_burden
+        @fee_burden = ["送料込み(出品者負担)", "着払い(購入者負担)"]
       end
   
       def sipping_time
