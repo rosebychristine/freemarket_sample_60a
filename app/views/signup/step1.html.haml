@@ -29,7 +29,7 @@
       %h2.sub-header
         会員情報入力
       -# %form#registration-form.inner-register-form{action: "", method: "POST"}
-      = form_for @user, url: step2_users_path, method: :get do |f|
+      = form_for @user, url: step2_signup_index_path, method: :get, html: {class: 'first-main__box'} do |f|
         / アクションはパス先が完成していないので未定義で置いている
         / ニックネームフォーム作成
         .form-create
@@ -37,17 +37,19 @@
             %label{for: "nickname"} ニックネーム
             %span.need-select 必須
             -# %input.input-default{name: "nickname", placeholder: "例）メルカリ太郎", type: "text", value: ""}/
-            = f.text_field :nickname, class: 'input-default', placeholder: '例）メルカリ太郎', type: 'text'
+            = f.text_field :nickname, placeholder: '例) メルカリ太郎',class: 'input-default'
           / メールアドレスフォーム作成
           .form-index
             %label{for: "email"} メールアドレス
             %span.need-select 必須
-            %input.input-default{name: "email", placeholder: "PC・携帯どちらでも可", type: "email", value: ""}/
+            -# %input.input-default{name: "email", placeholder: "PC・携帯どちらでも可", type: "email", value: ""}/
+            = f.email_field :email, placeholder: 'PC・携帯どちらでも可',class: 'input-default'
           / パスワードフォームは構造がややこしいので別クラスで定義する
           .form-index-password
             %label{for: "password"} パスワード
             %span.need-select 必須
-            %input.input-default{name: "password", placeholder: "７文字以上の半角英数字", type: "password"}/
+            -# %input.input-default{name: "password", placeholder: "７文字以上の半角英数字", type: "password"}/
+            = f.password_field :password, placeholder: '6文字以上',class: 'input-default'
             %p.infomation-form ※ 英字と数字の両方を含めて設定してください
             .checkbox-info
               %input#reveal-password{type: "checkbox"}/
@@ -62,14 +64,18 @@
           .form-index
             %label.oname お名前（全角)
             %span.need-select-name 必須
-            %input.input-default.half-one{name: "first-name", placeholder: "例）山田", type: "text"}/
-            %input.input-default.half{name: "family-name", placeholder: "例）彩", type: "text"}/
+            -# %input.input-default.half-one{name: "first-name", placeholder: "例）山田", type: "text"}/
+            = f.text_field :name_last, placeholder: '例) 山田',class: 'input-default half-one'
+            -# %input.input-default.half{name: "family-name", placeholder: "例）彩", type: "text"}/
+            = f.text_field :name_middle, placeholder: '彩',class: 'input-default half'
           / 名前（カタカナ）入力フォーム
           .form-index
             %label.oname お名前カナ(全角)
             %span.need-select-name 必須
-            %input.input-default.half-one{name: "first-name", placeholder: "例）ヤマダ", type: "text"}/
-            %input.input-default.half{name: "family-name", placeholder: "例）アヤ", type: "text"}/
+            -# %input.input-default.half-one{name: "first-name", placeholder: "例）ヤマダ", type: "text"}/
+            = f.text_field :name_last_kana, placeholder: 'ヤマダ',class: 'input-default half-one'
+            -# %input.input-default.half{name: "family-name", placeholder: "例）アヤ", type: "text"}/
+            = f.text_field :name_middle_kana, placeholder: 'アヤ',class: 'input-default half'
           / 生年月日入力フォーム
           .form-index
             %label{for: "birthday"} 生年月日
@@ -79,7 +85,8 @@
                 %i.icon-arrow-bottom
                   / ::beforeがよく分からず放置
                 / select-defaultでクラスを統一しています
-                %select.select-default{"aria-invalid" => "false", name: "year"}
+                -# %select.select-default{"aria-invalid" => "false", name: "year"}
+                = f.select :birthdate_year,nil,{},class:'select-default' do
                   %option{value:  ""} --
                   %option{value:  "2019"} 2019
                   %option{value:  "2018"} 2018
@@ -116,7 +123,8 @@
               .select-wrap-month
                 %i.icon-arrow-bottom
                   / ::beforeがよく分からず放置
-                %select.select-default{"aria-invalid" => "false", name: "month"}
+                -# %select.select-default{"aria-invalid" => "false", name: "month"}
+                = f.select :birthdate_month,nil,{},class:'select-default' do
                   %option{value:  ""} --
                   %option{value:  "1"} 1
                   %option{value:  "2"} 2
@@ -135,7 +143,8 @@
               .select-wrap-daily
                 %i.icon-arrow-bottom
                   / ::beforeがよく分からず放置
-                %select.select-default{"aria-invalid" => "false", name: "daily"}
+                -# %select.select-default{"aria-invalid" => "false", name: "daily"}
+                = f.select :birthdate_day,nil,{},class:'select-default' do
                   %option{value:  ""} --
                   %option{value:  "1"} 1
                   %option{value:  "2"} 2
@@ -181,7 +190,7 @@
               = link_to '利用規約', "#", class: "a btn btn-default"
               に同意したものとみなします
             -# %button.next-page{type: "submit"} 次へ進む
-            = f.submit class: 'next-page'
+            = f.submit  class: 'next-page'
           / これもリンク先を仮置きにしています
           .form-group-about
             %p

@@ -4,7 +4,7 @@
     %section.sell-main__container
       %div
         %h2.sell-main__head 商品の情報を入力
-        = form_with model: @product, url: root_path, method: :post, class:'sell-main__form' do |f|
+        = form_with model: @product, url: items_path, method: :post, class:'sell-main__form' do |f|
           .sell-main__upload-box
             %h3.sell-main__upload-head
               出品画像
@@ -13,7 +13,7 @@
             = f.label :image  do
               .sell-main__dropbox-container.clearfix
                 .sell-main__upload-items
-                  = f.fields_for :imges do |i|    
+                  = f.fields_for :images do |i|    
                     .image-input
                       = i.file_field :src, id: "product_image"
                   .sell-main__upload-drop-box
@@ -51,7 +51,13 @@
                 .sell-main__select-wrap
                   = fa_icon 'fa-chevron-down', class: 'fa-chevron-down'
                   %div
-                    = f.text_field :price, { class: 'sell-main__input-default', placeholder: '---',  value: '' }
+                    = f.select :condition,nil,{placeholder: '---'},class: 'sell-main__input-default' do
+                      %option{value:  ""} --
+                      %option{value:  @condition[0]} #{@condition[0]}
+                      %option{value:  @condition[1]} #{@condition[1]}
+                      %option{value:  @condition[2]} #{@condition[2]}
+                      %option{value:  @condition[3]} #{@condition[3]}
+                      %option{value:  @condition[4]} #{@condition[4]}
           .sell-main__content.clearfix
             %h3.sell-main__sub-head 配送について
             %a.sell-main__form-question{ href: '#'}

@@ -13,12 +13,13 @@ class ItemsController < ApplicationController
     fee_budd 
     sipping_time
     prefectures 
+
     end
 
     def create
     # 保存する処理
         @product = Product.create(product_params)
-        @product = Item.includes(:images).order('created_at DESC').limit(10)
+        # @product = Item.includes(:images).order('created_at DESC').limit(10)
 
     end
 
@@ -32,6 +33,7 @@ class ItemsController < ApplicationController
         @product = Product.find(params[:id])
         @images = @product.images
     end
+
 
     def fee_budd 
       @fee_budd = ["送料込み(出品者負担)", "着払い(購入者負担)"]
@@ -54,7 +56,12 @@ class ItemsController < ApplicationController
     end
 
 
+    private
+
     def product_params
-        params.require(:product).permit(:name, :price ,:description, images_attributes: {image: []}).merge(user_id: 1)
+        params.require(:product).permit(:name, :price ,:description, :condition, images_attributes: [:src]).merge(user_id: 1)
+    end
+    def product_condition
+        @condition = ["新品、未使用","目立った傷や汚れなし","やや傷や汚れあり","傷や汚れあり","全体的に状態が悪い"]
     end
 end

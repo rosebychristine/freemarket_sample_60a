@@ -25,8 +25,8 @@
   %main.main-view-container
     .main-view
       %h2.sub-header お届け先住所入力
-      %form.l-single-inner.registration-form
-      = form_with model: @address, url: signups_path, local: true, method: 'POST', novalidate: 'novalidate' do |f|
+      -# %form.l-single-inner.registration-form
+      = form_for @address, url: step5_signup_index_path, method: :get, html: {class: 'first-main__box'} do |f|
         .l-single-content
           .form-create
             .form-index
@@ -35,14 +35,14 @@
               .input-default 
                 = f.text_field :last_name, { class: 'half half-one', placeholder: '例) 山田', value: "" }
               .input-default
-                = f.text_field :name, {class: 'half half-one', placeholder: '例) 彩', value: "" }
+                = f.text_field :first_name, {class: 'half half-one', placeholder: '例) 彩', value: "" }
             .form-index
               %label{for: "mickname"} お名前カナ
               %span.need-select 必須
               .input-default
-                = f.text_field :address, {class: 'half half-one', placeholder: '例) ヤマダ', value: "" }
+                = f.text_field :last_name_kana, {class: 'half half-one', placeholder: '例) ヤマダ', value: "" }
               .input-default
-                = f.text_field :user_id, {class: 'half half-one', placeholder: '例) アヤ', value: "" }
+                = f.text_field :first_name_kana, {class: 'half half-one', placeholder: '例) アヤ', value: "" }
             .form-index
               %label{for: "mickname"} 郵便番号
               %span.need-select 必須
@@ -57,7 +57,7 @@
               %label{for: "mickname"} 建物名
               %span.need-select-free 任意
               .input-default
-                = f.text_field :city, {class: 'half half-one', placeholder: '例) 柳ビル103', value: ""}
+                = f.text_field :buildingname, {class: 'half half-one', placeholder: '例) 柳ビル103', value: ""}
             .form-index
               %label{for: "mickname"} 電話
               %span.need-select-free 任意
@@ -66,7 +66,5 @@
             
             .last-content
               / 次へ進むボタンを作成
-              %button.next-page{type: "submit"}
-                次へ進む
-                  
+              = f.submit class: 'next-page'      
 = render 'shared/fotter'
