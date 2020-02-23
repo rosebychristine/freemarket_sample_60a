@@ -22,8 +22,9 @@
         box-sizing: border-box;
         .setting-profile-icon {
           padding: 72px 16px 24px;
-          background: image-url('tatara.png');
-          background-size: contain;
+          background: image-url('tatara2.png');
+          // background-size: contain;
+          background-size: cover;
           text-align: center;
           figure {
             margin: 0 0 0;

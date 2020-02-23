@@ -14,5 +14,5 @@ Rails.application.routes.draw do
     end
   end
   resources :items, only: [:index, :create, :show,:new]
-  resources :mypages, only: [:index,:profile] 
+  resources :mypages, only: [:index,:edit] 
 end
