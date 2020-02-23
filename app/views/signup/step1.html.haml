@@ -33,13 +33,13 @@
         / アクションはパス先が完成していないので未定義で置いている
         / ニックネームフォーム作成
         .form-create
-          .form-index
+          .form-index2
             %label{for: "nickname"} ニックネーム
             %span.need-select 必須
             -# %input.input-default{name: "nickname", placeholder: "例）メルカリ太郎", type: "text", value: ""}/
             = f.text_field :nickname, placeholder: '例) メルカリ太郎',class: 'input-default'
           / メールアドレスフォーム作成
-          .form-index
+          .form-index2
             %label{for: "email"} メールアドレス
             %span.need-select 必須
             -# %input.input-default{name: "email", placeholder: "PC・携帯どちらでも可", type: "email", value: ""}/
@@ -61,7 +61,7 @@
             %h3.identification 本人確認
             %p.instructions 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
           / 名前（漢字）入力フォーム
-          .form-index
+          .form-index2
             %label.oname お名前（全角)
             %span.need-select-name 必須
             -# %input.input-default.half-one{name: "first-name", placeholder: "例）山田", type: "text"}/
@@ -69,7 +69,7 @@
             -# %input.input-default.half{name: "family-name", placeholder: "例）彩", type: "text"}/
             = f.text_field :name_middle, placeholder: '彩',class: 'input-default half'
           / 名前（カタカナ）入力フォーム
-          .form-index
+          .form-index2
             %label.oname お名前カナ(全角)
             %span.need-select-name 必須
             -# %input.input-default.half-one{name: "first-name", placeholder: "例）ヤマダ", type: "text"}/
@@ -77,7 +77,7 @@
             -# %input.input-default.half{name: "family-name", placeholder: "例）アヤ", type: "text"}/
             = f.text_field :name_middle_kana, placeholder: 'アヤ',class: 'input-default half'
           / 生年月日入力フォーム
-          .form-index
+          .form-index2
             %label{for: "birthday"} 生年月日
             %span.need-select 必須
             .birthday-input-form
@@ -183,7 +183,7 @@
             ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
         / 最後の文章を記述、また枠を別にしています
         .last-content
-          .form-index
+          .form-index2
             %p.last-content.last-text
               「次へ進む」のボタンを押すことにより、
               / 利用規約のリンクは仮置き
