@@ -75,18 +75,13 @@ class SignupController < ApplicationController
         # user.rb
         #   accept_nested_attributes_for :addresses
 
-        if @user.save
+        if
+          @user.save
           session[:id] = @user.id
-          @address.save
-          session[:id] = @address.id
-          redirect_to step1_signup_index_path
         else
-          render '/signup/step2 '
+          render '/signup/step2'
         end
-
-
       end
-
       private
 
         def user_params

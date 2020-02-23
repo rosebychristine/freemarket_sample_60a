@@ -21,7 +21,6 @@
         %li.active
           完了
           .progress-status
-        
   %main.main-view-container
     .main-view
       %h2.sub-header
@@ -34,7 +33,7 @@
               %br>/
               会員登録が完了しました。
       .last-content
-        / 次へ進むボタンを作成
-        %button.next-page{type: "submit"}
-          メルカリをはじめる
+        %h1
+          = link_to '/users/sign_in', class: "next-page", target: "_blank" do
+            メルカリをはじめる
 = render 'shared/fotter'
