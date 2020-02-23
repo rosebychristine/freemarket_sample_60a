@@ -131,6 +131,7 @@ ActiveRecord::Schema.define(version: 2020_02_22_081732) do
   create_table "shippings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "fee_burden", null: false
     t.string "shipping_time", null: false
+    t.string "prefectures", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

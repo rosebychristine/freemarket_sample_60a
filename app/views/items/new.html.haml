@@ -68,25 +68,78 @@
                   配送料の負担
                   %span.sell-main__form-require 必須
                 .sell-main__select-wrap
+                  = f.select :fee_budd,nil,{placeholder: '---'},class: 'sell-main__input-default' do
+                    %option{value:  ""} 選択してください
+                    %option{value:  @fee_budd[0]} #{@fee_budd[0]}
+                    %option{value:  @fee_budd[1]} #{@fee_budd[1]}
                   = fa_icon 'fa-chevron-down', class: 'fa-chevron-down'
-                  %div
-                    = f.text_field :price, { class: 'sell-main__input-default', placeholder: '---',  value: '' }
+                  
               .sell-main__form-group
                 = f.label :delivery_area_id do
                   発送元の地域
                   %span.sell-main__form-require 必須
                 .sell-main__select-wrap
                   = fa_icon 'fa-chevron-down', class: 'fa-chevron-down'
-                  %div
-                    = f.text_field :price, { class: 'sell-main__input-default', placeholder: '---',  value: '' }
+                  = f.select :prefectures,nil,{placeholder: '---'},class: 'sell-main__input-default' do
+                    %option{value:  ""} 選択してください
+                    %option{value:  @prefectures[0]} #{@prefectures[0]}
+                    %option{value:  @prefectures[1]} #{@prefectures[1]}
+                    %option{value:  @prefectures[2]} #{@prefectures[2]}
+                    %option{value:  @prefectures[3]} #{@prefectures[3]}
+                    %option{value:  @prefectures[4]} #{@prefectures[4]}
+                    %option{value:  @prefectures[5]} #{@prefectures[5]}
+                    %option{value:  @prefectures[6]} #{@prefectures[6]}
+                    %option{value:  @prefectures[7]} #{@prefectures[7]}
+                    %option{value:  @prefectures[8]} #{@prefectures[8]}
+                    %option{value:  @prefectures[9]} #{@prefectures[9]}
+                    %option{value:  @prefectures[10]} #{@prefectures[10]}
+                    %option{value:  @prefectures[11]} #{@prefectures[11]}
+                    %option{value:  @prefectures[12]} #{@prefectures[12]}
+                    %option{value:  @prefectures[13]} #{@prefectures[13]}
+                    %option{value:  @prefectures[14]} #{@prefectures[14]}
+                    %option{value:  @prefectures[15]} #{@prefectures[15]}
+                    %option{value:  @prefectures[16]} #{@prefectures[16]}
+                    %option{value:  @prefectures[17]} #{@prefectures[17]}
+                    %option{value:  @prefectures[18]} #{@prefectures[18]}
+                    %option{value:  @prefectures[19]} #{@prefectures[19]}
+                    %option{value:  @prefectures[20]} #{@prefectures[20]}
+                    %option{value:  @prefectures[21]} #{@prefectures[21]}
+                    %option{value:  @prefectures[22]} #{@prefectures[22]}
+                    %option{value:  @prefectures[23]} #{@prefectures[23]}
+                    %option{value:  @prefectures[24]} #{@prefectures[24]}
+                    %option{value:  @prefectures[25]} #{@prefectures[25]}
+                    %option{value:  @prefectures[26]} #{@prefectures[26]}
+                    %option{value:  @prefectures[27]} #{@prefectures[27]}
+                    %option{value:  @prefectures[28]} #{@prefectures[28]}
+                    %option{value:  @prefectures[29]} #{@prefectures[29]}
+                    %option{value:  @prefectures[30]} #{@prefectures[30]}
+                    %option{value:  @prefectures[31]} #{@prefectures[31]}
+                    %option{value:  @prefectures[32]} #{@prefectures[32]}
+                    %option{value:  @prefectures[33]} #{@prefectures[33]}
+                    %option{value:  @prefectures[34]} #{@prefectures[34]}
+                    %option{value:  @prefectures[35]} #{@prefectures[35]}
+                    %option{value:  @prefectures[36]} #{@prefectures[36]}
+                    %option{value:  @prefectures[37]} #{@prefectures[37]}
+                    %option{value:  @prefectures[38]} #{@prefectures[38]}
+                    %option{value:  @prefectures[39]} #{@prefectures[39]}
+                    %option{value:  @prefectures[40]} #{@prefectures[40]}
+                    %option{value:  @prefectures[41]} #{@prefectures[41]}
+                    %option{value:  @prefectures[42]} #{@prefectures[42]}
+                    %option{value:  @prefectures[43]} #{@prefectures[43]}
+                    %option{value:  @prefectures[44]} #{@prefectures[44]}
+                    %option{value:  @prefectures[45]} #{@prefectures[45]}
+                    %option{value:  @prefectures[46]} #{@prefectures[46]}
               .sell-main__form-group
                 = f.label :delivery_days do
                   発送までの日数
                   %span.sell-main__form-require 必須
                 .sell-main__select-wrap
                   = fa_icon 'fa-chevron-down', class: 'fa-chevron-down'
-                  %div
-                    = f.text_field :price, { class: 'sell-main__input-default', placeholder: '---',  value: '' }
+                  = f.select :sipping_time,nil,{placeholder: '---'},class: 'sell-main__input-default' do
+                    %option{value:  ""} 選択してください
+                    %option{value:  @sipping_time[0]} #{@sipping_time[0]}
+                    %option{value:  @sipping_time[1]} #{@sipping_time[1]}
+                    %option{value:  @sipping_time[2]} #{@sipping_time[2]}
           .sell-main__content.clearfix
             %h3.sell-main__sub-head 販売価格(300〜9,999,999)
             %a.sell-main__form-question{ href: '#' }
