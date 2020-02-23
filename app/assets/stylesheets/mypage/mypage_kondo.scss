@@ -204,18 +204,23 @@ width: 1020px;
     position: relative;
     height: 155px;
     padding: 20px;
+    
+    // background-size: contain;
+    
     background: url(../images/merucari-back.png);
-      background-image: url(../images/merucari-back.png);
-      background-position-x: center;
-      background-position-y: 40px;
-      background-size: 78px 85px;
-      background-repeat-x: no-repeat;
-      background-repeat-y: no-repeat;
-      background-attachment: initial;
-      background-origin: initial;
-      background-clip: initial;
-      background-color: initial;
-      background-repeat: no-repeat;
+      background: image-url('amano.png');
+      // background-size: cover;
+      // background-image: url(../images/merucari-back.png);
+      // background-position-x: center;
+      // background-position-y: 40px;
+      // background-size: 78px 85px;
+      // background-repeat-x: no-repeat;
+      // background-repeat-y: no-repeat;
+      // background-attachment: initial;
+      // background-origin: initial;
+      // background-clip: initial;
+      // background-color: initial;
+      // background-repeat: no-repeat;
       background-size: cover;
       text-align: center;
       .mypa {
