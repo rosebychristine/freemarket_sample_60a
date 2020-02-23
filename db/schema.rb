@@ -149,14 +149,14 @@ ActiveRecord::Schema.define(version: 2020_02_22_081732) do
     t.string "name_middle_kana", null: false
     t.string "name_last_kana", null: false
     t.string "nickname", null: false
-    t.integer "credit_card_no", null: false
+    t.text "credit_card_no", null: false
     t.integer "creditmonth_id", null: false
     t.integer "credityear_id", null: false
     t.integer "credit_card_security_code", null: false
     t.integer "birthdate_year", null: false
     t.integer "birthdate_month", null: false
     t.integer "birthdate_day", null: false
-    t.integer "phone_number", null: false
+    t.text "phone_number", null: false
     t.integer "phone_number_conf", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
