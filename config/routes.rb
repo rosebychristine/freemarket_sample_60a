@@ -13,6 +13,6 @@ Rails.application.routes.draw do
       post 'create2'
     end
   end
-  resources :items, only: [:index, :create, :show,:new]
+  resources :items, only: [:index,:create,:edit,:show,:new]
   resources :mypages, only: [:index,:edit] 
 end

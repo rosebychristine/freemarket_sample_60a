@@ -1,0 +1,152 @@
+= render 'shared/header'
+.christine
+  %section.itm_box_container
+    %h1.itm_name
+      = product.name
+    .main_itm_container
+      .itm_picture
+        .itm_picture__one
+          .itm_picture__main
+            .itm_picture__width
+              .itm_picture__active
+                .itm_picture__active__one
+                  = image_tag images.first.src.url, class: 'img_itm_one'
+            .itm_picture.disabled
+              .itm_picture__pre
+                prev
+              .itm_picture__next
+                next
+            .img_reductions
+              .img_reduction
+                %span
+                .img_reduction__one
+                  = image_tag '8651F35B-510B-4510-A297-272226E55505.jpg', alt: 'クッション未使用', class: 'img_itm_reduction'
+              .img_reduction
+                %span
+                .img_reduction__one
+                  = image_tag '0CEE4D9A-3157-4E09-8F94-A3BC37934600.jpg', alt: 'クッション未使用', class: 'img_itm_reduction'
+              .img_reduction
+                %span
+                .img_reduction__one
+                  = image_tag '0C9FDF3F-0599-40D2-8B22-C1EE93CE08D1.jpg', alt: 'クッション未使用', class: 'img_itm_reduction'
+      %table.itm_detailbox
+        %tbody
+          %tr
+            %th
+              出品者
+            %td.bluecolll
+              =link_to "#" do
+                名前
+              .icon_ratings
+                .icon_ratings__laugh
+                  %i.fa.fa-laugh
+                  %span
+                  60
+              .icon_ratings
+                .icon_ratings__meh
+                  %i.fa.fa-meh
+                  %span
+                  0
+              .icon_ratings
+                .icon_ratings__frown
+                  %i.fa.fa-frown
+                  %span
+                  0
+          %tr
+            %th
+              カテゴリー
+            %td.bluecolll
+              =link_to "#" do
+                レディース
+              =link_to "#" do
+                .catego_title_dt__sub
+                  %i.fa.fa-chevron-right
+                  インテリア小物
+              =link_to "#" do
+                .catego_title_dt__sub__sub
+                  %i.fa.fa-chevron-right
+                  クッション
+          %tr
+            %th
+              ブランド
+            %td.bluecolll
+              =link_to "#" do
+                unknown
+          %tr
+            %th
+              商品のサイズ
+            %td
+              M
+          %tr
+            %th
+              商品の状態
+            %td
+              新品、未使用
+          %tr
+            %th
+              配送料の負担
+            %td
+              送料込み（出品者負担）
+          %tr
+            %th
+              配送の方法
+            %td
+              らくらくメルカリ便
+          %tr
+            %th
+              配送現地域
+            %td.bluecolll
+              = link_to "#" do
+                %div
+                  大阪府
+          %tr
+            %th
+              配送日の目安
+            %td
+              １〜2日で発送
+    .itm_pricebox
+      %span.itm_pricebox__pricee
+        ¥
+        = product.price
+      %span.itm_pricebox__taxe
+        (税込)
+      %span.itm_pricebox__shippingfee
+        送料込み
+    .itmbtn_float
+      =link_to "#", class: "itm_purchasebtn" do
+        購入画面に進む
+      =link_to "#", class: "itm_purchasebtn_byapp" do
+        アプリで購入
+    .itm_description
+      %p.itm_description__inner
+        ふわふわです
+        おしゃれなのでおすすめです
+    .itm_btncontain
+      .itm_btncontain__lft
+        =link_to "#", class: "itm_btncontain__lft__likeyy" do
+          %i.fa.fa-heart
+          %span.itm_btncontain__lft__iine
+            いいね!
+          %span.itm_btncontain__lft__number
+            1
+        =link_to "#", class: "itm_btncontain__lft__rating" do
+          %i.fa.fa-flag
+          不適切な商品の報告
+      .itm_btncontain__rgt
+        =link_to "#" do
+          %i.fa.fa-user-lock
+          あんしん・あんぜんへの取り組み
+  .itm_dtl_msg
+    .itm_dtl_msg__container
+      .msg_content
+        %form.msgform{action: "#", method: "POST"}
+          %input.msgform{name: "keyword", type: "hidden", value: ""}/
+          %p.msgform_comment
+            相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          %input{type: "hidden", name: "itmm_id", value: ""}
+          %textarea.textareadeful{type: "text", name: "body"}
+          %button.msgsubmin{type: "submit"}
+            %span.msgsubmin__comment
+              コメントする
+
+= render 'shared/footer'
