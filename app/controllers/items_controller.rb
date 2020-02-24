@@ -9,6 +9,9 @@ class ItemsController < ApplicationController
     def new
     # 出品画面を表示するためのアクション
     # form_withを使うためにまずインスタンス生成をする（空っぽのインスタンスの準備）
+    # unless user_signed_in?
+    #     redirect_to root_path
+    # end
     @product = Product.new
     @product.images.new
     # @product.build_shipping
