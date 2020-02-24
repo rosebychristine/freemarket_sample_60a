@@ -38,6 +38,8 @@ class ItemsController < ApplicationController
     end
 
     def update
+        @product = Product.find(params[:id])
+        @images = @product.images
     end
 
     def show
