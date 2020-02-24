@@ -33,7 +33,7 @@ class ItemsController < ApplicationController
     end
 
     def edit
-        @product = Product.find(1)
+        @product = Product.find_by(params[:id])
         @image = Image.find(1)
     end
 
