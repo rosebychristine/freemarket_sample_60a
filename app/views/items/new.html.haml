@@ -68,10 +68,10 @@
                   配送料の負担
                   %span.sell-main__form-require 必須
                 .sell-main__select-wrap
-                  = f.select :fee_budd,nil,{placeholder: '---'},class: 'sell-main__input-default' do
+                  = f.select :fee_burden,nil,{placeholder: '---'},class: 'sell-main__input-default' do
                     %option{value:  ""} 選択してください
-                    %option{value:  @fee_budd[0]} #{@fee_budd[0]}
-                    %option{value:  @fee_budd[1]} #{@fee_budd[1]}
+                    %option{value:  @fee_burden[0]} #{@fee_burden[0]}
+                    %option{value:  @fee_burden[1]} #{@fee_burden[1]}
                   = fa_icon 'fa-chevron-down', class: 'fa-chevron-down'
                   
               .sell-main__form-group
@@ -135,7 +135,7 @@
                   %span.sell-main__form-require 必須
                 .sell-main__select-wrap
                   = fa_icon 'fa-chevron-down', class: 'fa-chevron-down'
-                  = f.select :sipping_time,nil,{placeholder: '---'},class: 'sell-main__input-default' do
+                  = f.select :shipping_time,nil,{placeholder: '---'},class: 'sell-main__input-default' do
                     %option{value:  ""} 選択してください
                     %option{value:  @sipping_time[0]} #{@sipping_time[0]}
                     %option{value:  @sipping_time[1]} #{@sipping_time[1]}
