@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
     def index
     #   @items = Item.includes(:images).order('created_at DESC')
       @products = Product.order("created_at DESC").limit(5)
-
+      @image = Image.first
     end
 
     def new
@@ -33,8 +33,8 @@ class ItemsController < ApplicationController
     end
 
     def edit
-        @product = Product.find(1)
-        @image = Image.find(1)
+        @product = Product.find_by(id: params[:id])
+        @image = Image.find_by(id: params[:id])
     end
 
     def update
@@ -45,6 +45,13 @@ class ItemsController < ApplicationController
     def show
         @product = Product.find(params[:id])
         @images = @product.images
+    end
+
+    def destroy
+        if @product.user_id == current_user.id
+           @product.destroy
+           redirect_to root_path, notice: '商品を削除しました'
+        end
     end
 
 
