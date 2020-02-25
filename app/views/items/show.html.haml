@@ -113,7 +113,7 @@
       %span.itm_pricebox__shippingfee
         送料込み
     .itmbtn_float
-      =link_to "#", class: "itm_purchasebtn" do
+      = link_to item_path(@product.id), method: :patch , class: "itm_purchasebtn" do
         購入画面に進む
       =link_to "#", class: "itm_purchasebtn_byapp" do
         アプリで購入

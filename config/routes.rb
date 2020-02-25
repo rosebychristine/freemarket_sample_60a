@@ -13,6 +13,6 @@ Rails.application.routes.draw do
       get 'done'
     end
   end
-  resources :items, only: [:index,:create,:edit,:show,:new]
+  resources :items, only: [:index,:create,:edit,:show,:new,:update]
   resources :mypages, only: [:index,:edit] 
 end

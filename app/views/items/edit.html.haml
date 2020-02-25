@@ -37,21 +37,6 @@
             %td.bluecolll
               =link_to "#" do
                 名前
-              .icon_ratings
-                .icon_ratings__laugh
-                  %i.fa.fa-laugh
-                  %span
-                  60
-              .icon_ratings
-                .icon_ratings__meh
-                  %i.fa.fa-meh
-                  %span
-                  0
-              .icon_ratings
-                .icon_ratings__frown
-                  %i.fa.fa-frown
-                  %span
-                  0
           %tr
             %th
               カテゴリー
@@ -106,16 +91,17 @@
               １〜2日で発送
     .itm_pricebox
       %span.itm_pricebox__pricee
+        ¥
         = @product.price
       %span.itm_pricebox__taxe
         (税込)
       %span.itm_pricebox__shippingfee
         送料込み
-    .itmbtn_float
-      =link_to "#", class: "itm_purchasebtn" do
-        購入画面に進む
-      =link_to "#", class: "itm_purchasebtn_byapp" do
-        アプリで購入
+    -# .itmbtn_float
+    -#   =link_to "#", class: "itm_purchasebtn" do
+    -#     購入画面に進む
+    -#   =link_to "#", class: "itm_purchasebtn_byapp" do
+    -#     アプリで購入
     .itm_description
       %p.itm_description__inner
         ふわふわです
@@ -147,5 +133,5 @@
           %button.msgsubmin{type: "submit"}
             %span.msgsubmin__comment
               コメントする
-
-= render 'shared/footer'
+=render 'shared/banner'
+= render 'shared/footer.haml'
