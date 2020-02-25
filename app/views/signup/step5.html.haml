@@ -26,7 +26,7 @@
     .main-view
       %h2.sub-header 支払い方法
       -# %form.registration-form.inner-register-form
-      = form_for @user, url: create2_signup_index_path, method: :post, html: {class: 'first-main__box'} do |f|
+      = form_for @user, url: signup_index_path, method: :post, html: {class: 'first-main__box'} do |f|
         .form-create
           .form-index
             %label{for: "mickname"} カード番号

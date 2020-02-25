@@ -2,7 +2,7 @@
 .christine
   %section.itm_box_container
     %h1.itm_name
-      = product.name
+      = @product.name
     .main_itm_container
       .itm_picture
         .itm_picture__one
@@ -10,7 +10,7 @@
             .itm_picture__width
               .itm_picture__active
                 .itm_picture__active__one
-                  = image_tag images.first.src.url, class: 'img_itm_one'
+                  = image_tag @image.src.url, class: 'img_itm_one'
             .itm_picture.disabled
               .itm_picture__pre
                 prev
@@ -106,8 +106,7 @@
               １〜2日で発送
     .itm_pricebox
       %span.itm_pricebox__pricee
-        ¥
-        = product.price
+        = @product.price
       %span.itm_pricebox__taxe
         (税込)
       %span.itm_pricebox__shippingfee
