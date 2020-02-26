@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+     before_action :find_product, only: [:show, :edit, :update, :destroy]
 
     def index
     #   @items = Item.includes(:images).order('created_at DESC')
@@ -33,17 +34,14 @@ class ItemsController < ApplicationController
     end
 
     def edit
-        @product = Product.find_by(id: params[:id])
-        @image = Image.find_by(id: params[:id])
     end
 
     def update
-        @product = Product.find(params[:id])
-        @images = @product.images
+        if @product.update(product_params)
+        end
     end
 
     def show
-        @product = Product.find(params[:id])
         @images = @product.images
     end
 
@@ -59,6 +57,12 @@ class ItemsController < ApplicationController
     def product_params
         params.require(:product).permit(:id,:name, :price ,:description, :condition, :fee_burden, :shipping_time,:prefectures, images_attributes: [:src]).merge(user_id: 1)
     end
+
+    def find_product
+        @product = Product.find(params[:id])
+        @image = Image.find_by(id: params[:id])
+    end
+
     def product_condition
         @condition = ["新品、未使用","目立った傷や汚れなし","やや傷や汚れあり","傷や汚れあり","全体的に状態が悪い"]
     end
