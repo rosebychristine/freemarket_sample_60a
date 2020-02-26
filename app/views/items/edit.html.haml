@@ -129,7 +129,7 @@
       %form{:action => "/jp/mypage/items/deactivate/m69554679925/", :method => "POST", :novalidate => "novalidate"}
         %input{:name => "__csrf_value", :type => "hidden",}/
         %button.btn-default.btn-gray{:type => "submit"} 出品を一旦停止する
-      = link_to "/items/#{@product.id}", method: :delete, class: "btn-default btn-gray" do
+      = button_to "/items/#{@product.id}", method: :delete, class: "btn-default btn-gray" do
         この商品を削除する
   .itm_dtl_msg
     .itm_dtl_msg__container
