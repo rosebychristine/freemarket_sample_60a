@@ -34,6 +34,5 @@
               会員登録が完了しました。
       .last-content
         %h1
-          = link_to '/users/sign_in', class: "next-page", target: "_blank" do
-            メルカリをはじめる
+          %button.next-page{type: "submit"} メルカリを始める
 = render 'shared/fotter'
