@@ -57,7 +57,7 @@ class ItemsController < ApplicationController
 
     private
     def product_params
-        params.require(:product).permit(:name, :price ,:description, :condition, :fee_burden, :shipping_time,:prefectures, images_attributes: [:src]).merge(user_id: 1)
+        params.require(:product).permit(:id,:name, :price ,:description, :condition, :fee_burden, :shipping_time,:prefectures, images_attributes: [:src]).merge(user_id: 1)
     end
     def product_condition
         @condition = ["新品、未使用","目立った傷や汚れなし","やや傷や汚れあり","傷や汚れあり","全体的に状態が悪い"]
@@ -81,5 +81,6 @@ class ItemsController < ApplicationController
               "福岡県","佐賀県","長崎県","熊本県","大分県","宮崎県","鹿児島県", 
               "沖縄県"]
       end
-  
+ 
+
 end
