@@ -38,8 +38,11 @@ class ItemsController < ApplicationController
 
     def update
         if @product.update(product_params)
+          redirect_to root_path
+        else 
+          redirect_to edit_item_path
         end
-    end
+      end
 
     def show
         @images = @product.images
@@ -85,6 +88,6 @@ class ItemsController < ApplicationController
               "福岡県","佐賀県","長崎県","熊本県","大分県","宮崎県","鹿児島県", 
               "沖縄県"]
       end
- 
 
+      
 end
