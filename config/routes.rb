@@ -1,6 +1,13 @@
 
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users,
+  # SNS認証
+  controllers: {
+    sessions: 'users/sessions',
+    registrations: "users/registrations",
+    omniauth_callbacks: 'users/omniauth_callbacks'
+  }
+
   root 'items#index'
   resources :users, only: [:index,:edit]
   resources :signup do
