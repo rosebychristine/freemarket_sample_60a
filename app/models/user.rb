@@ -11,5 +11,4 @@ class User < ApplicationRecord
   has_many :messages 
   has_many :alerts 
   has_many :orders 
-  has_one  :address 
 end
