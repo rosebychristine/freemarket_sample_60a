@@ -56,7 +56,7 @@ class ItemsController < ApplicationController
 
     private
     def product_params
-        params.require(:product).permit(:id,:name, :price ,:description, :condition, :fee_burden, :shipping_time,:prefectures, images_attributes: [:src]).merge(user_id: current_user.id)
+        params.require(:product).permit(:image,:id,:name, :price ,:description, :condition, :fee_burden, :shipping_time,:prefectures, images_attributes: [:src]).merge(user_id: current_user.id)
     end
     
     def find_product
