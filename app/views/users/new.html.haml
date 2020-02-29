@@ -14,5 +14,7 @@
               .form-index
                 %button.next-page-red{type: "submit"} メールアドレスで登録する
                 %button.next-page-blue{type: "submit"} Facebookで登録する
+                  = link_to user_facebook_omniauth_authorize_path do
                 %button.next-page-black{type: "submit"} Googleで登録する
+                  = link_to user_google_oauth2_omniauth_authorize_path do
 = render 'shared/fotter'
