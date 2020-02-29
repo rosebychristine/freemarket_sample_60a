@@ -85,3 +85,10 @@ gem 'haml-rails'
 gem 'devise'
 
 gem 'pry-rails'
+
+# SNS認証
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'dotenv-rails'
