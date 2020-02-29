@@ -446,7 +446,9 @@ body {
           transition: all ease-out .3s;
           cursor: pointer;
           text-align: center;
-          
+          a {
+            color: white;
+          }
       }
 
         .next-page-blue  {
@@ -456,7 +458,9 @@ body {
           width: 100%;
           line-height: 48px;
           font-size: 14px;
-          
+          a {
+            color: white;
+          }
         }
 
         .next-page-black  {
@@ -465,7 +469,9 @@ body {
           line-height: 48px;
           font-size: 14px;
           border: #979797 solid 1px;
-          
+          a {
+            color: black;
+          }
         }
 
         a {
