@@ -44,7 +44,7 @@
                         %span.label_price.category_spa
                           ¥
                           = product.price
-                        = image_tag @image.src.url, alt: 'ipsa_lotion', class: 'ladies-recommend'
+                        = product.images.present? ? (image_tag product.images.first.src.url, alt: 'ipsa_lotion', class: 'ladies-recommend') : (image_tag 'common/no_image.png', alt: '画像がありません')
           -#   %li.ladiesitm_one.category_li
           -#     %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
           -#       =link_to "#", class: "ldies_itm_lnks" do

@@ -2,7 +2,8 @@ class ItemsController < ApplicationController
     before_action :find_product, only: [:show, :edit, :update, :destroy]
 
     def index
-    #   @items = Item.includes(:images).order('created_at DESC')
+      @products = Product.includes(:images).order('created_at DESC')
+      
     end
 
     def new
