@@ -3,8 +3,6 @@ class ItemsController < ApplicationController
 
     def index
     #   @items = Item.includes(:images).order('created_at DESC')
-      @products = Product.order("created_at DESC").limit(5)
-      @image = Image.first
     end
 
     def new
@@ -58,7 +56,7 @@ class ItemsController < ApplicationController
 
     private
     def product_params
-        params.require(:product).permit(:id,:name, :price ,:description, :condition, :fee_burden, :shipping_time,:prefectures, images_attributes: [:src]).merge(user_id: 1)
+        params.require(:product).permit(:image,:id,:name, :price ,:description, :condition, :fee_burden, :shipping_time,:prefectures, images_attributes: [:src]).merge(user_id: 1)
     end
     
     def find_product
