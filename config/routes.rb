@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       get 'step2'
       get 'step3'
       get 'step4'
-      # get 'step5'
+      # get 'credit'
       get 'done'
     end
   end
