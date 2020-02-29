@@ -17,9 +17,9 @@ Rails.application.routes.draw do
       get 'step3'
       get 'step4'
       get 'step5'
-      post 'create2'
+      get 'done'
     end
   end
-  resources :items, only: [:index, :create, :show,:new]
+  resources :items, only: [:index,:create,:edit,:show,:new,:update,:destroy]
   resources :mypages, only: [:index,:edit] 
 end
