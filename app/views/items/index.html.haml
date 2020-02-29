@@ -1152,10 +1152,16 @@
                       %span.label_price.category_spa
                         ¥
                         350
-                      = image_tag '0158FF1F-FB33-4C6E-8711-02A21301E192.jpg', alt: 'icecream', class: 'ladies-recommend'
-  - if user_signed_in? 
-    .new_itembox
+                      = image_tag '0158FF1F-FB33-4C6E-8711-02A21301E192.jpg', alt: 'icecream', class: 'ladies-recommend' 
+  .new_itembox
+    - if user_signed_in?
       =link_to "items/new", class: "newitembox_link" do
+        .new_itembox__btn
+          %p.new_itembox__btn__text
+            出品
+          %i.fa.fa-camera
+    -else
+      =link_to step1_signup_index_path, class: "newitembox_link" do
         .new_itembox__btn
           %p.new_itembox__btn__text
             出品
