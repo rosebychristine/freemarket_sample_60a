@@ -8,9 +8,9 @@ class ItemsController < ApplicationController
     def new
     # 出品画面を表示するためのアクション
     # form_withを使うためにまずインスタンス生成をする（空っぽのインスタンスの準備）
-    # unless user_signed_in?
-    #     redirect_to root_path
-    # end
+    unless user_signed_in?
+         redirect_to root_path
+    end
     @product = Product.new
     @product.images.new
     # @product.build_shipping
@@ -23,12 +23,12 @@ class ItemsController < ApplicationController
 
     def create
     # 保存する処理
-        @product = Product.new(product_params)
-        if @product.save
-            redirect_to root_path
-        else
-            render :new
-        end
+        @product = Product.new(product_params) 
+            if @product.save && @product.valid?
+                redirect_to root_path
+            else
+                render :new
+            end
     end
 
     def edit
@@ -56,7 +56,7 @@ class ItemsController < ApplicationController
 
     private
     def product_params
-        params.require(:product).permit(:image,:id,:name, :price ,:description, :condition, :fee_burden, :shipping_time,:prefectures, images_attributes: [:src]).merge(user_id: 1)
+        params.require(:product).permit(:id,:name, :price ,:description, :condition, :fee_burden, :shipping_time,:prefectures, images_attributes: [:src]).merge(user_id: current_user.id)
     end
     
     def find_product

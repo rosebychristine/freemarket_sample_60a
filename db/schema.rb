@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_22_081732) do
+ActiveRecord::Schema.define(version: 2020_02_24_104701) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "last_name", null: false
@@ -131,6 +131,24 @@ ActiveRecord::Schema.define(version: 2020_02_22_081732) do
     t.index ["products_id"], name: "index_products_categories_on_products_id"
   end
 
+  create_table "shippings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "fee_burden", null: false
+    t.string "shipping_time", null: false
+    t.string "prefectures", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
+  end
+
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -144,14 +162,14 @@ ActiveRecord::Schema.define(version: 2020_02_22_081732) do
     t.string "name_middle_kana", null: false
     t.string "name_last_kana", null: false
     t.string "nickname", null: false
-    t.text "credit_card_no", null: false
+    t.integer "credit_card_no", null: false
     t.integer "creditmonth_id", null: false
     t.integer "credityear_id", null: false
     t.integer "credit_card_security_code", null: false
     t.integer "birthdate_year", null: false
     t.integer "birthdate_month", null: false
     t.integer "birthdate_day", null: false
-    t.text "phone_number", null: false
+    t.integer "phone_number", null: false
     t.integer "phone_number_conf", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -175,4 +193,5 @@ ActiveRecord::Schema.define(version: 2020_02_22_081732) do
   add_foreign_key "products", "users"
   add_foreign_key "products_categories", "categories"
   add_foreign_key "products_categories", "products", column: "products_id"
+  add_foreign_key "sns_credentials", "users"
 end

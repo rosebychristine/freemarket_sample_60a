@@ -89,7 +89,7 @@ body {
 
     .progress-bar li:last-child {
       margin: 0;
-  }
+    }
 
     h1 {
       font-size: 100%;
@@ -280,33 +280,6 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         .need-select-free {
             background: #ccc;;
             margin: 0 0 0 8px;
@@ -473,6 +446,7 @@ body {
           transition: all ease-out .3s;
           cursor: pointer;
           text-align: center;
+          
       }
 
         .next-page-blue  {
@@ -482,6 +456,7 @@ body {
           width: 100%;
           line-height: 48px;
           font-size: 14px;
+          
         }
 
         .next-page-black  {
@@ -490,6 +465,7 @@ body {
           line-height: 48px;
           font-size: 14px;
           border: #979797 solid 1px;
+          
         }
 
         a {
@@ -515,8 +491,13 @@ body {
         padding: 24px 16px 30px;
         border-top: 1px solid #ccc;
       }
+
+      .form-index3 {
+        margin: 24px 0 0;
+        // height: 90px;
+      }
       .last-content2 {
-      color: #0099e8;
+        color: #0099e8;
         text-decoration: none;
       }
       
