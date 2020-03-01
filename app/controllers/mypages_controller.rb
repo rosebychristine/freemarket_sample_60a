@@ -17,4 +17,7 @@ class MypagesController < ApplicationController
   def update
   end
 
+  def destroy
+  end
+
 end

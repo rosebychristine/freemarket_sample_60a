@@ -70,7 +70,7 @@
     %h3.mypage-option__head 設定
     %ul.mypage-option__lists
       %li
-        = link_to "/mypages/profile", class: "mypage-option__lists__list" do
+        = link_to "/mypages/:id/edit", class: "mypage-option__lists__list" do
           プロフィール
           = fa_icon 'chevron-right', class: 'icon'
       %li
@@ -86,7 +86,7 @@
           メール・パスワード
           = fa_icon 'chevron-right', class: 'icon'
       %li
-        = link_to "/mypages/index", class: "mypage-option__lists__list" do
+        = link_to "/mypages/update", class: "mypage-option__lists__list" do
           本人情報
           = fa_icon 'chevron-right', class: 'icon'
       %li
