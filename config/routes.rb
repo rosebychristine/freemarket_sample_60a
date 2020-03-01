@@ -21,5 +21,5 @@ Rails.application.routes.draw do
     end
   end
   resources :items, only: [:index,:create,:edit,:show,:new,:update,:destroy]
-  resources :mypages, only: [:index,:edit] 
+  resources :mypages, only: [:index, :edit, :destroy, :update]
 end

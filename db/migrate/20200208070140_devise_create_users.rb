@@ -13,7 +13,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.integer :postal_code, null: false
       t.string :prefectures,  null: false
       t.string :buildingname,         null: false           
-      t.integer :tell,         unique: true
+      t.string :tell,         unique: true
       ## Recoverable
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
