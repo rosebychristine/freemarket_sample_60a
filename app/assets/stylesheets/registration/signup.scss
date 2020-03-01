@@ -434,7 +434,7 @@ body {
             // z-index: 1000;
         }
 
-        .next-page-red {
+        button.next-page-red {
           background: #ea352d;
           border: 1px solid #ea352d;
           color: #fff;
@@ -448,10 +448,21 @@ body {
           text-align: center;
           a {
             color: white;
+            background: #ea352d;
+            border: 1px solid #ea352d;
+            color: #fff;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            border: 1px solid transparent;
+            -webkit-transition: all ease-out .3s;
+            transition: all ease-out .3s;
+            cursor: pointer;
+            text-align: center;
           }
-      }
+         }
 
-        .next-page-blue  {
+        button.next-page-blue  {
           margin: 16px 0 0;
           background: #385185;
           color: #fff;
@@ -463,7 +474,7 @@ body {
           }
         }
 
-        .next-page-black  {
+        button.next-page-black  {
           margin: 16px 0 0;
           width: 100%;
           line-height: 48px;
