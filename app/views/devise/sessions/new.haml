@@ -13,13 +13,13 @@
             .last-content
               
               %button.next-page-red{type: "submit"} 
-                = link_to "メールアドレスで登録する", step1_signup_index_path                                                 
+                = link_to "メールアドレスで登録する", step1_signup_index_path                                              
               
               %button.next-page-blue{type: "submit"} 
-                = link_to "Facebookで登録する", user_facebook_omniauth_authorize_path                                 
+                = link_to "Facebookで登録する", user_facebook_omniauth_authorize_path, method: :post                                
             
               %button.next-page-black{type: "submit"} 
-                = link_to "Googleで登録する", user_google_oauth2_omniauth_authorize_path 
+                = link_to "Googleで登録する", user_google_oauth2_omniauth_authorize_path, method: :post 
 
 = render 'shared/fotter'
 
