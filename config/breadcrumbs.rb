@@ -12,7 +12,7 @@ end
 
 crumb :mypage_index do
   link 'プロフィール'
-  parent :mypage, edit_mypage_path
+  parent :mypage
 end
 
 
