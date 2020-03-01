@@ -1,18 +1,18 @@
 
 
 crumb :root do
-  link 'メルカリ'
+  link 'メルカリ', root_path
 end
 
 crumb :mypage do
-  link 'マイページ'
+  link 'マイページ', mypages_path
   parent :root
 end
 
 
-crumb :mypage_profile do
+crumb :mypage_index do
   link 'プロフィール'
-  parent :mypage
+  parent :mypage, edit_mypage_path
 end
 
 
