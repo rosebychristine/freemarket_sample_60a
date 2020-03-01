@@ -33,7 +33,7 @@
             .form-index
               %label{for: "phone_number"} 携帯電話の番号
               -# %input.input-default{name: "phone_number", placeholder: "携帯電話の番号を入力", type: "tel", value: ""}/
-              = f.telephone_field :phone_number, placeholder: '携帯電話の番号を入力', class: 'input-default'
+              = f.telephone_field :phone_number, { placeholder: '携帯電話の番号を入力', class: 'input-default', maxlength: '11', pattern: '(070|080|090)\d{4}\d{4}',}
             %p
               本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
             .last-content
