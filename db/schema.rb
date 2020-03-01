@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_02_24_104701) do
     t.integer "postal_code", null: false
     t.string "prefectures", null: false
     t.string "buildingname", null: false
-    t.integer "tell"
+    t.string "tell"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -150,7 +150,7 @@ ActiveRecord::Schema.define(version: 2020_02_24_104701) do
     t.integer "postal_code", null: false
     t.string "prefectures", null: false
     t.string "buildingname", null: false
-    t.integer "tell"
+    t.string "tell"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

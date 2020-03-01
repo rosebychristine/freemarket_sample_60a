@@ -33,6 +33,10 @@ class ItemsController < ApplicationController
     end
 
     def edit
+    product_condition
+    fee_burden 
+    sipping_time
+    prefectures 
     end
 
     def update
@@ -57,7 +61,7 @@ class ItemsController < ApplicationController
 
     private
     def product_params
-        params.require(:product).permit(:image,:id,:name, :price ,:description, :condition, :fee_burden, :shipping_time,:prefectures, images_attributes: [:src]).merge(user_id: current_user.id)
+        params.require(:product).permit(:image,:id,:name, :price ,:description, :condition, :fee_burden, :shipping_time,:prefectures, images_attributes: [:src ,:id]).merge(user_id: current_user.id)
     end
     
     def find_product
