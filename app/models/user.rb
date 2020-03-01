@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
-  has_many :sns_credentials, dependent: :destroy
+  
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
@@ -15,6 +15,8 @@ class User < ApplicationRecord
   has_many :messages 
   has_many :alerts 
   has_many :orders 
+  has_many :sns_credentials, dependent: :destroy
+  
   # SNS認証
   def self.without_sns_data(auth)
     user = User.where(email: auth.info.email).first
