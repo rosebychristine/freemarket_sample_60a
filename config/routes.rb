@@ -19,9 +19,17 @@ Rails.application.routes.draw do
       # get 'credit'
       get 'done'
     end
+ 
   end
 
   resources :items, only: [:index,:create,:edit,:show,:new,:update,:destroy]
-  
-  resources :mypages, only: [:index,:edit,:update,:destroy] 
+
+  resources :mypages, only: [:index,:edit] do
+    collection do
+      get 'identification'
+      get 'credit'
+    end
+  end
+
+
 end

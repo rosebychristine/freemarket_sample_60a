@@ -15,7 +15,15 @@ crumb :mypage_index do
   parent :mypage
 end
 
+crumb :mypage_identification do
+  link '本人情報の確認'
+  parent :mypage
+end
 
+crumb :mypage_credit do
+  link '支払い方法'
+  parent :mypage
+end
 
 # If you want to split your breadcrumbs configuration over multiple files, you
 # can create a folder named `config/breadcrumbs` and put your configuration

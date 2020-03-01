@@ -14,10 +14,14 @@ class MypagesController < ApplicationController
   def create
   end
 
-  def update
+  def identification
   end
 
   def destroy
   end
+
+  def credit
+  end
+
 
 end
