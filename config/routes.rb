@@ -7,7 +7,6 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
-
   root 'items#index'
   resources :users, only: [:index,:edit]
   resources :signup do
@@ -19,18 +18,12 @@ Rails.application.routes.draw do
       # get 'credit'
       get 'done'
     end
- 
   end
-
   resources :items, only: [:index,:create,:edit,:show,:new,:update,:destroy]
-
   resources :mypages, only: [:index,:edit] do
     collection do
       get 'identification'
       get 'credit'
     end
   end
-
-
-
 end
