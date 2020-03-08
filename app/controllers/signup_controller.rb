@@ -29,7 +29,7 @@ class SignupController < ApplicationController
         @user = User.new
     end
 
-    # def step5
+    # def credit
     #   session[:last_name] = address_params[:last_name]
     #   session[:first_name] = address_params[:first_name]
     #   session[:last_name_kana] = address_params[:last_nama_kana]
