@@ -146,7 +146,18 @@
           %textarea.textareadeful{type: "text", name: "body"}
           %button.msgsubmin{type: "submit"}
             %span.msgsubmin__comment
-              コメントする
+              コメントする  
+  - if user_signed_in? && current_user.id == @product.user_id
+    .l-single-container
+      .listing-item-change-box
+        = link_to  edit_item_url(@product.id), class: "btn-default btn-red" do
+          商品の編集
+        %p.text-center or
+        %form{action: "/jp/mypage/items/deactivate/m69554679925/", method: "POST", novalidate: "novalidate"}
+          %input{name: "__csrf_value", type: "hidden",}/
+          %button.btn-default.btn-gray{type: "submit"} 出品を一旦停止する
+        = button_to "/items/#{@product.id}", method: :delete, class: "btn-default btn-gray" do
+          この商品を削除する
   .navicontainer_one
     .navitm_landr
       .navi_itmprev
@@ -330,5 +341,4 @@
                       350
                   .thumbnail_style_p
                     = image_tag '0FD70C9C-138C-4846-A63A-0C7785F5AB7B.jpg', alt: 'icecream', class: 'owners-recommend'
-
 = render 'shared/footer.haml'

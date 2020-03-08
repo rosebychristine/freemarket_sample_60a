@@ -37,6 +37,8 @@ class ItemsController < ApplicationController
     fee_burden 
     sipping_time
     prefectures 
+    
+    
     end
 
     def update
@@ -57,8 +59,7 @@ class ItemsController < ApplicationController
            redirect_to root_path, notice: '商品を削除しました'
         end
     end
-
-
+   
     private
     def product_params
         params.require(:product).permit(:image,:id,:name, :price ,:description, :condition, :fee_burden, :shipping_time,:prefectures, images_attributes: [:src ,:id]).merge(user_id: current_user.id)
@@ -93,4 +94,5 @@ class ItemsController < ApplicationController
       end
 
       
+  
 end
