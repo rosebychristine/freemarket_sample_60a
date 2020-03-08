@@ -35,23 +35,23 @@
             %th
               出品者
             %td.bluecolll
-              =link_to "#" do
-                名前
-              .icon_ratings
-                .icon_ratings__laugh
-                  %i.fa.fa-laugh
-                  %span
-                  60
-              .icon_ratings
-                .icon_ratings__meh
-                  %i.fa.fa-meh
-                  %span
-                  0
-              .icon_ratings
-                .icon_ratings__frown
-                  %i.fa.fa-frown
-                  %span
-                  0
+              = link_to "#{@product.user.nickname}", '#'
+              %div
+                .icon_ratings
+                  .icon_ratings__laugh
+                    %i.fa.fa-laugh
+                    %span
+                    60
+                .icon_ratings
+                  .icon_ratings__meh
+                    %i.fa.fa-meh
+                    %span
+                    0
+                .icon_ratings
+                  .icon_ratings__frown
+                    %i.fa.fa-frown
+                    %span
+                    0
           %tr
             %th
               カテゴリー
