@@ -32,4 +32,4 @@
 public/uploads/
 
 # SNS認証のAPIID
-.env
+/.env

@@ -7,18 +7,18 @@ class ItemsController < ApplicationController
     end
 
     def new
-    # 出品画面を表示するためのアクション
-    # form_withを使うためにまずインスタンス生成をする（空っぽのインスタンスの準備）
-    unless user_signed_in?
-         redirect_to root_path
-    end
-    @product = Product.new
-    @product.images.new
-    # @product.build_shipping
-    product_condition
-    fee_burden 
-    sipping_time
-    prefectures 
+      # 出品画面を表示するためのアクション
+      # form_withを使うためにまずインスタンス生成をする（空っぽのインスタンスの準備）
+      unless user_signed_in?
+          redirect_to root_path
+      end
+      @product = Product.new
+      @product.images.new
+      # @product.build_shipping
+      product_condition
+      fee_burden 
+      sipping_time
+      prefectures 
 
     end
 
@@ -58,16 +58,21 @@ class ItemsController < ApplicationController
         end
     end
 
+    def purchase
+      Payjp.api_key = PAYJP_SECRET_KEY
+      Payjp::Charge.create(currency: 'jpy', amount: 1000, card: params['payjp-token'])
+      redirect_to root_path, notice: "支払いが完了しました"
+    end
 
     private
     def product_params
         params.require(:product).permit(:image,:id,:name, :price ,:description, :condition, :fee_burden, :shipping_time,:prefectures, images_attributes: [:src ,:id]).merge(user_id: current_user.id)
     end
     
-    def find_product
-        @product = Product.find(params[:id])
-        @image = Image.find_by(id: params[:id])
-    end
+    # def find_product
+    #     @product = Product.find(params[:id])
+    #     @image = Image.find_by(id: params[:id])
+    # end
 
     def product_condition
         @condition = ["新品、未使用","目立った傷や汚れなし","やや傷や汚れあり","傷や汚れあり","全体的に状態が悪い"]
