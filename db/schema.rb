@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_29_094826) do
+ActiveRecord::Schema.define(version: 2020_03_08_064949) do
 
   create_table "alerts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "product_id", null: false
@@ -101,6 +101,16 @@ ActiveRecord::Schema.define(version: 2020_02_29_094826) do
     t.index ["user_id"], name: "index_oders_on_user_id"
   end
 
+  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "status", null: false
+    t.bigint "product_id", null: false
+    t.bigint "trading_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_orders_on_product_id"
+    t.index ["trading_id"], name: "index_orders_on_trading_id"
+  end
+
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.integer "price", default: 0, null: false
@@ -124,6 +134,15 @@ ActiveRecord::Schema.define(version: 2020_02_29_094826) do
     t.index ["products_id"], name: "index_products_categories_on_products_id"
   end
 
+  create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "body"
+    t.integer "value", null: false
+    t.bigint "trading_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["trading_id"], name: "index_reviews_on_trading_id"
+  end
+
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "provider"
     t.string "uid"
@@ -131,6 +150,15 @@ ActiveRecord::Schema.define(version: 2020_02_29_094826) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_sns_credentials_on_user_id"
+  end
+
+  create_table "tradings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "buyer_id", null: false
+    t.bigint "seller_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["buyer_id"], name: "index_tradings_on_buyer_id"
+    t.index ["seller_id"], name: "index_tradings_on_seller_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -177,8 +205,13 @@ ActiveRecord::Schema.define(version: 2020_02_29_094826) do
   add_foreign_key "messages", "users"
   add_foreign_key "oders", "products"
   add_foreign_key "oders", "users"
+  add_foreign_key "orders", "products"
+  add_foreign_key "orders", "tradings"
   add_foreign_key "products", "users"
   add_foreign_key "products_categories", "categories"
   add_foreign_key "products_categories", "products", column: "products_id"
+  add_foreign_key "reviews", "tradings"
   add_foreign_key "sns_credentials", "users"
+  add_foreign_key "tradings", "users", column: "buyer_id"
+  add_foreign_key "tradings", "users", column: "seller_id"
 end
