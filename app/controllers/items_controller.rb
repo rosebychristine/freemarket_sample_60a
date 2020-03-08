@@ -71,10 +71,10 @@ class ItemsController < ApplicationController
         params.require(:product).permit(:image,:id,:name, :price ,:description, :condition, :fee_burden, :shipping_time,:prefectures, images_attributes: [:src ,:id]).merge(user_id: current_user.id)
     end
     
-    # def find_product
-    #     @product = Product.find(params[:id])
-    #     @image = Image.find_by(id: params[:id])
-    # end
+    def find_product
+        @product = Product.find(params[:id])
+        @image = Image.find_by(id: params[:id])
+    end
 
     def product_condition
         @condition = ["新品、未使用","目立った傷や汚れなし","やや傷や汚れあり","傷や汚れあり","全体的に状態が悪い"]
