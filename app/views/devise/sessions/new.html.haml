@@ -1,0 +1,127 @@
+-# .signup-container
+-#   = render 'shared/header_signin'
+-#   %main.signup-main
+-#     .signup-main__login-panel
+-#       .signup-main__login-no-account
+-#         %p アカウントをお持ちでない方はこちら
+-#         = link_to '/signup/' do
+-#           新規会員登録
+-#       .signup-main__login-form-inner
+-#         %button.signup-main__btn-default.signup-main__btn-sns.signup-main__btn-sns--facebook{ id: 'facebook-login' }
+-#           = icon 'fab', 'facebook-square'
+-#           Facebookでログイン
+-#         %button.signup-main__btn-default.signup-main__btn-sns.signup-main__btn-sns--google{ id: 'google-login' }
+-#           Googleでログイン
+-#       %form{ action: '/login/', method: 'POST', novalidate: 'novalidate' }
+-#         .signup-main__login-form-inner
+-#           .signup-main__form-group
+-#             %input.signup-main__login-input-text.signup-main__input-default{ type: 'email', name: 'email', placeholder: 'メールアドレス' }
+-#           .signup-main__form-group
+-#             %input.signup-main__login-input-text.signup-main__input-default{ type: 'password', name: 'password', placeholder: 'パスワード' }
+-#           %button.signup-main__login-submit.signup-main__btn-default.signup-main__btn-red{ type: 'submit' }
+-#             ログイン
+-#           = link_to '#' do
+-#             パスワードをお忘れの方
+-#   = render 'shared/footer'
+
+
+
+
+-# .content_2.all-container
+-#   = render 'shared/header_signin'
+-#   %main.main-view-container
+-#     .main-view
+
+-#       %h2.sub-header 
+-#       %p アカウントをお持ちでない方はこちら
+-#       .last-content
+-#         %button.next-page-red{type: "submit"} 
+-#           = link_to "新規会員登録", step1_signup_index_path 
+
+-#       %form.l-single-inner.registration-form
+-#         .l-single-content
+-#           .form-create
+-#             .last-content                                     
+              
+-#               %button.next-page-blue{type: "submit"} 
+-#                 = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path, method: :post                                
+            
+-#               %button.next-page-black{type: "submit"} 
+-#                 = link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path, method: :post 
+  
+-#             .signup-main__login-form-inner
+-#               .signup-main__form-group
+-#                 %input.signup-main__login-input-text.signup-main__input-default{ type: 'email', name: 'email', placeholder: 'メールアドレス' }
+-#               .signup-main__form-group
+-#                 %input.signup-main__login-input-text.signup-main__input-default{ type: 'password', name: 'password', placeholder: 'パスワード' }
+-#               %button.signup-main__login-submit.signup-main__btn-default.signup-main__btn-red{ type: 'submit' }
+-#                 ログイン
+-#               = link_to '#' do
+-#                 パスワードをお忘れの方
+              
+-#   = render 'shared/footer'
+
+
+
+
+.content_2.all-container
+  = render 'shared/header_signin'
+  %main.signup-main
+    .signup-main__login-panel
+      .signup-main__login-no-account
+        %p アカウントをお持ちでない方はこちら
+        = link_to '/signup/step1' do
+          新規会員登録
+
+
+
+      .signup-main__login-form-inner
+        
+        .last-content                                     
+              
+          %button.next-page-blue{type: "submit"} 
+            = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path, method: :post                                
+        
+          %button.next-page-black{type: "submit"} 
+            = link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path, method: :post 
+        -# %button.signup-main__btn-default.signup-main__btn-sns.signup-main__btn-sns--facebook{ id: 'facebook-login' }
+        -#   = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path, method: :post 
+
+        -# %button.signup-main__btn-default.signup-main__btn-sns.signup-main__btn-sns--google{ id: 'google-login' }
+        -#   = link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path, method: :post 
+
+
+      -# %form.l-single-inner.registration-form
+      -#   .l-single-content
+      -#     .form-create
+      -#       .last-content                                     
+              
+      -#         %button.next-page-blue{type: "submit"} 
+      -#           = link_to "Facebookでログイン", user_facebook_omniauth_authorize_path, method: :post                                
+            
+      -#         %button.next-page-black{type: "submit"} 
+      -#           = link_to "Googleでログイン", user_google_oauth2_omniauth_authorize_path, method: :post 
+      
+      .signup-main__login-form-inner
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+
+          .signup-main__form-group
+            -# .signup-main__login-input-text.signup-main__input-default
+            = f.email_field :email, autofocus: true, placeholder: 'メールアドレス', class: 'signup-main__login-input-text signup-main__input-default'
+
+          .signup-main__form-group
+            -# .signup-main__login-input-text.signup-main__input-default
+            = f.password_field :password, autocomplete: "off", placeholder: 'パスワード', class: 'signup-main__login-input-text signup-main__input-default'
+
+          - if devise_mapping.rememberable?  
+            -# %button
+            = f.submit "ログイン", class: 'signup-main__login-submit signup-main__btn-default signup-main__btn-red'
+              
+          
+            
+            = link_to '#' do
+              パスワードをお忘れの方
+
+       
+              
+  = render 'shared/footer'
