@@ -45,7 +45,7 @@ Rails.application.routes.draw do
       post 'purchase'
     end
   end
-
+  
   resources :mypages, only: [:index,:edit] do
     collection do
       get 'identification'

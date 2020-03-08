@@ -37,6 +37,8 @@ class ItemsController < ApplicationController
     fee_burden 
     sipping_time
     prefectures 
+    
+    
     end
 
     def update
@@ -98,4 +100,5 @@ class ItemsController < ApplicationController
       end
 
       
+  
 end
