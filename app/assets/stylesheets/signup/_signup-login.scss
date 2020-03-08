@@ -1,0 +1,345 @@
+#inner-top{
+  border-top: 1px solid #f5f5f5;
+}
+.information-registration__base__main-box__click-area__error-font{
+  font-size: 14px;
+  color: red;
+  margin-top: 8px; 
+}
+
+.signup-main {
+  display: block;
+  
+  &__btn-default {
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    -webkit-transition: all ease-out .3s;
+    transition: all ease-out .3s;
+    cursor: pointer;
+    text-align: center;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  .signup-main__btn-red{
+    margin: 24px 0;
+    margin-top: 24px;
+    background: #ea352d;
+    border: 1px solid #ea352d;
+    color: #fff;
+    width: 100%;
+    // padding: 24px 16px 40px;
+  }
+
+  &__inner {
+    padding: 40px;
+    .signup-main__btn-red{
+      margin-top: 40px;
+    }
+    &--registration-form {
+      padding: 24px 16px 40px;
+      .signup-main__content{
+        max-width: 343px;
+      }
+      .signup-main__form-group:not(:first-of-type) {
+        margin-top: 24px;
+      }
+      .signup-main__btn-red{
+        margin-top: 24px;
+        background: #ea352d;
+        border: 1px solid #ea352d;
+        color: #fff;
+      }
+    }
+    p {
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+  }
+  
+  &__btn-sns {
+    position: relative;
+    i {
+      position: absolute;
+      top: 50%;
+      left: 16px;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+    }
+    &--facebook {
+      margin: 16px 0 0;
+      background: #385185;
+      color: #fff;
+      .fa-facebook-square {
+        color: #fff;
+        background: #385185;
+        font-size: 26px;
+      }
+      &:first-child {
+        margin: 0;
+      }
+    }
+    &--google {
+      margin: 16px 0 0;
+      background: #fff image-url('google.svg') no-repeat 3px top;
+      border: #979797 solid 1px;
+      color: #333;
+    }
+  }
+
+
+  &__login-panel {
+    max-width: 456px;
+    margin: 0 auto;
+    background: #fff;
+    a {
+      display: block;
+      // margin-top: 40px;
+    }
+  }
+  &__login-no-account {
+    padding: 24px 32px;
+    text-align: center;
+    p {
+      font-size: 14px;
+    }
+    a {
+      display: block;
+      margin-top: 8px;
+      border: 1px solid #0099e8;
+      background: #0099e8;
+      color: #fff;
+      line-height: 40px;
+    }
+  }
+  &__login-form-inner {
+    padding: 24px 32px;
+    &:first-child {
+      padding: 24px 32px;
+      border: 0;
+    }
+    .signup-main__form-group{
+      margin-top: 24px;
+      &:first-child {
+        margin: 0;
+      }
+    }
+
+    .next-page-blue  {
+      margin: 16px 0 0;
+      background: #385185;
+      color: #fff;
+      width: 100%;
+      line-height: 48px;
+      font-size: 14px;
+      // height: 60px;
+      a {
+        color: white;
+      }
+    }
+
+    .next-page-black  {
+      margin: 16px 0 0;
+      width: 100%;
+      line-height: 48px;
+      font-size: 14px;
+      border: #979797 solid 1px;
+      a {
+        color: black;
+      }
+    }
+
+
+    .signup-main__input-default {
+      // margin: 20px 0px 20px 0px ;
+      
+    }
+
+    .signup-main__login-input-text {
+      // margin: 24px 0 0;
+      width: 100%;
+      height: 48px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      background: #fff;
+      line-height: 1.5;
+      font-size: 16px;
+      // float: left;
+    }
+  }
+
+
+  &__login-submit {
+    margin: 24px 0 0;
+  }
+  &__done{
+    text-align: center;
+    img{
+      width: 100%;
+    }
+  }
+  &__banner-pc {
+    display: none;
+  }
+  &__banner-sp {
+    max-width: 375px;
+  }
+  &__fake-link:hover{
+    text-decoration: none;
+  }
+}
+
+.field_with_errors{
+  select{
+    border-color: #ea352d;
+  }
+}
+@media screen and (min-width: 768px){
+  .signup-main{
+    &__container {
+    width: 700px;
+    margin: 0 auto;
+    }
+    &__inner{
+      padding: 64px;
+    }
+    &__head {
+      padding: 32px 16px;
+      font-size: 22px;
+      &--registration{
+      font-size: 22px;
+      padding: 32px;
+      }
+    }
+    &__sub-head{
+      font-size: 16px;
+    }
+    &__birthday-select-wrap{
+      .signup-main__select-wrap {
+        width: 76px;
+        &:first-of-type {
+          width: 76px;
+        }
+      }
+    }
+    &__chapter-head {
+      font-size: 24px;
+      padding: 8px 24px;
+      &--registration {
+        font-size: 22px;
+        padding: 32px;
+      }
+    }
+    &__chapter-sub-head {
+      font-size: 16px;
+    }
+    &__login-panel {
+      max-width: none;
+      width: 456px;
+    }
+    &__login-no-account {
+      padding: 40px 64px;
+      border-bottom: 1px solid #eee;
+    }
+    &__login-form-inner {
+      padding: 32px 64px;
+      &:first-child {
+        padding: 24px 64px 32px;
+      }
+    }
+    &__banner-pc {
+      display: inline;
+    }
+    &__banner-sp {
+      display: none;
+    }
+  }
+}
+@media screen and (min-width: 1068px){
+  .signup-main{
+    &__inner{
+      &--registration-form {
+        padding: 40px 40px 64px;
+        .signup-main__form-group:not(:first-of-type) {
+          margin-top: 32px;
+        }
+      }
+    }
+  }
+}
+
+
+// .form-create {
+//   max-width: 343px;
+//   margin: auto;
+
+//     .need-select-sp {
+//       position: relative;
+//       top: -5px;
+//       right: 2px;
+//       background: #ea352d;
+//       margin: 0 0 0 8px;
+//       padding: 2px 4px;
+//       border-radius: 2px;
+//       color: #fff;
+//       font-size: 12px;
+//       vertical-align: top;
+//     }
+    
+    
+  
+
+//     .form-index {
+//       margin: 24px 0 0;
+//       height: 90px;
+
+
+
+//       .input-default{
+//       width: 100%;
+//       margin: 24px 0 0;
+//       height: 48px;
+//       border-radius: 4px;
+//       border: 1px solid #ccc;
+//       background: #fff;
+//       line-height: 1.5;
+//       font-size: 16px;
+//       float: left;
+//       }
+
+//       .half {
+//           width: calc(50% - 6px);
+//           position: relative;
+//           left: 10px;
+//       }
+
+//       .half-one {
+//           width: calc(50% - 6px);
+//           position: relative;
+//           top: 15px;
+//       }
+
+//       .half-one2 {
+//         width: calc(90% - 6px);
+//         position: relative;
+//         top: 15px;
+//     }
+
+//       .need-select {
+//           background: #ea352d;
+//           margin: 0 0 0 8px;
+//           padding: 2px 4px;
+//           border-radius: 2px;
+//           color: #fff;
+//           font-size: 12px;
+//           vertical-align: top;
+//           position: relative;
+//           top: 17px;
+//           right: 2px;
+//       }
+//     }
