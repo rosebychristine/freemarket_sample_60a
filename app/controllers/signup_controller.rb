@@ -1,4 +1,7 @@
 class SignupController < ApplicationController
+    
+    def step0
+    end
 
     def step1
         @user = User.new
@@ -29,7 +32,7 @@ class SignupController < ApplicationController
         @user = User.new
     end
 
-    # def step5
+    # def credit
     #   session[:last_name] = address_params[:last_name]
     #   session[:first_name] = address_params[:first_name]
     #   session[:last_name_kana] = address_params[:last_nama_kana]
@@ -90,6 +93,14 @@ class SignupController < ApplicationController
 
     def ending
     end
+
+    def login
+#       @user = User.find_by_email("取得したメール")
+# 　　　 sign_in @user
+#       redirect_to new_user_session_path
+    end
+
+
 
     def done
       sign_in User.find(session[:id]) unless user_signed_in?

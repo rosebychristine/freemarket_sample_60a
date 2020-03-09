@@ -21,7 +21,7 @@
               クレジットカードを追加する
         .credit-pay
           = link_to "支払い方法について", "#" , class: "payment"
-          = link_to "#" do
+          = link_to new_card_path do
             = fa_icon 'chevron-right', class: 'icon'
 
 = render 'shared/banner'

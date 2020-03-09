@@ -7,18 +7,18 @@ class ItemsController < ApplicationController
     end
 
     def new
-    # 出品画面を表示するためのアクション
-    # form_withを使うためにまずインスタンス生成をする（空っぽのインスタンスの準備）
-    unless user_signed_in?
-         redirect_to root_path
-    end
-    @product = Product.new
-    @product.images.new
-    # @product.build_shipping
-    product_condition
-    fee_burden 
-    sipping_time
-    prefectures 
+      # 出品画面を表示するためのアクション
+      # form_withを使うためにまずインスタンス生成をする（空っぽのインスタンスの準備）
+      unless user_signed_in?
+          redirect_to root_path
+      end
+      @product = Product.new
+      @product.images.new
+      # @product.build_shipping
+      product_condition
+      fee_burden 
+      sipping_time
+      prefectures 
 
     end
 
@@ -37,6 +37,8 @@ class ItemsController < ApplicationController
     fee_burden 
     sipping_time
     prefectures 
+    
+    
     end
 
     def update
@@ -58,6 +60,11 @@ class ItemsController < ApplicationController
         end
     end
 
+    def purchase
+      Payjp.api_key = PAYJP_SECRET_KEY
+      Payjp::Charge.create(currency: 'jpy', amount: 1000, card: params['payjp-token'])
+      redirect_to root_path, notice: "支払いが完了しました"
+    end
 
     private
     def product_params
@@ -93,4 +100,5 @@ class ItemsController < ApplicationController
       end
 
       
+  
 end
