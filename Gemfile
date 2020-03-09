@@ -99,5 +99,5 @@ gem 'omniauth-facebook'
 gem 'dotenv-rails'
 gem "omniauth-rails_csrf_protection"
 gem 'rspec-rails'
-
+gem 'factory_bot_rails'
 gem 'payjp'
