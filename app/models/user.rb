@@ -13,3 +13,5 @@ class User < ApplicationRecord
   has_many :orders 
   has_one  :address 
 end
+
+# ユーザデータ、外部キーの実装のやり方。

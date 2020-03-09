@@ -43,7 +43,7 @@
               .sell-product-inner
                 %h4 支払い方法
                 %p.user-info
-                -if @product.user.credit_card_no == ""
+                -if current_user.credit_card_no == ""
                   %i.fas.fa-plus-circle
                   = link_to '登録してください', "#", class: "left-messages"
                 - else
@@ -52,7 +52,7 @@
               .sell-product-inner
                 %h4 配送先
                 %p.user-info
-                  -if @product.user.credit_card_no == ""
+                  -if current_user.credit_card_no == ""
                     %i.fas.fa-plus-circle
                     = link_to '登録してください', "#", class: "left-messages"
                   - else
@@ -60,8 +60,12 @@
             %section.sell-content.sell-content-error
               %p.has-error-text
                 この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
-              %button.next-page{type: "submit"}
-                購入する
+              -if current_user.credit_card_no == ""
+                %button.next-page{type: "submit"}
+                  購入する
+              -else 
+                %button.next-page-red{type: "submit"}
+                  購入する 
               %p.not-have-app-text
                 アプリをお持ちでない方は以下よりインストールしてご利用いただけます。
               %br
