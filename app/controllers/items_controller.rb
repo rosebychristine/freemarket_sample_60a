@@ -40,8 +40,11 @@ class ItemsController < ApplicationController
     end
 
     def update
-        @product = Product.find(params[:id])
-        @images = @product.images
+        if @product.update(product_params)
+            redirect_to root_path
+          else 
+            redirect_to edit_item_path
+          end
     end
 
     def show
