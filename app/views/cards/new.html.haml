@@ -1,9 +1,10 @@
 .all-container
+  = render 'shared/header_signin'
   / viewの全てを囲む
-  %header.header
-    %h1
-      = link_to '#', class: "link", target: "_blank" do
-        = image_tag 'merukari.svg'
+  -# %header.header
+  -#   %h1
+  -#     = link_to '#', class: "link", target: "_blank" do
+  -#       = image_tag 'merukari.svg'
   %main.main-view-container
     .main-view
       %h2.sub-header 支払い方法
@@ -110,4 +111,4 @@
             #card_token
             = submit_tag "追加する", id: "token_submit", class: 'next-page'
             -# = submit_tag  class: 'next-page', id: 'token_submit'
-  =render 'shared/fotter'
+  =render 'shared/footer'
