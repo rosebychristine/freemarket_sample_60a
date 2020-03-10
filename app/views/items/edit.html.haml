@@ -52,7 +52,7 @@
                   = fa_icon 'fa-chevron-down', class: 'fa-chevron-down'
                   %div
                     = f.select :condition,nil,{placeholder: '---'},class: 'sell-main__input-default' do
-                      %option{value:  ""} --
+                      %option{value:  ""} #{@product.condition}
                       %option{value:  @condition[0]} #{@condition[0]}
                       %option{value:  @condition[1]} #{@condition[1]}
                       %option{value:  @condition[2]} #{@condition[2]}
@@ -69,7 +69,7 @@
                   %span.sell-main__form-require 必須
                 .sell-main__select-wrap
                   = f.select :fee_burden,nil,{placeholder: '---'},class: 'sell-main__input-default' do
-                    %option{value:  ""} 選択してください
+                    %option{value:  ""} #{@product.fee_burden}
                     %option{value:  @fee_burden[0]} #{@fee_burden[0]}
                     %option{value:  @fee_burden[1]} #{@fee_burden[1]}
                   = fa_icon 'fa-chevron-down', class: 'fa-chevron-down'
@@ -81,7 +81,7 @@
                 .sell-main__select-wrap
                   = fa_icon 'fa-chevron-down', class: 'fa-chevron-down'
                   = f.select :prefectures,nil,{placeholder: '---'},class: 'sell-main__input-default' do
-                    %option{value:  ""} 選択してください
+                    %option{value:  ""} #{@product.prefectures}
                     %option{value:  @prefectures[0]} #{@prefectures[0]}
                     %option{value:  @prefectures[1]} #{@prefectures[1]}
                     %option{value:  @prefectures[2]} #{@prefectures[2]}
@@ -136,7 +136,7 @@
                 .sell-main__select-wrap
                   = fa_icon 'fa-chevron-down', class: 'fa-chevron-down'
                   = f.select :shipping_time,nil,{placeholder: '---'},class: 'sell-main__input-default' do
-                    %option{value:  ""} 選択してください
+                    %option{value:  ""} #{@product.shipping_time}
                     %option{value:  @sipping_time[0]} #{@sipping_time[0]}
                     %option{value:  @sipping_time[1]} #{@sipping_time[1]}
                     %option{value:  @sipping_time[2]} #{@sipping_time[2]}
