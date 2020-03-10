@@ -75,6 +75,18 @@ body {
                     cursor: pointer;
                     text-align: center;
                   }
+                  button.next-page-red{
+                    border: 1px solid #ea352d;
+                    background: #ea352d;
+                    color: #fff;
+                    display: block;
+                    width: 100%;
+                    line-height: 48px;
+                    font-size: 14px;
+                    transition: all ease-out .3s;
+                    cursor: pointer;
+                    text-align: center;
+                  }
                   p.not-have-app-text {
                     margin-top: 40px;
                     line-height: 1.5;

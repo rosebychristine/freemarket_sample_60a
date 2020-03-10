@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
+
   resources :cards, only: [:new, :show] do
     collection do
       post 'show', to: 'cards#show'
@@ -20,16 +21,20 @@ Rails.application.routes.draw do
 
   root 'items#index'
   resources :users, only: [:index,:edit]
+
   resources :signup do
     collection do
+      get 'step0'
       get 'step1'
       get 'step2'
       get 'step3'
       get 'step4'
       get 'credit'
       get 'done'
+      get 'login'
     end
   end
+
 
   resources :purchase, only: [:index] do
     collection do
@@ -46,6 +51,8 @@ Rails.application.routes.draw do
     end
   end
   
+
+
   resources :mypages, only: [:index,:edit] do
     collection do
       get 'identification'
