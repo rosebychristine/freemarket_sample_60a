@@ -1,3 +1,62 @@
-%h2 購入が完了しました！
-%p Apple MacBook Pro 13インチ
-%p ¥135,000(送料込み)
+.signup-container
+  = render 'shared/header_signin'
+  %main.single-main
+    %section
+      .transact-attention
+        %i.far.fa-clock
+        %span 発送をお待ちください
+        %p 出品者からの発送通知をお待ちください
+      %h2.l-single-head 購入が完了しました
+      %section
+        .buy-content-inner
+          %h3.buy-item-image
+            %img
+              = image_tag('tatara.png', class: 'image-image', size: '120x120')
+          %p.buy-item-name.bold
+            Apple MacBook Pro 13インチ
+      %section
+        .buy-content-inner
+          %p.buy-price-ja.bold
+            ¥135,000(送料込み)
+      %section.buy-content.buy-user-info
+        .buy-content-text
+          %br
+          %h3 配送先
+          %address.buy-user-info-text
+            〒 #{current_user.postal_code}
+            %br
+              #{current_user.prefectures}
+            %br
+            %span
+              #{current_user.last_name}
+              #{current_user.first_name}
+      %section.buy-conten-user-info
+        .buy-content-price
+          %h3 支払い方法
+          %p.buy-user-info-text
+            = '**** **** ****'
+            = 4
+            = 23
+            = image_tag 'visa.svg', alt: 'visa', height: '20', width: '29'
+      %section.buy-content.buy-done-flow
+        %h3 発送通知後の流れ
+        %br
+        .done-user-ratings
+          %i.fas.fa-smile
+        .done-user-ratings
+          %i.fas.fa-meh
+        .done-user-ratings
+          %i.fas.fa-frown
+        %p.buy-contet__text
+          %br
+          %span 商品を受け取ったら
+          %br
+          出品者の評価をしましょう。
+          %br
+          購入代金が出品者に振り込まれます。
+          %br
+          評価後に取引は完了です。
+          = link_to mypages_path, class: 'buy-content-bold' do
+            マイページへもどる
+  
+  = render 'shared/footer'
