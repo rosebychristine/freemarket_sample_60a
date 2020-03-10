@@ -1,35 +1,34 @@
 class ItemsController < ApplicationController
     before_action :find_product, only: [:show, :edit, :update, :destroy]
-
     def index
       @products = Product.includes(:images).order('created_at DESC').limit(5)
       
     end
 
     def new
-      # 出品画面を表示するためのアクション
-      # form_withを使うためにまずインスタンス生成をする（空っぽのインスタンスの準備）
-      unless user_signed_in?
-          redirect_to root_path
-      end
-      @product = Product.new
-      @product.images.new
-      # @product.build_shipping
-      product_condition
-      fee_burden 
-      sipping_time
-      prefectures 
-
+        # 出品画面を表示するためのアクション
+        # form_withを使うためにまずインスタンス生成をする（空っぽのインスタンスの準備）
+        unless user_signed_in?
+             redirect_to root_path
+        end
+        @product = Product.new
+        @product.images.new
+        # @product.build_shipping
+        product_condition
+        fee_burden 
+        sipping_time
+        prefectures 
     end
 
     def create
     # 保存する処理
         @product = Product.new(product_params) 
-            if @product.save && @product.valid?
-                redirect_to root_path
-            else
-                render :new
-            end
+        binding.pry
+        if @product.save && @product.valid?
+            redirect_to root_path
+        else
+            render :new
+        end
     end
 
     def edit
@@ -42,12 +41,9 @@ class ItemsController < ApplicationController
     end
 
     def update
-        if @product.update(product_params)
-          redirect_to root_path
-        else 
-          redirect_to edit_item_path
-        end
-      end
+        @product = Product.find(params[:id])
+        @images = @product.images
+    end
 
     def show
         @images = @product.images
@@ -81,13 +77,11 @@ class ItemsController < ApplicationController
     end
     def fee_burden
         @fee_burden = ["送料込み(出品者負担)", "着払い(購入者負担)"]
-      end
-  
-      def sipping_time
+    end
+    def sipping_time
         @sipping_time = ["1~2日で発送", "2~3日で発送", "4~7日で発送"]
-      end
-  
-      def prefectures
+    end
+    def prefectures
         @prefectures = ["北海道","青森県","岩手県","宮城県","秋田県","山形県","福島県",
               "茨城県","栃木県","群馬県","埼玉県","千葉県","東京都","神奈川県",
               "新潟県","富山県","石川県","福井県","山梨県","長野県",
@@ -97,8 +91,6 @@ class ItemsController < ApplicationController
               "徳島県","香川県","愛媛県","高知県",
               "福岡県","佐賀県","長崎県","熊本県","大分県","宮崎県","鹿児島県", 
               "沖縄県"]
-      end
+    end
 
-      
-  
 end
