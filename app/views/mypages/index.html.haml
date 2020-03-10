@@ -1,5 +1,5 @@
 = render 'mypage-header'
-- breadcrumb :mypage_profile
+- breadcrumb :mypage
 = render 'mypages/bread-crumbs'
 %main.container
   .mypa-container
@@ -9,7 +9,8 @@
       %section.mypa-user-icon
         = link_to '#', class: "mypa", target: "_blank" do
           = image_tag 'tatara.png',class: "mypa-icon"
-          %h2.bold current_user.nickname
+          %h2.bold 
+          = current_user.nickname
           .mypa_number
             .comment
               評価
@@ -53,7 +54,7 @@
               = image_tag 'mercari_mini.png',class: "mercari_mini"
             .mypa-item-body
               .mypa-item-text-1
-                %h5  こんにちは
+                %h5  不正ログインが発覚しました
               %time
                 %i.icon-time
                 %span 2 日前
@@ -63,7 +64,7 @@
               = image_tag 'mercari_mini.png',class: "mercari_mini"
             .mypa-item-body
               .mypa-item-text-1
-                %h5  こんにちは
+                %h5  ☆サラリーマン金太郎☆からクレームが来ています
               %time
                 %i.icon-time
                 %span 2 日前

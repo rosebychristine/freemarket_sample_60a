@@ -34,14 +34,13 @@
             .form-index
               %label.phone-number{for: "phone_number"} 認証番号
               -# %input.input-default{name: "phone_number", placeholder: "認証番号を入力", type: "tel", value:""}/
-              = f.text_field :phone_number_conf, placeholder: '認証番号を入力',class: 'input-default'
+              = f.text_field :phone_number_conf, placeholder: '認証番号を入力',class: 'input-default' ,maxlength: '4',pattern: '^[0-9]*'
             %p
               SMSで届いた認証番号を入力してください
             .last-content
-              %button.next-page{type: "submit"} 認証して完了
+              = f.submit class: 'next-page'
         .l-single-content
           .form-create
-            
             .form-index
               %label.phone-number{for: "phone_number"}
                 30秒たっても認証番号が届かない方へ

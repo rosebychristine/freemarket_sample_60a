@@ -10,22 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_22_081732) do
-
-  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "last_name", null: false
-    t.string "first_name", null: false
-    t.string "last_name_kana", null: false
-    t.string "first_name_kana", null: false
-    t.integer "postal_code", null: false
-    t.string "prefectures", null: false
-    t.string "buildingname", null: false
-    t.integer "tell"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_addresses_on_user_id"
-  end
+ActiveRecord::Schema.define(version: 2020_03_08_064949) do
 
   create_table "alerts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "product_id", null: false
@@ -42,6 +27,14 @@ ActiveRecord::Schema.define(version: 2020_02_22_081732) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_brands_on_category_id"
+  end
+
+  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -108,6 +101,16 @@ ActiveRecord::Schema.define(version: 2020_02_22_081732) do
     t.index ["user_id"], name: "index_oders_on_user_id"
   end
 
+  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "status", null: false
+    t.bigint "product_id", null: false
+    t.bigint "trading_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_orders_on_product_id"
+    t.index ["trading_id"], name: "index_orders_on_trading_id"
+  end
+
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.integer "price", default: 0, null: false
@@ -131,9 +134,44 @@ ActiveRecord::Schema.define(version: 2020_02_22_081732) do
     t.index ["products_id"], name: "index_products_categories_on_products_id"
   end
 
+  create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "body"
+    t.integer "value", null: false
+    t.bigint "trading_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["trading_id"], name: "index_reviews_on_trading_id"
+  end
+
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
+  end
+
+  create_table "tradings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "buyer_id", null: false
+    t.bigint "seller_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["buyer_id"], name: "index_tradings_on_buyer_id"
+    t.index ["seller_id"], name: "index_tradings_on_seller_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "last_name", null: false
+    t.string "first_name", null: false
+    t.string "last_name_kana", null: false
+    t.string "first_name_kana", null: false
+    t.integer "postal_code", null: false
+    t.string "prefectures", null: false
+    t.string "buildingname", null: false
+    t.string "tell"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -144,10 +182,6 @@ ActiveRecord::Schema.define(version: 2020_02_22_081732) do
     t.string "name_middle_kana", null: false
     t.string "name_last_kana", null: false
     t.string "nickname", null: false
-    t.text "credit_card_no", null: false
-    t.integer "creditmonth_id", null: false
-    t.integer "credityear_id", null: false
-    t.integer "credit_card_security_code", null: false
     t.integer "birthdate_year", null: false
     t.integer "birthdate_month", null: false
     t.integer "birthdate_day", null: false
@@ -157,7 +191,6 @@ ActiveRecord::Schema.define(version: 2020_02_22_081732) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "addresses", "users"
   add_foreign_key "alerts", "products"
   add_foreign_key "alerts", "users"
   add_foreign_key "brands", "categories"
@@ -172,7 +205,13 @@ ActiveRecord::Schema.define(version: 2020_02_22_081732) do
   add_foreign_key "messages", "users"
   add_foreign_key "oders", "products"
   add_foreign_key "oders", "users"
+  add_foreign_key "orders", "products"
+  add_foreign_key "orders", "tradings"
   add_foreign_key "products", "users"
   add_foreign_key "products_categories", "categories"
   add_foreign_key "products_categories", "products", column: "products_id"
+  add_foreign_key "reviews", "tradings"
+  add_foreign_key "sns_credentials", "users"
+  add_foreign_key "tradings", "users", column: "buyer_id"
+  add_foreign_key "tradings", "users", column: "seller_id"
 end

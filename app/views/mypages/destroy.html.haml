@@ -1,11 +1,11 @@
 .mypage-container
   = render 'mypages/mypage-header'
-  - breadcrumb :mypage_profile
+  - breadcrumb :mypage_index
   = render 'mypages/bread-crumbs'
 %main.container
   = render 'shared/side_bar'
   .logout-main
     .logout-in
-      = link_to "ログアウト"  , destroy_user_session_path,method: :delete ,class: "btn-logout"
+      = link_to "ログアウト", destroy_user_session_path, method: :delete ,class: "btn-logout"
 = render 'shared/banner'
 = render 'shared/footer'

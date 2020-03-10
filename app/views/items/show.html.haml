@@ -1,4 +1,4 @@
-= render 'shared/header'
+= render 'shared/header_login'
 .christine
   %section.itm_box_container
     %h1.itm_name
@@ -35,23 +35,23 @@
             %th
               出品者
             %td.bluecolll
-              =link_to "#" do
-                名前
-              .icon_ratings
-                .icon_ratings__laugh
-                  %i.fa.fa-laugh
-                  %span
-                  60
-              .icon_ratings
-                .icon_ratings__meh
-                  %i.fa.fa-meh
-                  %span
-                  0
-              .icon_ratings
-                .icon_ratings__frown
-                  %i.fa.fa-frown
-                  %span
-                  0
+              = link_to "#{@product.user.nickname}", '#'
+              %div
+                .icon_ratings
+                  .icon_ratings__laugh
+                    %i.fa.fa-laugh
+                    %span
+                    60
+                .icon_ratings
+                  .icon_ratings__meh
+                    %i.fas.fa-meh
+                    %span
+                    0
+                .icon_ratings
+                  .icon_ratings__frown
+                    %i.fas.fa-frown
+                    %span
+                    0
           %tr
             %th
               カテゴリー
@@ -119,8 +119,7 @@
         アプリで購入
     .itm_description
       %p.itm_description__inner
-        ふわふわです
-        おしゃれなのでおすすめです
+        = @product.description
     .itm_btncontain
       .itm_btncontain__lft
         =link_to "#", class: "itm_btncontain__lft__likeyy" do
@@ -147,7 +146,18 @@
           %textarea.textareadeful{type: "text", name: "body"}
           %button.msgsubmin{type: "submit"}
             %span.msgsubmin__comment
-              コメントする
+              コメントする  
+  - if user_signed_in? && current_user.id == @product.user_id
+    .l-single-container
+      .listing-item-change-box
+        = link_to  edit_item_url(@product.id), class: "btn-default btn-red" do
+          商品の編集
+        %p.text-center or
+        %form{action: "/jp/mypage/items/deactivate/m69554679925/", method: "POST", novalidate: "novalidate"}
+          %input{name: "__csrf_value", type: "hidden",}/
+          %button.btn-default.btn-gray{type: "submit"} 出品を一旦停止する
+        = button_to "/items/#{@product.id}", method: :delete, class: "btn-default btn-gray" do
+          この商品を削除する
   .navicontainer_one
     .navitm_landr
       .navi_itmprev
@@ -331,5 +341,4 @@
                       350
                   .thumbnail_style_p
                     = image_tag '0FD70C9C-138C-4846-A63A-0C7785F5AB7B.jpg', alt: 'icecream', class: 'owners-recommend'
-
 = render 'shared/footer.haml'

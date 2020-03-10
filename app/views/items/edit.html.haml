@@ -1,147 +1,180 @@
-= render 'shared/header'
-.christine
-  %section.itm_box_container
-    %h1.itm_name
-      = @product.name
-    .main_itm_container
-      .itm_picture
-        .itm_picture__one
-          .itm_picture__main
-            .itm_picture__width
-              .itm_picture__active
-                .itm_picture__active__one
-                  = image_tag @image.src.url, class: 'img_itm_one'
-            .itm_picture.disabled
-              .itm_picture__pre
-                prev
-              .itm_picture__next
-                next
-            .img_reductions
-              .img_reduction
-                %span
-                .img_reduction__one
-                  = image_tag '8651F35B-510B-4510-A297-272226E55505.jpg', alt: 'クッション未使用', class: 'img_itm_reduction'
-              .img_reduction
-                %span
-                .img_reduction__one
-                  = image_tag '0CEE4D9A-3157-4E09-8F94-A3BC37934600.jpg', alt: 'クッション未使用', class: 'img_itm_reduction'
-              .img_reduction
-                %span
-                .img_reduction__one
-                  = image_tag '0C9FDF3F-0599-40D2-8B22-C1EE93CE08D1.jpg', alt: 'クッション未使用', class: 'img_itm_reduction'
-      %table.itm_detailbox
-        %tbody
-          %tr
-            %th
-              出品者
-            %td.bluecolll
-              =link_to "#" do
-                名前
-          %tr
-            %th
-              カテゴリー
-            %td.bluecolll
-              =link_to "#" do
-                レディース
-              =link_to "#" do
-                .catego_title_dt__sub
-                  %i.fa.fa-chevron-right
-                  インテリア小物
-              =link_to "#" do
-                .catego_title_dt__sub__sub
-                  %i.fa.fa-chevron-right
-                  クッション
-          %tr
-            %th
-              ブランド
-            %td.bluecolll
-              =link_to "#" do
-                unknown
-          %tr
-            %th
-              商品のサイズ
-            %td
-              M
-          %tr
-            %th
-              商品の状態
-            %td
-              新品、未使用
-          %tr
-            %th
-              配送料の負担
-            %td
-              送料込み（出品者負担）
-          %tr
-            %th
-              配送の方法
-            %td
-              らくらくメルカリ便
-          %tr
-            %th
-              配送現地域
-            %td.bluecolll
-              = link_to "#" do
+.sell-container
+  = render 'shared/header_signin'
+  %main.sell-main
+    %section.sell-main__container
+      %div
+        %h2.sell-main__head 商品の情報を入力
+        = form_with model: @product, url: item_path(@product.id), method: :put, class:'sell-main__form' do |f|
+          .sell-main__upload-box
+            %h3.sell-main__upload-head
+              出品画像
+              %span.sell-main__form-require 必須
+            %p 最大10枚までアップロードできます
+            = f.label :image  do
+              .sell-main__dropbox-container.clearfix
+                .sell-main__upload-items
+                  = f.fields_for :images do |i|    
+                    .image-input
+                      = i.file_field :src, id: "product_image"
+                  .sell-main__upload-drop-box
+                    %pre
+                      ドラッグアンドドロップ
+                      またはクリックしてファイルをアップロード
+          .sell-main__content.clearfix
+            .sell-main__form-group
+              = f.label :name do
+                商品名
+                %span.sell-main__form-require 必須
+              %div
+                = f.text_field :name, { class:'sell-main__input-default', placeholder: '商品名（必須 40文字まで)' }
+            .sell-main__form-group
+              = f.label :description do
+                商品の説明
+                %span.sell-main__form-require 必須
+              = f.text_area :description, { class: 'sell-main__textarea-default', placeholder: '商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に100万円で購入したとです。ライトグレーで傷はありません。あわせやすいのでおすすめです。', rows: '5' }
+          .sell-main__content.clearfix
+            %h3.sell-main__sub-head 商品の詳細
+            .sell-main__form-box
+              .sell-main__form-group
+                = f.label :category_id do
+                  カテゴリー
+                  %span.sell-main__form-require 必須
                 %div
-                  大阪府
-          %tr
-            %th
-              配送日の目安
-            %td
-              １〜2日で発送
-    .itm_pricebox
-      %span.itm_pricebox__pricee
-        ¥
-        = @product.price
-      %span.itm_pricebox__taxe
-        (税込)
-      %span.itm_pricebox__shippingfee
-        送料込み
-    -# .itmbtn_float
-    -#   =link_to "#", class: "itm_purchasebtn" do
-    -#     購入画面に進む
-    -#   =link_to "#", class: "itm_purchasebtn_byapp" do
-    -#     アプリで購入
-    .itm_description
-      %p.itm_description__inner
-        ふわふわです
-        おしゃれなのでおすすめです
-    .itm_btncontain
-      .itm_btncontain__lft
-        =link_to "#", class: "itm_btncontain__lft__likeyy" do
-          %i.fa.fa-heart
-          %span.itm_btncontain__lft__iine
-            いいね!
-          %span.itm_btncontain__lft__number
-            1
-        =link_to "#", class: "itm_btncontain__lft__rating" do
-          %i.fa.fa-flag
-          不適切な商品の報告
-      .itm_btncontain__rgt
-        =link_to "#" do
-          %i.fa.fa-user-lock
-          あんしん・あんぜんへの取り組み
-  .l-single-container
-    .listing-item-change-box
-      = link_to "#", class: "btn-default btn-red" do
-        商品の編集
-      %p.text-center or
-      %form{action: "/jp/mypage/items/deactivate/m69554679925/", method: "POST", novalidate: "novalidate"}
-        %input{name: "__csrf_value", type: "hidden",}/
-        %button.btn-default.btn-gray{type: "submit"} 出品を一旦停止する
-      = button_to "/items/#{@product.id}", method: :delete, class: "btn-default btn-gray" do
-        この商品を削除する
-  .itm_dtl_msg
-    .itm_dtl_msg__container
-      .msg_content
-        %form.msgform{action: "#", method: "POST"}
-          %input.msgform{name: "keyword", type: "hidden", value: ""}/
-          %p.msgform_comment
-            相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-          %input{type: "hidden", name: "itmm_id", value: ""}
-          %textarea.textareadeful{type: "text", name: "body"}
-          %button.msgsubmin{type: "submit"}
-            %span.msgsubmin__comment
-              コメントする
-=render 'shared/banner'
-= render 'shared/footer.haml'
+                  .sell-main__select-wrap                   
+                    = fa_icon 'fa-chevron-down', class: 'fa-chevron-down'
+                    %div
+                      = f.text_field :price, { class: 'sell-main__input-default', placeholder: '---',  value: '' }
+              .sell-main__form-group
+                = f.label :condition do
+                  商品の状態
+                  %span.sell-main__form-require 必須
+                .sell-main__select-wrap
+                  = fa_icon 'fa-chevron-down', class: 'fa-chevron-down'
+                  %div
+                    = f.select :condition,nil,{placeholder: '---'},class: 'sell-main__input-default' do
+                      %option{value:  ""} --
+                      %option{value:  @condition[0]} #{@condition[0]}
+                      %option{value:  @condition[1]} #{@condition[1]}
+                      %option{value:  @condition[2]} #{@condition[2]}
+                      %option{value:  @condition[3]} #{@condition[3]}
+                      %option{value:  @condition[4]} #{@condition[4]}
+          .sell-main__content.clearfix
+            %h3.sell-main__sub-head 配送について
+            %a.sell-main__form-question{ href: '#'}
+              ?
+            .sell-main__form-box
+              .sell-main__form-group
+                = f.label :delivery_charge_id do
+                  配送料の負担
+                  %span.sell-main__form-require 必須
+                .sell-main__select-wrap
+                  = f.select :fee_burden,nil,{placeholder: '---'},class: 'sell-main__input-default' do
+                    %option{value:  ""} 選択してください
+                    %option{value:  @fee_burden[0]} #{@fee_burden[0]}
+                    %option{value:  @fee_burden[1]} #{@fee_burden[1]}
+                  = fa_icon 'fa-chevron-down', class: 'fa-chevron-down'
+                  
+              .sell-main__form-group
+                = f.label :delivery_area_id do
+                  発送元の地域
+                  %span.sell-main__form-require 必須
+                .sell-main__select-wrap
+                  = fa_icon 'fa-chevron-down', class: 'fa-chevron-down'
+                  = f.select :prefectures,nil,{placeholder: '---'},class: 'sell-main__input-default' do
+                    %option{value:  ""} 選択してください
+                    %option{value:  @prefectures[0]} #{@prefectures[0]}
+                    %option{value:  @prefectures[1]} #{@prefectures[1]}
+                    %option{value:  @prefectures[2]} #{@prefectures[2]}
+                    %option{value:  @prefectures[3]} #{@prefectures[3]}
+                    %option{value:  @prefectures[4]} #{@prefectures[4]}
+                    %option{value:  @prefectures[5]} #{@prefectures[5]}
+                    %option{value:  @prefectures[6]} #{@prefectures[6]}
+                    %option{value:  @prefectures[7]} #{@prefectures[7]}
+                    %option{value:  @prefectures[8]} #{@prefectures[8]}
+                    %option{value:  @prefectures[9]} #{@prefectures[9]}
+                    %option{value:  @prefectures[10]} #{@prefectures[10]}
+                    %option{value:  @prefectures[11]} #{@prefectures[11]}
+                    %option{value:  @prefectures[12]} #{@prefectures[12]}
+                    %option{value:  @prefectures[13]} #{@prefectures[13]}
+                    %option{value:  @prefectures[14]} #{@prefectures[14]}
+                    %option{value:  @prefectures[15]} #{@prefectures[15]}
+                    %option{value:  @prefectures[16]} #{@prefectures[16]}
+                    %option{value:  @prefectures[17]} #{@prefectures[17]}
+                    %option{value:  @prefectures[18]} #{@prefectures[18]}
+                    %option{value:  @prefectures[19]} #{@prefectures[19]}
+                    %option{value:  @prefectures[20]} #{@prefectures[20]}
+                    %option{value:  @prefectures[21]} #{@prefectures[21]}
+                    %option{value:  @prefectures[22]} #{@prefectures[22]}
+                    %option{value:  @prefectures[23]} #{@prefectures[23]}
+                    %option{value:  @prefectures[24]} #{@prefectures[24]}
+                    %option{value:  @prefectures[25]} #{@prefectures[25]}
+                    %option{value:  @prefectures[26]} #{@prefectures[26]}
+                    %option{value:  @prefectures[27]} #{@prefectures[27]}
+                    %option{value:  @prefectures[28]} #{@prefectures[28]}
+                    %option{value:  @prefectures[29]} #{@prefectures[29]}
+                    %option{value:  @prefectures[30]} #{@prefectures[30]}
+                    %option{value:  @prefectures[31]} #{@prefectures[31]}
+                    %option{value:  @prefectures[32]} #{@prefectures[32]}
+                    %option{value:  @prefectures[33]} #{@prefectures[33]}
+                    %option{value:  @prefectures[34]} #{@prefectures[34]}
+                    %option{value:  @prefectures[35]} #{@prefectures[35]}
+                    %option{value:  @prefectures[36]} #{@prefectures[36]}
+                    %option{value:  @prefectures[37]} #{@prefectures[37]}
+                    %option{value:  @prefectures[38]} #{@prefectures[38]}
+                    %option{value:  @prefectures[39]} #{@prefectures[39]}
+                    %option{value:  @prefectures[40]} #{@prefectures[40]}
+                    %option{value:  @prefectures[41]} #{@prefectures[41]}
+                    %option{value:  @prefectures[42]} #{@prefectures[42]}
+                    %option{value:  @prefectures[43]} #{@prefectures[43]}
+                    %option{value:  @prefectures[44]} #{@prefectures[44]}
+                    %option{value:  @prefectures[45]} #{@prefectures[45]}
+                    %option{value:  @prefectures[46]} #{@prefectures[46]}
+              .sell-main__form-group
+                = f.label :delivery_days do
+                  発送までの日数
+                  %span.sell-main__form-require 必須
+                .sell-main__select-wrap
+                  = fa_icon 'fa-chevron-down', class: 'fa-chevron-down'
+                  = f.select :shipping_time,nil,{placeholder: '---'},class: 'sell-main__input-default' do
+                    %option{value:  ""} 選択してください
+                    %option{value:  @sipping_time[0]} #{@sipping_time[0]}
+                    %option{value:  @sipping_time[1]} #{@sipping_time[1]}
+                    %option{value:  @sipping_time[2]} #{@sipping_time[2]}
+          .sell-main__content.clearfix
+            %h3.sell-main__sub-head 販売価格(300〜9,999,999)
+            %a.sell-main__form-question{ href: '#' }
+              ?
+            .sell-main__form-box
+              %ul.sell-main__price
+                %li.sell-main__form-group
+                  .clearfix
+                    = f.label :price do
+                      価格
+                      %span.sell-main__form-require 必須
+                    .sell-main__right.sell-main__price-input 
+                      ¥
+                      %div
+                        = f.text_field :price, { class: 'sell-main__input-default', placeholder: '例）300',  value: '' }
+                %li.clearfix
+                  販売手数料 (10%)
+                %li.clearfix.bold
+                  販売利益
+          .sell-main__content.sell-main__btn-box
+            %div
+              %p
+                = link_to '禁止されている出品', '#'
+                、
+                = link_to '行為', '#'
+                を必ずご確認ください。
+              %p
+                またブランド品でシリアルナンバー等がある場合はご記載ください。
+                = link_to '偽ブランドの販売', '#'
+                は犯罪であり処罰される可能性があります。
+              %p
+                また、出品をもちまして
+                = link_to '加盟店規約', '#'
+                に同意したことになります。
+            = f.submit '変更する', class: 'sell-main__btn-default sell-main__btn-red'
+            = link_to 'もどる',root_path, class: 'sell-main__btn-default sell-main__btn-gray'
+  = render 'shared/footer'
+ 

@@ -1,9 +1,8 @@
 class ItemsController < ApplicationController
     before_action :find_product, only: [:show, :edit, :update, :destroy]
     def index
-    #   @items = Item.includes(:images).order('created_at DESC')
-      @products = Product.order("created_at DESC").limit(5)
-      @image = Image.first
+      @products = Product.includes(:images).order('created_at DESC').limit(5)
+      
     end
 
     def new
@@ -33,6 +32,12 @@ class ItemsController < ApplicationController
     end
 
     def edit
+    product_condition
+    fee_burden 
+    sipping_time
+    prefectures 
+    
+    
     end
 
     def update
@@ -51,10 +56,15 @@ class ItemsController < ApplicationController
         end
     end
 
+    def purchase
+      Payjp.api_key = PAYJP_SECRET_KEY
+      Payjp::Charge.create(currency: 'jpy', amount: 1000, card: params['payjp-token'])
+      redirect_to root_path, notice: "支払いが完了しました"
+    end
 
     private
     def product_params
-        params.require(:product).permit(:id,:name, :price ,:description, :condition, :fee_burden, :shipping_time,:prefectures, images_attributes: [:src]).merge(user_id: current_user.id)
+        params.require(:product).permit(:image,:id,:name, :price ,:description, :condition, :fee_burden, :shipping_time,:prefectures, images_attributes: [:src ,:id]).merge(user_id: current_user.id)
     end
     
     def find_product
@@ -82,4 +92,5 @@ class ItemsController < ApplicationController
               "福岡県","佐賀県","長崎県","熊本県","大分県","宮崎県","鹿児島県", 
               "沖縄県"]
     end
+
 end

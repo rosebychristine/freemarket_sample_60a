@@ -2,7 +2,7 @@
   .toppage-header-top
     .toppage-header-top__header
       .toppage-header-top__header-contents
-        = link_to " /tops" do
+        = link_to "/" do
           = image_tag 'fmarket_logo_red.svg', alt: 'mercari-logo', class: 'toppage-header-top__header-contents--mercari-logo'
 
         .toppage-header-top__header-search
@@ -44,10 +44,10 @@
             %span やることリスト
            
         %li.toppage-header-top__footer-contents-login-content
-          = link_to "#" do
+          = link_to "/mypages" do
             %figure
               %div
                 = image_tag 'tatara.png', alt: 'mypage-logo', width: '32px', class: 'toppage-header-top__footer-contents-login-content--mypage-header-user-icon'
                 %span
-                  = link_to 'マイページ'
+                  = link_to 'マイページ', mypages_path
  
