@@ -9,6 +9,8 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string :shipping_time,    null: false, default: ""
       t.string :prefectures,      null: false, default: ""
       t.references :user,         foreign_key: true 
+      t.string  :sales_status
+      t.integer  :status,         null: false, default: 0
       t.timestamps
     end
   end

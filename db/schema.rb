@@ -120,6 +120,8 @@ ActiveRecord::Schema.define(version: 2020_03_08_064949) do
     t.string "shipping_time", default: "", null: false
     t.string "prefectures", default: "", null: false
     t.bigint "user_id"
+    t.string "sales_status"
+    t.integer "status", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_products_on_user_id"

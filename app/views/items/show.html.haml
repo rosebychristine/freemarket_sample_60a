@@ -9,6 +9,10 @@
           .itm_picture__main
             .itm_picture__width
               .itm_picture__active
+                -if @product.status == "売却済み"
+                  .item-sold-out-b
+                    %div
+                      SOLD
                 .itm_picture__active__one
                   = image_tag @images.first.src.url, class: 'img_itm_one'
             .itm_picture.disabled
@@ -114,7 +118,12 @@
         送料込み
     .itmbtn_float
       = link_to item_path(@product.id), method: :patch , class: "itm_purchasebtn" do
-        購入画面に進む
+        -if @product.status == "売却済み" 
+          .input{disabled: "disabled", class: "itm_purchasebtn-gry"}
+            売り切れました
+        -else
+          .itm_purchasebtn
+            購入画面に進む
       =link_to "#", class: "itm_purchasebtn_byapp" do
         アプリで購入
     .itm_description

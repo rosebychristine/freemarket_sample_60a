@@ -35,6 +35,10 @@
               %li.ladiesitm_one.category_li
                 %div{style: "visibility: visible; transition: all 0.5s ease 0s; opacity: 1;"}
                   = link_to item_path(product.id), method: :get ,class: "ldies_itm_lnks" do
+                    -if product.status == "売却済み"
+                      .item-sold-out-badge
+                        %div
+                          SOLD
                     %figure.ladies_itm_lnk
                       %figcaption
                         %span.category_spa
