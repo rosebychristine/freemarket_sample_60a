@@ -60,8 +60,7 @@
             %section.sell-content.sell-content-error
               %p.has-error-text
                 この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
-              = form_tag(action: :pay, method: :post) do
-                %button 購入する
+              = link_to '購入する',pay_purchase_path(@product)
               %p.not-have-app-text
                 アプリをお持ちでない方は以下よりインストールしてご利用いただけます。
               %br
