@@ -17,8 +17,9 @@
         .credit-btn
           .credit-in
             %button.btn-credit{type: "submit"}
-              = fa_icon 'credit-card', calss: "credit-icon"
-              クレジットカードを追加する
+              = link_to new_card_path, class: "btn-credit" do       
+                クレジットカードを追加する
+                = fa_icon 'credit-card', class: "credit-icon"
         .credit-pay
           = link_to "支払い方法について", "#" , class: "payment"
           = link_to new_card_path do
@@ -26,3 +27,4 @@
 
 = render 'shared/banner'
 = render 'shared/footer'
+
