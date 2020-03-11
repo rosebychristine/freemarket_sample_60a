@@ -44,7 +44,7 @@ Rails.application.routes.draw do
     end
     member do
       get 'index'
-      get 'pay'
+      post 'pay'
       get 'purchase_conf'
     end
   end
