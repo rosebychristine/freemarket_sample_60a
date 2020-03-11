@@ -104,4 +104,6 @@ class ItemsController < ApplicationController
               "沖縄県"]
     end
 
+    def price
+        
 end
