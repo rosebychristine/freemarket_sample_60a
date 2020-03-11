@@ -1,7 +1,5 @@
 
 Rails.application.routes.draw do
-  get 'purchase/index'
-  get 'purchase/done'
   devise_for :users,
   # SNS認証
   controllers: {
@@ -29,7 +27,6 @@ Rails.application.routes.draw do
       get 'step2'
       get 'step3'
       get 'step4'
-      get 'credit'
       get 'done'
       get 'login'
     end
@@ -38,9 +35,11 @@ Rails.application.routes.draw do
 
   resources :purchase, only: [:index] do
     collection do
-      get 'index', to: 'purchase#index'
-      post 'pay', to: 'purchase#pay'
       get 'done', to: 'purchase#done'
+    end
+    member do
+     get 'index'
+     get 'buy'
     end
   end
 

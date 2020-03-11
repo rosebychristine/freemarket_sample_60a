@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  require 'payjp'
     before_action :find_product, only: [:show, :edit, :update, :destroy]
     def index
       @products = Product.includes(:images).order('created_at DESC').limit(5)
@@ -34,18 +35,17 @@ class ItemsController < ApplicationController
     product_condition
     fee_burden 
     sipping_time
-    prefectures 
-    
-    
+    prefectures
     end
 
-    def update
-        if @product.update(product_params)
-            redirect_to root_path
-          else 
-            redirect_to edit_item_path
-          end
-    end
+
+    # def update
+    #     if @product.update(product_params)
+    #         redirect_to root_path
+    #       else 
+    #         redirect_to edit_item_path
+    #       end
+    # end
 
     def show
         @images = @product.images
@@ -59,10 +59,28 @@ class ItemsController < ApplicationController
     end
 
     def purchase
+
       Payjp.api_key = PAYJP_SECRET_KEY
       Payjp::Charge.create(currency: 'jpy', amount: 1000, card: params['payjp-token'])
       redirect_to root_path, notice: "支払いが完了しました"
     end
+
+    # def pay
+    #   @product = Product.find(params[:id])
+  
+    #   card = Card.where(user_id: current_user.id).first
+    #   Payjp.api_key = ENV['PAYJP_PRIVATE_KEY']
+    #   Payjp::Charge.create(
+    #   :amount => @produsct.price, #支払金額を入力（itemテーブル等に紐づけても良い）
+    #   :customer => @card.customer_id, #顧客ID
+    #   :currency => 'jpy', #日本円
+    # )
+    # redirect_to action: 'done' #完了画面に移動
+    # # render 'done'
+    # end
+  
+    # def done
+    # end
 
     private
     def product_params

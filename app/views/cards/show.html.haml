@@ -20,7 +20,7 @@
                 = exp_month + " / " + exp_year
                 = form_tag(delete_cards_path, method: :post, id: 'charge-form',  name: "inputForm") do
                   %input{ type: "hidden", name: "card_id", value: "" }
-                  %button.setpay_lists__delete
+                  %button{type: "submit", class:setpay_lists__delete}
                     削除する
       .about_paymentt
         = link_to "#" , class: "about_paymentt__detail" do

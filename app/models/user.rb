@@ -16,7 +16,7 @@ class User < ApplicationRecord
   has_many :alerts 
   has_many :orders 
   has_many :sns_credentials, dependent: :destroy
-  has_one :cards
+  has_many :cards
   
   # SNS認証
   def self.without_sns_data(auth)

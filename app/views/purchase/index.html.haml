@@ -1,18 +1,81 @@
-%h2 購入を確定しますか？
-%p Apple MacBook Pro 13インチ
-%p ¥135,000(送料込み)
-%br
-%h3 支払い方法
-- if @default_card_information.blank?
-  %br /
-- else
-  -#以下カード情報を表示
-  = "**** **** **** " + @default_card_information.last4
-  - exp_month = @default_card_information.exp_month.to_s
-  - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
-  = exp_month + " / " + exp_year
-%br
-= form_tag(action: :pay, method: :post) do
-  %button 購入する
+.all-container
+  / viewの全てを囲む
+  %header.header
+    %h4.margi
+      = link_to '#', class: "link", target: "_blank" do
+        = image_tag 'merukari.svg' 
+  %main.main-view-container
+    %section.main-view-buy
+      %h6.sub-header
+        購入内容の確認
+      .sell-product
+        .sell-product-inner
+          .sell-item-box
+            .sell-item-image
+              = image_tag @images.first.src.url
+            .sell-item-detail
+              %p.sell-item-name 
+                = @product.name
+              %p.sell-item-price
+                %span 
+                  = @product.price
+                %span.sell-tax （税込）送料込み
+      .sell-product
+        .sell-product-inner
+          %form.sell-form{action: "", method: "POST"}
+            %ul.sell-price
+              %li.sell-price-pay
+                .sell-price-paypay
+                  支払い金額
+              .buy-price-big
+                %span
+                  ¥ 
+                  = @product.price
+            %ul.sell-points
+              %li.accordion-parent
+                .checkbox-default.use-point
+                  %input{class: "check",:checked => "checked", :name => "riyu", :type => "checkbox", :value => "1"}
+                    %i.fas.fa-check-square.fa-lg
+                    %label.sell-position
+                      ポイントを使用（所持ポイント:P0)
 
-=render 'shared/fotter'
+            %section.sell-content.sell-content-payment
+              .sell-product-inner
+                %h4 支払い方法
+                %p.user-info
+                -if current_user.credit_card_no == ""
+                  %i.fas.fa-plus-circle
+                  = link_to '登録してください', new_card_path, class: "left-messages"
+                - else
+                  -#以下カード情報を表示
+                  = "**** **** **** " + @default_card_information.last4
+                  - exp_month = @default_card_information.exp_month.to_s
+                  - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                  = exp_month + " / " + exp_year
+            %section.sell-content.sell-content-payment
+              .sell-product-inner
+                %h4 配送先
+                %p.user-info
+                  -if current_user.credit_card_no == ""
+                    %i.fas.fa-plus-circle
+                    = link_to '登録してください', "#", class: "left-messages"
+                  - else
+                    #{@product.user.credit_card_no}
+            %section.sell-content.sell-content-error
+              %p.has-error-text
+                この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
+              -if current_user.credit_card_no == ""
+                %button.next-page{type: "submit"}
+                  購入する
+              -else 
+                %button.next-page-red{type: "submit"}
+                  購入する 
+              %p.not-have-app-text
+                アプリをお持ちでない方は以下よりインストールしてご利用いただけます。
+              %br
+              .store-logos
+                = link_to '#', class: "apple", target: "_blank" do
+                  = image_tag 'apple.svg', size:'130x40'
+                = link_to '#', class: "google", target: "_blank" do
+                  = image_tag 'Google.png', size:'130x40'
+= render 'shared/fotter'

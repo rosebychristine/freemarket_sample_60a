@@ -117,13 +117,13 @@
       %span.itm_pricebox__shippingfee
         送料込み
     .itmbtn_float
-      = link_to item_path(@product.id), method: :patch , class: "itm_purchasebtn" do
-        -if @product.status == "売却済み" 
-          .input{disabled: "disabled", class: "itm_purchasebtn-gry"}
-            売り切れました
-        -else
-          .itm_purchasebtn
-            購入画面に進む
+      = link_to purchase_path(@product.id), class: "itm_purchasebtn" do
+        -# -if @product.status == "売却済み" 
+        -#   .input{disabled: "disabled", class: "itm_purchasebtn-gry"}
+        -#     売り切れました
+        -# -else
+        .itm_purchasebtn
+          購入画面に進む
       =link_to "#", class: "itm_purchasebtn_byapp" do
         アプリで購入
     .itm_description
