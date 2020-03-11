@@ -11,13 +11,19 @@
         .buy-content-inner
           %h3.buy-item-image
             %img
-              = image_tag('tatara.png', class: 'image-image', size: '120x120')
+              -# = image_tag('tatara.png', class: 'image-image', size: '120x120')
+              -# = image_tag @product.images[0], class: 'owl-carousel-sub', size: '120x120'
+              = image_tag @images.first.src.url, size: '120x120'
           %p.buy-item-name.bold
-            Apple MacBook Pro 13インチ
+            -# Apple MacBook Pro 13インチ
+            = @product.name
       %section
         .buy-content-inner
           %p.buy-price-ja.bold
-            ¥135,000(送料込み)
+            -# ¥135,000(送料込み)
+            -# = @product.jpy
+            -# = @product.price
+            ¥ #{@product.price} (送料込み)
       %section.buy-content.buy-user-info
         .buy-content-text
           %br
