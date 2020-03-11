@@ -43,29 +43,25 @@
               .sell-product-inner
                 %h4 支払い方法
                 %p.user-info
-                -if current_user.credit_card_no == ""
-                  %i.fas.fa-plus-circle
-                  = link_to '登録してください', "#", class: "left-messages"
+                - if @default_card_information.blank?
+                  %br /
                 - else
-                  #{@product.user.credit_card_no}
+                  -#以下カード情報を表示
+                  = "**** **** **** " + @default_card_information.last4
+                  - exp_month = @default_card_information.exp_month.to_s
+                  - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                  = exp_month + " / " + exp_year
             %section.sell-content.sell-content-payment
               .sell-product-inner
                 %h4 配送先
                 %p.user-info
-                  -if current_user.credit_card_no == ""
-                    %i.fas.fa-plus-circle
-                    = link_to '登録してください', "#", class: "left-messages"
-                  - else
-                    #{@product.user.credit_card_no}
+                  %i.fas.fa-plus-circle
+                  = link_to '登録してください', "#", class: "left-messages"
             %section.sell-content.sell-content-error
               %p.has-error-text
                 この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
-              -if current_user.credit_card_no == ""
-                %button.next-page{type: "submit"}
-                  購入する
-              -else 
-                %button.next-page-red{type: "submit"}
-                  購入する 
+              = form_tag(action: :pay, method: :post) do
+                %button 購入する
               %p.not-have-app-text
                 アプリをお持ちでない方は以下よりインストールしてご利用いただけます。
               %br
