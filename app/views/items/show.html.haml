@@ -14,7 +14,7 @@
                     %div
                       SOLD
                 .itm_picture__active__one
-                  = image_tag @images.first.src.url, class: 'img_itm_one'
+                  = image_tag @product.images.first.src.url, class: 'img_itm_one'
             .itm_picture.disabled
               .itm_picture__pre
                 prev

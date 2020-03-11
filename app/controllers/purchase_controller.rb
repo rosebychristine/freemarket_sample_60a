@@ -27,6 +27,7 @@ class PurchaseController < ApplicationController
   )
   redirect_to action: 'done' #完了画面に移動
   end
+
   def purchase_conf
     @product = Product.find(params[:id])
     @images = @product.images
@@ -42,4 +43,5 @@ class PurchaseController < ApplicationController
       #保管したカードIDでpayjpから情報取得、カード情報表示のためインスタンス変数に代入
       @default_card_information = customer.cards.retrieve(card.card_id)
     end
+  end
 end
