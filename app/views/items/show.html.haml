@@ -122,7 +122,7 @@
           .itm_purchasebtn-gry
             売り切れました
       -else
-        = link_to item_path(@product.id), method: :patch do
+        = link_to purchase_conf_purchase_path(@product.id), method: :get do
           .itm_purchasebtn
             購入画面に進む
       =link_to "#", class: "itm_purchasebtn_byapp" do
