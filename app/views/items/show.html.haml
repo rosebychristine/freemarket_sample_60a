@@ -1,4 +1,10 @@
-= render 'shared/header_login'
+- if user_signed_in? 
+  = render '/mypages/mypage-header'
+  - breadcrumb :mypage_profile
+  = render 'mypages/bread-crumbs'
+- else
+  = render 'shared/header_login'
+  = render 'shared/slide'
 .christine
   %section.itm_box_container
     %h1.itm_name
