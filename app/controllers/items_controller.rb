@@ -48,6 +48,7 @@ class ItemsController < ApplicationController
 
     def show
         @images = @product.images
+        
     end
 
     def destroy
