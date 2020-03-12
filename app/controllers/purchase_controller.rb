@@ -28,6 +28,11 @@ class PurchaseController < ApplicationController
   redirect_to action: 'done' #完了画面に移動
   end
 
+  def done
+    @product = Product.find(params[:id])
+    @images = @product.images
+  end
+
   def purchase_conf
     @product = Product.find(params[:id])
     @images = @product.images
