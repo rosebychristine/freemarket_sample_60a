@@ -16,7 +16,6 @@
                   = f.fields_for :images do |i|  
                     .image-input
                       = i.file_field :src, id: "product_image"
-                        =.js-file_group{data:{index: image.index}
                   .sell-main__upload-drop-box
                     %pre
                       ドラッグアンドドロップ
