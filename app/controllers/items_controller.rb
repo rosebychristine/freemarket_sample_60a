@@ -38,7 +38,13 @@ class ItemsController < ApplicationController
     
     
     end
-  end
+    def update
+        if @product.update(product_params)
+            redirect_to root_path
+          else 
+            redirect_to edit_item_path
+          end
+    end
 
     def show
         @images = @product.images
@@ -89,5 +95,5 @@ class ItemsController < ApplicationController
     end
 
     def price
-
+    end
 end
