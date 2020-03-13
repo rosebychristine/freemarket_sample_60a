@@ -26,13 +26,21 @@ class PurchaseController < ApplicationController
     customer: card.customer_id, #顧客ID
     currency: 'jpy', #日本円
   )
+  if @product.update(status: 2, user_id: current_user.id)
+    flash[:notice] = '購入しました。'
+    redirect_to action: 'done' 
+  else
+    flash[:alert] = '購入に失敗しました。'
+    redirect_to controller: "items", action: 'show'
+  end
   
-  redirect_to action: 'done' #完了画面に移動
+  # redirect_to action: 'done' #完了画面に移動
   end
 
   def done
     @product = Product.find(params[:id])
     @images = @product.images
+    # product.status_before_type_cast == 2
   end
 
   def purchase_conf
