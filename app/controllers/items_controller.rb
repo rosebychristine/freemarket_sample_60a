@@ -22,6 +22,7 @@ class ItemsController < ApplicationController
 
     def create
     # 保存する処理
+        binding.pry
         @product = Product.new(product_params)
         if @product.save && @product.valid?
             redirect_to root_path
