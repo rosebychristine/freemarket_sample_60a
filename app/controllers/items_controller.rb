@@ -48,7 +48,7 @@ class ItemsController < ApplicationController
 
     def show
         @images = @product.images
-        
+
     end
 
     def destroy
@@ -66,7 +66,7 @@ class ItemsController < ApplicationController
 
     private
     def product_params
-        params.require(:product).permit(:image,:id,:name, :price ,:description, :condition, :fee_burden, :shipping_time,:prefectures, images_attributes: [:src ,:id]).merge(user_id: current_user.id)
+        params.require(:product).permit(:image,:id,:name, :status, :price ,:description, :condition, :fee_burden, :shipping_time,:prefectures, images_attributes: [:src ,:id]).merge(user_id: current_user.id)
     end
     
     def find_product
